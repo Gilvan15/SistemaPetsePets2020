@@ -116,6 +116,7 @@ namespace SistemaPet
                 {
                     sound3();
                     MessageBox.Show("Usuário ou Senha inválidos!", "Aviso!", MessageBoxButtons.OK);
+                    textSenha.Focus();
                     return;
                 }
 

@@ -362,13 +362,6 @@ namespace SistemaPet.subForms
                 comboCamera.Items.Add("Nenhum dispositivo encontrado!");
             }
         }
-        private void btnSalvar_Click_1(object sender, EventArgs e)
-        {
-            sound1();
-            opc = "Salvar";
-            InicarOpc();
-        }
-
         private void btnPesquisar_Click_1(object sender, EventArgs e)
         {
             sound1();
@@ -385,129 +378,6 @@ namespace SistemaPet.subForms
                 textPesquisar.Visible = false;
             }
         }        
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            sound1();
-            opc = "Editar";
-            InicarOpc();
-        }
-
-        private void btnLimpar_Click_1(object sender, EventArgs e)
-        {
-            sound2();
-            LimparCampos();
-            DesabilitarCampos();
-        }
-
-        private void btnNovo_Click_1(object sender, EventArgs e)
-        {
-            sound1();
-            opc = "Novo";
-            InicarOpc();
-        }
-        private void btnAtivarCamera_Click_1(object sender, EventArgs e)
-        {
-            if (videoSource != null)
-            {
-                MessageBox.Show("A câmera já está ativada!", "Aviso!", MessageBoxButtons.OK);
-            }
-            else
-            {
-                sound1();
-                FilterInfoCollection videosources = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-                if (videosources != null)
-                {
-                    try
-                    {
-                        videoSource = new VideoCaptureDevice(videosources[0].MonikerString);
-                        videoSource.NewFrame += (s, i) => pictureCamera.Image = (Bitmap)i.Frame.Clone();
-                        videoSource.Start();
-                    }
-                    catch (Exception)
-                    {
-                        sound3();
-                        MessageBox.Show("Erro Câmera: " + "Dispositivo WebCam não encontrado neste computador!", "Aviso", MessageBoxButtons.OK);
-                    }
-                }
-            }
-        }
-        private void btnTirarFoto_Click_1(object sender, EventArgs e)
-        {
-            if (videoSource == null)
-            {
-                MessageBox.Show("Ative primerio a camera!", "Aviso!", MessageBoxButtons.OK);
-                return;
-            }
-            sound4();
-            base.OnClosed(e);
-            if (videoSource != null && videoSource.IsRunning)
-            {
-                videoSource.SignalToStop();
-                videoSource = null;
-            }
-        }
-        private void btnOffCamera_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                if (videoSource != null)
-                {
-                    sound5();
-                    videoSource.SignalToStop();
-                    pictureCamera.Image = null;
-                    videoSource = null;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
-        private void btnSalvarFoto_Click_1(object sender, EventArgs e)
-        {
-            if (pictureCamera.Image == null)
-            {
-                MessageBox.Show("Antes de salvar, ative primerio a Camera e tire a foto");
-                return;
-            }
-
-            // Carrega a imagem para o nosso formulário
-            Bitmap bmp = new Bitmap(pictureCamera.Image);
-            pictureCamera.Image = bmp;
-            MemoryStream ms = new MemoryStream();
-            bmp.Save(ms, ImageFormat.Bmp);
-            byte[] foto = ms.ToArray();
-
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = Settings.Default.dbpetsepetsConnectionString;
-            SqlCommand cn = new SqlCommand("UPDATE Animal SET Foto = @foto WHERE id =" + textCod.Text, con);
-
-            SqlParameter paramFoto = new SqlParameter("@foto", SqlDbType.Binary);
-            paramFoto.Value = foto;
-            cn.Parameters.Add(paramFoto);
-            con.Open();
-
-            if (MessageBox.Show("Salvar Foto em Restrito?", "Salvar Foto", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-                    cn.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Foto Cadastrada com Sucesso!");
-                    ListarGrid();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: ao salvar a foto!!: " + ex.Message);
-                }
-            }
-            else
-            {
-                pictureCamera.Image = null;
-                return;
-            }
-        }
-
         private void comboProprietario_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             using (SqlConnection con = new SqlConnection())
@@ -609,9 +479,167 @@ namespace SistemaPet.subForms
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
+            if (textCod.Text == "")
+            {
+                sound3();
+                MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
+                return;
+            }
+
+
             sound1();
             opc = "Excluir";
             InicarOpc();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            sound1();
+            opc = "Editar";
+            InicarOpc();
+        }
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            sound2();
+            LimparCampos();
+            DesabilitarCampos();
+        }
+
+        private void btnNovo1_Click(object sender, EventArgs e)
+        {
+            sound1();
+            opc = "Novo";
+            InicarOpc();
+        }
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            sound1();
+            opc = "Salvar";
+            InicarOpc();
+        }
+
+        private void btnAtivarCamera_Click(object sender, EventArgs e)
+        {
+            if (videoSource != null)
+            {
+                MessageBox.Show("A câmera já está ativada!", "Aviso!", MessageBoxButtons.OK);
+            }
+            else
+            {
+                sound1();
+                FilterInfoCollection videosources = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+                if (videosources != null)
+                {
+                    try
+                    {
+                        videoSource = new VideoCaptureDevice(videosources[0].MonikerString);
+                        videoSource.NewFrame += (s, i) => pictureCamera.Image = (Bitmap)i.Frame.Clone();
+                        videoSource.Start();
+                    }
+                    catch (Exception)
+                    {
+                        sound3();
+                        MessageBox.Show("Erro Câmera: " + "Dispositivo WebCam não encontrado neste computador!", "Aviso", MessageBoxButtons.OK);
+                    }
+                }
+            }
+        }
+        private void btnTirarFoto1_Click(object sender, EventArgs e)
+        {
+            if (videoSource == null)
+            {
+                MessageBox.Show("Ative primerio a camera!", "Aviso!", MessageBoxButtons.OK);
+                return;
+            }
+            sound4();
+            base.OnClosed(e);
+            if (videoSource != null && videoSource.IsRunning)
+            {
+                videoSource.SignalToStop();
+                videoSource = null;
+            }
+        }
+        private void btnOffCamera_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (videoSource != null)
+                {
+                    sound5();
+                    videoSource.SignalToStop();
+                    pictureCamera.Image = null;
+                    videoSource = null;
+                    pictureCamera.Image = Image.FromFile(pasta_aplicacao + "img\\dog1.png");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void btnAtivarCamera_MouseHover(object sender, EventArgs e)
+        {
+            btnAtivarCamera.ForeColor = Color.Black;
+        }
+
+        private void btnAtivarCamera_MouseLeave(object sender, EventArgs e)
+        {
+            btnAtivarCamera.ForeColor = Color.White;
+        }
+
+        private void btnSalvarFoto_Click(object sender, EventArgs e)
+        {
+            if (pictureCamera.Image == null)
+            {
+                MessageBox.Show("Antes de salvar, ative primerio a Camera e tire a foto");
+                return;
+            }
+            if (textCod.Text == "")
+            {
+                sound3();
+                MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
+                return;
+            }
+
+
+
+            // Carrega a imagem para o nosso formulário
+            Bitmap bmp = new Bitmap(pictureCamera.Image);
+            pictureCamera.Image = bmp;
+            MemoryStream ms = new MemoryStream();
+            bmp.Save(ms, ImageFormat.Bmp);
+            byte[] foto = ms.ToArray();
+
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = Settings.Default.dbpetsepetsConnectionString;
+            SqlCommand cn = new SqlCommand("UPDATE Animal SET Foto = @foto WHERE id =" + textCod.Text, con);
+
+            SqlParameter paramFoto = new SqlParameter("@foto", SqlDbType.Binary);
+            paramFoto.Value = foto;
+            cn.Parameters.Add(paramFoto);
+            con.Open();
+
+            if (MessageBox.Show("Salvar Foto em Restrito?", "Salvar Foto", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    cn.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Foto Cadastrada com Sucesso!");
+                    LimparCampos();
+                    ListarGrid();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: ao salvar a foto!!: " + ex.Message);
+                }
+            }
+            else
+            {
+                //pictureCamera.Image = null;
+                return;
+            }
         }
     }
 }
