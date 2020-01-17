@@ -33,6 +33,7 @@ namespace SistemaPet.subForms
             InitializeComponent();
             pasta_aplicacao = Application.StartupPath + @"\";
             carregarCamera();
+            
         }
 
         private void DesabilitarCampos()
@@ -325,9 +326,18 @@ namespace SistemaPet.subForms
         {
             // TODO: esta linha de código carrega dados na tabela 'dbpetsepetsDataSet.Animal'. Você pode movê-la ou removê-la conforme necessário.
             this.animalTableAdapter.Fill(this.dbpetsepetsDataSet.Animal);
+            CarregaComboIdade();
             CarregaCombo();
             ListarGrid();
             DesabilitarCampos();
+        }
+
+        private void CarregaComboIdade() 
+        {
+            for (int x = 1; x <= 100; x++) 
+            {
+                cbIdade.Items.Add(x);
+            }
         }
 
         private void carregarCamera() 
@@ -374,14 +384,7 @@ namespace SistemaPet.subForms
                 pictureLupa.Visible = false;
                 textPesquisar.Visible = false;
             }
-        }
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            sound1();
-            opc = "Excluir";
-            InicarOpc();
-        }
-
+        }        
         private void btnEditar_Click(object sender, EventArgs e)
         {
             sound1();
@@ -515,14 +518,14 @@ namespace SistemaPet.subForms
                     con.Open();
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "SELECT * FROM Pessoa_Fisica WHERE nome = '" + comboProprietario.SelectedItem.ToString() + "'";
+                    cmd.CommandText = "SELECT * FROM Cliente WHERE nome = '" + comboProprietario.SelectedItem.ToString() + "'";
                     cmd.ExecuteNonQuery();
                     DataTable dt = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dt);
                     foreach (DataRow dr in dt.Rows)
                     {
-                        textTelefone.Text = dr["telefone1"].ToString();
+                        textTelefone.Text = dr["fone1"].ToString();
                         textEmail.Text = dr["email"].ToString();
                     }
                     con.Close();
@@ -585,9 +588,30 @@ namespace SistemaPet.subForms
             {
                 MessageBox.Show("BADE!! ERROR DataGrid: " + ex.Message);
             }
+                       
+        }
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            sound1();
+            if (pictureLupa.Visible == false)
+            {
+                pictureLupa.Visible = true;
+                textPesquisar.Visible = true;
+                textPesquisar.Text = null;
+                textPesquisar.Focus();
+            }
+            else
+            {
+                pictureLupa.Visible = false;
+                textPesquisar.Visible = false;
+            }
+        }
 
-
-
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            sound1();
+            opc = "Excluir";
+            InicarOpc();
         }
     }
 }

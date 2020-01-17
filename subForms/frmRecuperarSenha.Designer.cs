@@ -60,7 +60,7 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(800, 50);
+            this.panelTop.Size = new System.Drawing.Size(634, 50);
             this.panelTop.TabIndex = 1;
             // 
             // label2
@@ -80,7 +80,7 @@
             this.Fechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Fechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Fechar.Image = ((System.Drawing.Image)(resources.GetObject("Fechar.Image")));
-            this.Fechar.Location = new System.Drawing.Point(748, 4);
+            this.Fechar.Location = new System.Drawing.Point(582, 4);
             this.Fechar.Name = "Fechar";
             this.Fechar.Size = new System.Drawing.Size(40, 40);
             this.Fechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -106,9 +106,9 @@
             this.textEmail.HintForeColor = System.Drawing.Color.Empty;
             this.textEmail.HintText = "";
             this.textEmail.isPassword = false;
-            this.textEmail.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textEmail.LineIdleColor = System.Drawing.Color.Gray;
-            this.textEmail.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textEmail.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textEmail.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textEmail.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textEmail.LineThickness = 3;
             this.textEmail.Location = new System.Drawing.Point(284, 121);
             this.textEmail.Margin = new System.Windows.Forms.Padding(4);
@@ -148,13 +148,13 @@
             this.btnLogar.IconVisible = true;
             this.btnLogar.IconZoom = 90D;
             this.btnLogar.IsTab = false;
-            this.btnLogar.Location = new System.Drawing.Point(229, 173);
+            this.btnLogar.Location = new System.Drawing.Point(284, 173);
             this.btnLogar.Name = "btnLogar";
             this.btnLogar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnLogar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnLogar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLogar.selected = false;
-            this.btnLogar.Size = new System.Drawing.Size(360, 40);
+            this.btnLogar.Size = new System.Drawing.Size(305, 40);
             this.btnLogar.TabIndex = 8;
             this.btnLogar.Text = "Enviar Email";
             this.btnLogar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -167,7 +167,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 275);
+            this.ClientSize = new System.Drawing.Size(634, 260);
             this.Controls.Add(this.btnLogar);
             this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.textEmail);
