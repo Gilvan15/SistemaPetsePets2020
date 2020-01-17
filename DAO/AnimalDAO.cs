@@ -66,9 +66,16 @@ namespace DAO
                         dado.Raca = Convert.ToString(dr["raca"]);
                         dado.Nome = Convert.ToString(dr["nome"]);
                         dado.Proprietario = Convert.ToString(dr["proprietario"]);
+                        dado.Telefone = Convert.ToString(dr["telefone"]);
                         dado.Email = Convert.ToString(dr["email"]);
                         dado.Cuidados_esp = Convert.ToString(dr["cuidados_esp"]);
                         dado.Alergico = Convert.ToString(dr["alergico"]);
+
+                        if (dr["foto"] != DBNull.Value)
+                        {
+                            dado.Foto = (byte[])dr["foto"];
+                        }
+
                         lista.Add(dado);
                     }
                 }

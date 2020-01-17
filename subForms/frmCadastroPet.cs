@@ -33,20 +33,23 @@ namespace SistemaPet.subForms
             InitializeComponent();
             pasta_aplicacao = Application.StartupPath + @"\";
             carregarCamera();
-            
         }
-
         private void DesabilitarCampos()
         {
             LimparCampos();
             comboEspecie.Enabled = false;
             textRaca.Enabled = false;
             textNome.Enabled = false;
+            cbIdade.Enabled = false;
+            radioButton1.Enabled = false;
+            radioButton2.Enabled = false;
+            radioButton3.Enabled = false;
             comboProprietario.Enabled = false;
             textTelefone.Enabled = false;
             textEmail.Enabled = false;
             richTextBoxCE.Enabled = false;
             textAlegMedic.Enabled = false;
+            btnSalvar.Enabled = false;
         }
         private void LimparCampos()
         {
@@ -54,6 +57,10 @@ namespace SistemaPet.subForms
             comboEspecie.Text = null;
             textRaca.Text = null;
             textNome.Text = null;
+            cbIdade.Text = null;
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
             comboProprietario.Text = null;
             textTelefone.Text = null;
             textEmail.Text = null;
@@ -69,13 +76,17 @@ namespace SistemaPet.subForms
             comboEspecie.Enabled = true;
             textRaca.Enabled = true;
             textNome.Enabled = true;
+            cbIdade.Enabled = true;
+            radioButton1.Enabled = true;
+            radioButton2.Enabled = true;
+            radioButton3.Enabled = true;
             comboProprietario.Enabled = true;
             textTelefone.Enabled = true;
             textEmail.Enabled = true;
             richTextBoxCE.Enabled = true;
             textAlegMedic.Enabled = true;
+            btnSalvar.Enabled = true;
         }
-
         public void CarregarFoto()
         {
             //Reculperando a imagem do banco de dados
@@ -123,7 +134,7 @@ namespace SistemaPet.subForms
                comboProprietario.Items.Add(item.Nome);
             }
         }
-        private void ListarGrid()
+        private void CarregarGrid()
         {
             try
             {
@@ -156,125 +167,6 @@ namespace SistemaPet.subForms
         {
             switch (opc)
             {
-                case "Novo":
-                    HabilitarCampos();
-                    LimparCampos();
-                    textRaca.Focus();
-                    break;
-
-                case "Salvar":
-                    try
-                    {
-                        objTabela.Especie = comboEspecie.Text;
-                        objTabela.Raca = textRaca.Text;
-                        objTabela.Nome = textNome.Text;
-                        objTabela.Proprietario = comboProprietario.Text;
-                        objTabela.Telefone = textTelefone.Text;
-                        objTabela.Email = textEmail.Text;
-                        objTabela.Cuidados_esp = richTextBoxCE.Text;
-                        objTabela.Alergico = textAlegMedic.Text;
-
-                        int x = AnimalModel.Inseir(objTabela);
-
-                        if (x > 0)
-                        {
-                            MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
-                            DesabilitarCampos();
-                            ListarGrid();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error ao Tentar cadastrar Registro!", "Aviso!", MessageBoxButtons.OK);
-                        }
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Ocorreu um error tentar salvar Registro:" + ex.Message);
-
-                    }
-                    break;
-
-                case "Excluir":
-                    try
-                    {
-
-                        if (textCod.Text == Convert.ToString(null))
-                        {
-                            sound3();
-                            MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
-                            return;
-                        }
-
-                        objTabela.Id = Convert.ToInt32(textCod.Text);
-                        int x = AnimalModel.Excluir(objTabela);
-
-                        if (x > 0)
-                        {
-                            MessageBox.Show("Registro  excluído com suceso!", "Aviso!", MessageBoxButtons.OK);
-                            DesabilitarCampos();
-                            ListarGrid();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error ao Tentar Excluir o Registro");
-                        }
-                    }
-
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Ocorreu um erro ao excluir: " + ex.Message);
-                    }
-
-                    break;
-
-                case "Editar":
-
-                    if (textCod.Text == "")
-                    {
-                        sound3();
-                        MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
-                        return;
-                    }
-
-                    try
-                    {
-                        DialogResult result1 = MessageBox.Show("Confima alteração do registro?", "Aviso!", MessageBoxButtons.YesNo);
-                        if (result1 == DialogResult.Yes)
-                        {
-                            objTabela.Id = Convert.ToInt32(textCod.Text);
-                            objTabela.Especie = comboEspecie.Text;
-
-                            objTabela.Raca = textRaca.Text;
-                            objTabela.Nome = textNome.Text;
-                            objTabela.Proprietario = comboProprietario.Text;
-                            objTabela.Telefone = textTelefone.Text;
-                            objTabela.Email = textEmail.Text;
-                            objTabela.Cuidados_esp = richTextBoxCE.Text;
-                            objTabela.Alergico = textAlegMedic.Text;
-
-                            int x = AnimalModel.Editar(objTabela);
-
-                            if (x > 0)
-                            {
-                                MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
-                                DesabilitarCampos();
-                                ListarGrid();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error ao Tentar Editar o Registro", "Aviso!", MessageBoxButtons.OK);
-                            }
-                        }
-                        else { return; }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Editar ERROR: " + ex.Message);
-
-                    }
-                    break;
-
                 case "Buscar":
 
                     try
@@ -324,11 +216,9 @@ namespace SistemaPet.subForms
         }
         private void frmCadastroPet_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'dbpetsepetsDataSet.Animal'. Você pode movê-la ou removê-la conforme necessário.
-            this.animalTableAdapter.Fill(this.dbpetsepetsDataSet.Animal);
             CarregaComboIdade();
             CarregaCombo();
-            ListarGrid();
+            CarregarGrid();
             DesabilitarCampos();
         }
 
@@ -382,6 +272,8 @@ namespace SistemaPet.subForms
         {
             using (SqlConnection con = new SqlConnection())
             {
+                if (comboProprietario.Text == string.Empty) {return;}
+
                 try
                 {
                     con.ConnectionString = Settings.Default.dbpetsepetsConnectionString;
@@ -421,16 +313,11 @@ namespace SistemaPet.subForms
             }
         }
 
-        private void comboCamera_SelectedValueChanged(object sender, EventArgs e)
-        {
-            //MessageBox.Show("passou aqui!");
-        }
-
         private void textPesquisar_OnValueChanged_1(object sender, EventArgs e)
         {
             if (textPesquisar.Text == "")
             {
-                ListarGrid();
+                CarregarGrid();
                 return;
             }
             opc = "Buscar";
@@ -442,7 +329,7 @@ namespace SistemaPet.subForms
         {
             try
             {
-                HabilitarCampos();
+                //HabilitarCampos();
                 textCod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 comboEspecie.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 textRaca.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
@@ -456,7 +343,7 @@ namespace SistemaPet.subForms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("BADE!! ERROR DataGrid: " + ex.Message);
+                MessageBox.Show("ERROR DataGridView: " + ex.Message);
             }
                        
         }
@@ -479,24 +366,85 @@ namespace SistemaPet.subForms
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
+            sound1();
+            try
+            {
+                if (textCod.Text == "")
+                {
+                    sound3();
+                    MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
+                    return;
+                }
+                DialogResult result1 = MessageBox.Show("Confima a Exclusão do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                if (result1 == DialogResult.Yes)
+                {
+                    objTabela.Id = Convert.ToInt32(textCod.Text);
+                    int x = AnimalModel.Excluir(objTabela);
+                    if (x > 0)
+                    {
+                        sound2();
+                        LimparCampos();
+                        DesabilitarCampos();
+                        CarregarGrid();
+                        MessageBox.Show(string.Format("Registro  excluído com sucesso!"));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error ao Tentar Excluir o Registro");
+                    }
+                }
+                else { return; }
+            }
+            catch (Exception ex)
+            {
+                sound3();
+                MessageBox.Show("Registro vinculado a outra tabela!", "Exclusão Negada!", MessageBoxButtons.OK);
+            }
+
+
+            /*
+            try
+            {
+                if (textCod.Text == Convert.ToString(null))
+                {
+                    sound3();
+                    MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
+                    return;
+                }
+
+                objTabela.Id = Convert.ToInt32(textCod.Text);
+                int x = AnimalModel.Excluir(objTabela);
+
+                if (x > 0)
+                {
+                    MessageBox.Show("Registro  excluído com suceso!", "Aviso!", MessageBoxButtons.OK);
+                    DesabilitarCampos();
+                    CarregarGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Error ao Tentar Excluir o Registro");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao excluir: " + ex.Message);
+            }
+            */
+        }
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            sound1();
             if (textCod.Text == "")
             {
                 sound3();
                 MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
                 return;
             }
-
-
-            sound1();
-            opc = "Excluir";
-            InicarOpc();
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            sound1();
             opc = "Editar";
-            InicarOpc();
+            HabilitarCampos();
+            textNome.Focus();
+            btnSalvar.Enabled = true;
         }
         private void btnLimpar_Click(object sender, EventArgs e)
         {
@@ -504,20 +452,111 @@ namespace SistemaPet.subForms
             LimparCampos();
             DesabilitarCampos();
         }
-
         private void btnNovo1_Click(object sender, EventArgs e)
         {
             sound1();
-            opc = "Novo";
-            InicarOpc();
+            opc = "Salvar";
+            HabilitarCampos();
+            LimparCampos();
+            textNome.Focus();
+            btnSalvar.Enabled = true;
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             sound1();
-            opc = "Salvar";
-            InicarOpc();
-        }
+            if (textNome.Text == string.Empty)
+            {
+                sound3();
+                MessageBox.Show("Impossivel salvar registro vazio!", "Aviso!", MessageBoxButtons.OK);
+                textNome.Focus();
+                LimparCampos();
+                DesabilitarCampos();
+                return;
+            }
+            switch (opc)
+            {
+                case "Salvar":
+                    try
+                    {
+                        DialogResult result1 = MessageBox.Show("Confima o cadastro do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        if (result1 == DialogResult.Yes)
+                        {
+                            objTabela.Especie = comboEspecie.Text;
+                            objTabela.Raca = textRaca.Text;
+                            objTabela.Nome = textNome.Text;
+                            objTabela.Proprietario = comboProprietario.Text;
+                            objTabela.Telefone = textTelefone.Text;
+                            objTabela.Email = textEmail.Text;
+                            objTabela.Cuidados_esp = richTextBoxCE.Text;
+                            objTabela.Alergico = textAlegMedic.Text;
 
+                            int x = AnimalModel.Inseir(objTabela);
+
+                            if (x > 0)
+                            {
+                                MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
+                                DesabilitarCampos();
+                                CarregarGrid();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error ao Tentar cadastrar Registro!", "Aviso!", MessageBoxButtons.OK);
+                            }
+                        }
+                        else { return; }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocorreu um error tentar cadastrar o Registro:" + ex.Message);
+                    }
+                    break;
+
+                case "Editar":
+
+                    if (textCod.Text == "")
+                    {
+                        sound3();
+                        MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
+                        return;
+                    }
+
+                    try
+                    {
+                        DialogResult result1 = MessageBox.Show("Confima alteração do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        if (result1 == DialogResult.Yes)
+                        {
+                            objTabela.Id = Convert.ToInt32(textCod.Text);
+                            objTabela.Especie = comboEspecie.Text;
+                            objTabela.Raca = textRaca.Text;
+                            objTabela.Nome = textNome.Text;
+                            objTabela.Proprietario = comboProprietario.Text;
+                            objTabela.Telefone = textTelefone.Text;
+                            objTabela.Email = textEmail.Text;
+                            objTabela.Cuidados_esp = richTextBoxCE.Text;
+                            objTabela.Alergico = textAlegMedic.Text;
+
+                            int x = AnimalModel.Editar(objTabela);
+
+                            if (x > 0)
+                            {
+                                MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
+                                DesabilitarCampos();
+                                CarregarGrid();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error ao Tentar Editar o Registro", "Aviso!", MessageBoxButtons.OK);
+                            }
+                        }
+                        else { return; }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Editar ERROR: " + ex.Message);
+                    }
+                    break;
+            }
+        }
         private void btnAtivarCamera_Click(object sender, EventArgs e)
         {
             if (videoSource != null)
@@ -628,7 +667,7 @@ namespace SistemaPet.subForms
                     con.Close();
                     MessageBox.Show("Foto Cadastrada com Sucesso!");
                     LimparCampos();
-                    ListarGrid();
+                    CarregarGrid();
                 }
                 catch (Exception ex)
                 {

@@ -267,9 +267,6 @@ namespace SistemaPet.subForms
             LimparCampos();
             textNome.Focus();
             btnSalvar.Enabled = true;
-
-
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -360,13 +357,12 @@ namespace SistemaPet.subForms
                 return;
             }
 
-
             switch (opc)
             {
                 case "Salvar":
                     try
                     {
-                        DialogResult result1 = MessageBox.Show("Confima salvação do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        DialogResult result1 = MessageBox.Show("Confima o cadastro do registro?", "Aviso!", MessageBoxButtons.YesNo);
                         if (result1 == DialogResult.Yes)
                         {
                             objTabela.Nome = textNome.Text;
@@ -391,14 +387,14 @@ namespace SistemaPet.subForms
                             }
                             else
                             {
-                                MessageBox.Show("Error ao Tentar cadastrar Usuário!", "Aviso!", MessageBoxButtons.OK);
+                                MessageBox.Show("Error ao tentar cadastrar o retistro!", "Aviso!", MessageBoxButtons.OK);
                             }
                         }
                         else { return; }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Ocorreu um error tentar salvar o registro:" + ex.Message);
+                        MessageBox.Show("Ocorreu um error ao tentar cadastrar o registro:" + ex.Message);
                     }
                     break;
 
