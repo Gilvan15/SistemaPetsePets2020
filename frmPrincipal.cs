@@ -244,6 +244,9 @@ namespace SistemaPet
             ocutarPaineis();
             AbrirFormWrapper(new frmLogo());
         }
-        
+        private void btnMenuFuncionario_Click(object sender, EventArgs e)
+        {
+            AbrirFormWrapper(new frmFuncionario());
+        }
     }
 }

@@ -101,6 +101,12 @@
     <Compile Include="subForms\frmFuncao.Designer.cs">
       <DependentUpon>frmFuncao.cs</DependentUpon>
     </Compile>
+    <Compile Include="subForms\frmFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subForms\frmFuncionario.Designer.cs">
+      <DependentUpon>frmFuncionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="subForms\frmLogo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,7 +137,6 @@
     <Compile Include="subForms\frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="subForms\PrinterOffline.cs" />
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="subForms\frmFuncao.resx">
       <DependentUpon>frmFuncao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subForms\frmFuncionario.resx">
+      <DependentUpon>frmFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="subForms\frmLogo.resx">
       <DependentUpon>frmLogo.cs</DependentUpon>
