@@ -14,14 +14,17 @@ using Bunifu.Framework.UI;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Management;
 
 namespace SistemaPet.subForms
 {
     public partial class frmRecibo : Form
     {
+
         private PrintDocument printDocument1 = new PrintDocument();
         Bitmap memoryImage;
         string pasta_aplicacao = "";
+        string nomeImpessora = "";
         private string opc = "";
         string valor;
         ReciboEnt objTabela = new ReciboEnt();
@@ -29,8 +32,8 @@ namespace SistemaPet.subForms
         {
             InitializeComponent();
             pasta_aplicacao = Application.StartupPath + @"\";
-        }
 
+        }
         public frmRecibo(string valor, string numero, string Nome, string import1,
             string import2, string refer1, string refer2, string emitent, string cnpj)
         {
@@ -86,9 +89,9 @@ namespace SistemaPet.subForms
 
         private void frmRecibo_Load(object sender, EventArgs e)
         {
-
             //btnSalvar.Enabled = false;
             CarregarGrid();
+            SelectPrinter();
             DesabilitarCampos();
             atualizaData();
         }
@@ -113,7 +116,10 @@ namespace SistemaPet.subForms
             btnPrepararImpressao.Visible = false;
             btnFecharRecibo.Visible = true;
             btnImprimir.Visible = true;
-       }
+            comboPrinter1.Visible = true;
+            labelSelecionePrint.Visible = true;
+
+        }
                 
 
         private void HabilitarCampos()
@@ -525,26 +531,24 @@ namespace SistemaPet.subForms
                     break;
             }
         }
-
         public void AbrirsegundoPlano() 
         {
             frmPanodeFundo.AbrirPanodeFundo();
         }
-
         public void FecharPanodeFundo() 
         {
-            frmPanodeFundo.FecharPanodeFundo();
+            int tot = Application.OpenForms.OfType<frmRecibo>().Count();
+            //MessageBox.Show("total de janelas abertas: " + tot);
+            for (int i = 0; i < tot; i++)
+            {
+                frmPanodeFundo.FecharPanodeFundo();
+            }
         }
-        
-
 
         private void btnPrepararImpressao_Click(object sender, EventArgs e)
         {
             sound1();
-
-            
-
-            if (Application.OpenForms.OfType<frmRecibo>().Count() > 1)
+            if (Application.OpenForms.OfType<frmRecibo>().Count() > 2)
             {
                 MessageBox.Show("O Recibo já está aberto!");
             }
@@ -561,11 +565,10 @@ namespace SistemaPet.subForms
                 Form frmrec = new frmRecibo(textValorRecibo.Text, textNumeroRecibo.Text,
                     textRecebemosde.Text, textImportanciade1.Text, textImportanciade2.Text,
                     textReferentea1.Text, textReferentea2.Text, textEmitente.Text, textCnpj.Text);
-                frmrec.TopMost = true;
+                frmrec.TopMost = false;
                 frmrec.Show();
             }
         }
-
         private void btnNovo_Click(object sender, EventArgs e)
         {
             sound1();
@@ -577,33 +580,73 @@ namespace SistemaPet.subForms
             //textValorRecibo.Text = Convert.ToDouble(textValorRecibo.Text).ToString("C");
             textValorRecibo.Focus();
         }
-
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            try
+            if (comboPrinter1.Text == string.Empty) 
             {
-                sound1();
-                btnImprimir.Visible = false;
-                btnFecharRecibo.Visible = false;
-                CaptureScreen();
-                printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
-                printDocument1.Print();
-                btnImprimir.Visible = true;
-                btnFecharRecibo.Visible = true;
-              
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show("Error de Impressão: "  + ex);
+                sound3();
+                MessageBox.Show("Selecione uma Impressora Ativa:");
+                return;
             }
             
+            nomeImpessora = comboPrinter1.Text;
+            ReadyCheck();
         }
-
         private void btnFecharRecibo_Click(object sender, EventArgs e)
         {
             sound1();
+            comboPrinter1.Visible = false;
             this.Close();
             FecharPanodeFundo();
+        }
+        private void SelectPrinter() 
+        {
+            comboPrinter1.Items.Clear();
+            foreach (string impressora in PrinterSettings.InstalledPrinters)
+            {
+                comboPrinter1.Items.Add(impressora.Trim().ToLower());
+            }
+        }        
+        private void ReadyCheck()
+        {
+            ManagementObjectSearcher searcher = new   ManagementObjectSearcher("SELECT * FROM Win32_Printer");
+            
+            foreach (ManagementObject printer in searcher.Get())
+            {
+                string printerName = printer["Name"].ToString().ToLower();
+
+                if (printer["Name"].ToString().ToLower() == nomeImpessora)
+               {
+                    if (printer["WorkOffline"].ToString().ToLower().Equals("true") && printer["Default"].ToString().ToLower().Equals("true"))
+                    {
+                        MessageBox.Show("A Impressora está Offline: Ligue a impressora:" + printerName.ToUpper());
+                        return;
+                    }
+                    else
+                    {
+                        //MessageBox.Show("Online: " + printerName);
+                        try
+                        {
+                            sound1();
+                            btnImprimir.Visible = false;
+                            btnFecharRecibo.Visible = false;
+                            comboPrinter1.Visible = false;
+                            labelSelecionePrint.Visible = false;
+                            CaptureScreen();
+                            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+                            printDocument1.Print();
+                            btnImprimir.Visible = true;
+                            btnFecharRecibo.Visible = true;
+                            comboPrinter1.Visible = true;
+                            labelSelecionePrint.Visible = true;
+                        }
+                        catch (Exception ex)
+                        {
+                            //MessageBox.Show("Error de Impressão: "  + ex);
+                        }
+                    }
+                }
+            }
         }
     }
 }

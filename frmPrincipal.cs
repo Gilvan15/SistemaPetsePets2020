@@ -26,13 +26,14 @@ namespace SistemaPet
         {
             InitializeComponent();
             pasta_aplicacao = Application.StartupPath + @"\";
-
         }
-
         private void ocutarPaineis()
         {
             panelSubMenuCadastrar.Visible = false;
             panelSubVendas.Visible = false;
+            panelSubRelatorio.Visible = false;
+            panelSubValores.Visible = false;
+
         }
 
         private void AbrirFormWrapper(object formwapper) 
@@ -120,9 +121,9 @@ namespace SistemaPet
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             string str = "" +  Convert.ToChar(174);
-            lblFooter.Text = "PETS & PETS RAÇÕES E ACESSÓRIOS " + str + " CNPJ: 33.555.177/0001-03 | Fone: 3238-1495/99944-7754";
-            string tmp = "0";
-            label1.Text = Convert.ToString($"Pets " + tmp.Replace("0","e" ) + " Pets");
+            lblFooter.Text = "PETS E PETS RAÇÕES E ACESSÓRIOS " + str + " CNPJ: 33.555.177/0001-03 | Fone: (92) 98433-8895";
+            //string tmp = "0";
+            //label1.Text = Convert.ToString($"Pets " + tmp.Replace("0","e" ) + " Pets");
             ocutarPaineis();
             bunifuTLog.Show(pictlogo);
             sond1();
@@ -133,8 +134,6 @@ namespace SistemaPet
             this.Close();
             frmLog.Show();
         }
-
-
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             AbrirFormWrapper(new frmUsuario());
@@ -143,22 +142,10 @@ namespace SistemaPet
         {
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\Entrada.wav");
             player.Play();
-        }
-        private void label1_Click(object sender, EventArgs e)
+        }        
+        private void textPetsePets_Click_1(object sender, EventArgs e)
         {
             AbrirFormWrapper(new frmLogo());
-        }
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-            AbrirFormWrapper(new frmLogo());
-        }
-        private void label1_MouseHover(object sender, EventArgs e)
-        {
-            label1.ForeColor = Color.GreenYellow;
-        }
-        private void label1_MouseLeave(object sender, EventArgs e)
-        {
-            label1.ForeColor = Color.White;
         }
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
@@ -240,5 +227,23 @@ namespace SistemaPet
         {
             AbrirFormWrapper(new frmCliente());
         }
+
+        private void richTextBox1_MouseHover(object sender, EventArgs e)
+        {
+            richTextBox1.ForeColor = Color.GreenYellow;
+        }
+
+        private void richTextBox1_MouseLeave(object sender, EventArgs e)
+        {
+            richTextBox1.ForeColor = Color.White;
+        }
+
+        private void richTextBox1_Click(object sender, EventArgs e)
+        {
+            ActiveControl = null;
+            ocutarPaineis();
+            AbrirFormWrapper(new frmLogo());
+        }
+        
     }
 }

@@ -44,6 +44,7 @@ namespace SistemaPet.subForms
         private void LimparCampos()
         {
             textCod.Text = null;
+            textPesquisar.Text = null;
             textNome.Text = null;
             textEmail.Text = null;
             textTelefone1.Text = null;

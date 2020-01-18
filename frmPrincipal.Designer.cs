@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
             BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
             this.panelTop = new System.Windows.Forms.Panel();
             this.restaurar = new System.Windows.Forms.PictureBox();
             this.minimizar = new System.Windows.Forms.PictureBox();
@@ -64,9 +64,9 @@
             this.btnMenuFuncao = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenuCadastro = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.label1 = new System.Windows.Forms.Label();
             this.bunifuT = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panelSideBarhost = new System.Windows.Forms.Panel();
             this.lblFooter = new System.Windows.Forms.Label();
@@ -940,9 +940,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.richTextBox1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.bunifuSeparator1);
-            this.panel1.Controls.Add(this.label1);
             this.bunifuTLog.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuT.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -951,14 +951,34 @@
             this.panel1.Size = new System.Drawing.Size(210, 102);
             this.panel1.TabIndex = 0;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(93)))), ((int)(((byte)(36)))));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTLog.SetDecoration(this.richTextBox1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuT.SetDecoration(this.richTextBox1, BunifuAnimatorNS.DecorationType.None);
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
+            this.richTextBox1.Location = new System.Drawing.Point(70, 38);
+            this.richTextBox1.Multiline = false;
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(129, 25);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "Pets & Pets";
+            this.richTextBox1.Click += new System.EventHandler(this.richTextBox1_Click);
+            this.richTextBox1.MouseLeave += new System.EventHandler(this.richTextBox1_MouseLeave);
+            this.richTextBox1.MouseHover += new System.EventHandler(this.richTextBox1_MouseHover);
+            // 
             // pictureBox1
             // 
             this.bunifuT.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTLog.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(7, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 22);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(57, 57);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -971,50 +991,33 @@
             this.bunifuSeparator1.ForeColor = System.Drawing.Color.White;
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(7, 85);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(7, 87);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(186, 10);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(192, 11);
             this.bunifuSeparator1.TabIndex = 2;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuT.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTLog.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(73, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Pets e Pets";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
-            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
-            this.label1.MouseHover += new System.EventHandler(this.label1_MouseHover);
             // 
             // bunifuT
             // 
             this.bunifuT.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.bunifuT.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.bunifuT.DefaultAnimation = animation3;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.bunifuT.DefaultAnimation = animation4;
             this.bunifuT.MaxAnimationTime = 3500;
             // 
             // panelSideBarhost
@@ -1056,22 +1059,22 @@
             // 
             this.bunifuTLog.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndRotate;
             this.bunifuTLog.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(30);
-            animation4.RotateCoeff = 0.5F;
-            animation4.RotateLimit = 0.2F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.bunifuTLog.DefaultAnimation = animation4;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(30);
+            animation3.RotateCoeff = 0.5F;
+            animation3.RotateLimit = 0.2F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.bunifuTLog.DefaultAnimation = animation3;
             this.bunifuTLog.TimeStep = 0.01F;
             // 
             // frmPrincipal
@@ -1103,7 +1106,6 @@
             this.panelSubVendas.ResumeLayout(false);
             this.panelSubMenuCadastrar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSideBarhost.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -1137,10 +1139,7 @@
         private System.Windows.Forms.Panel panelSubMenuCadastrar;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuFuncao;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuCadastro;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelSideBarhost;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuServicos;
         private System.Windows.Forms.Label label2;
@@ -1154,6 +1153,9 @@
         private System.Windows.Forms.PictureBox Fechar;
         private System.Windows.Forms.Label lblFooter;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
     }
 }
 

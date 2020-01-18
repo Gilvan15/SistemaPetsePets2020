@@ -144,7 +144,7 @@
             this.panel1.Controls.Add(this.bunifuSeparator1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(985, 812);
+            this.panel1.Size = new System.Drawing.Size(984, 812);
             this.panel1.TabIndex = 0;
             // 
             // btnSalvarFoto
@@ -157,7 +157,7 @@
             this.btnSalvarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvarFoto.ForeColor = System.Drawing.Color.White;
-            this.btnSalvarFoto.Location = new System.Drawing.Point(866, 313);
+            this.btnSalvarFoto.Location = new System.Drawing.Point(865, 313);
             this.btnSalvarFoto.Name = "btnSalvarFoto";
             this.btnSalvarFoto.Size = new System.Drawing.Size(105, 30);
             this.btnSalvarFoto.TabIndex = 195;
@@ -175,7 +175,7 @@
             this.btnOffCamera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOffCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOffCamera.ForeColor = System.Drawing.Color.White;
-            this.btnOffCamera.Location = new System.Drawing.Point(583, 264);
+            this.btnOffCamera.Location = new System.Drawing.Point(582, 264);
             this.btnOffCamera.Name = "btnOffCamera";
             this.btnOffCamera.Size = new System.Drawing.Size(82, 44);
             this.btnOffCamera.TabIndex = 194;
@@ -193,7 +193,7 @@
             this.btnTirarFoto1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTirarFoto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTirarFoto1.ForeColor = System.Drawing.Color.White;
-            this.btnTirarFoto1.Location = new System.Drawing.Point(582, 185);
+            this.btnTirarFoto1.Location = new System.Drawing.Point(581, 185);
             this.btnTirarFoto1.Name = "btnTirarFoto1";
             this.btnTirarFoto1.Size = new System.Drawing.Size(82, 44);
             this.btnTirarFoto1.TabIndex = 193;
@@ -212,7 +212,7 @@
             this.btnAtivarCamera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtivarCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtivarCamera.ForeColor = System.Drawing.Color.White;
-            this.btnAtivarCamera.Location = new System.Drawing.Point(583, 107);
+            this.btnAtivarCamera.Location = new System.Drawing.Point(582, 107);
             this.btnAtivarCamera.Name = "btnAtivarCamera";
             this.btnAtivarCamera.Size = new System.Drawing.Size(82, 44);
             this.btnAtivarCamera.TabIndex = 192;
@@ -232,7 +232,7 @@
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(864, 774);
+            this.btnSalvar.Location = new System.Drawing.Point(863, 774);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(110, 35);
             this.btnSalvar.TabIndex = 191;
@@ -406,7 +406,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(959, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(958, 150);
             this.dataGridView1.TabIndex = 173;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -416,7 +416,7 @@
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(585, 319);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(584, 319);
             this.bunifuCustomLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(79, 20);
@@ -428,7 +428,7 @@
             this.comboCamera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboCamera.FormattingEnabled = true;
-            this.comboCamera.Location = new System.Drawing.Point(671, 315);
+            this.comboCamera.Location = new System.Drawing.Point(670, 315);
             this.comboCamera.Name = "comboCamera";
             this.comboCamera.Size = new System.Drawing.Size(189, 28);
             this.comboCamera.TabIndex = 171;
@@ -441,7 +441,7 @@
             this.comboProprietario.FormattingEnabled = true;
             this.comboProprietario.Location = new System.Drawing.Point(114, 343);
             this.comboProprietario.Name = "comboProprietario";
-            this.comboProprietario.Size = new System.Drawing.Size(444, 28);
+            this.comboProprietario.Size = new System.Drawing.Size(443, 28);
             this.comboProprietario.TabIndex = 169;
             this.comboProprietario.SelectedIndexChanged += new System.EventHandler(this.comboProprietario_SelectedIndexChanged_1);
             // 
@@ -462,7 +462,7 @@
             this.textPesquisar.Location = new System.Drawing.Point(54, 543);
             this.textPesquisar.Margin = new System.Windows.Forms.Padding(5);
             this.textPesquisar.Name = "textPesquisar";
-            this.textPesquisar.Size = new System.Drawing.Size(917, 29);
+            this.textPesquisar.Size = new System.Drawing.Size(916, 29);
             this.textPesquisar.TabIndex = 166;
             this.textPesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textPesquisar.Visible = false;
@@ -485,7 +485,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxCE.Location = new System.Drawing.Point(14, 480);
             this.richTextBoxCE.Name = "richTextBoxCE";
-            this.richTextBoxCE.Size = new System.Drawing.Size(957, 52);
+            this.richTextBoxCE.Size = new System.Drawing.Size(956, 52);
             this.richTextBoxCE.TabIndex = 165;
             this.richTextBoxCE.Text = "";
             // 
@@ -493,7 +493,7 @@
             // 
             this.pictureCamera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureCamera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureCamera.Location = new System.Drawing.Point(671, 107);
+            this.pictureCamera.Location = new System.Drawing.Point(670, 107);
             this.pictureCamera.Name = "pictureCamera";
             this.pictureCamera.Size = new System.Drawing.Size(300, 200);
             this.pictureCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -513,7 +513,7 @@
             "HAMSTER"});
             this.comboEspecie.Location = new System.Drawing.Point(243, 107);
             this.comboEspecie.Name = "comboEspecie";
-            this.comboEspecie.Size = new System.Drawing.Size(315, 28);
+            this.comboEspecie.Size = new System.Drawing.Size(314, 28);
             this.comboEspecie.TabIndex = 158;
             // 
             // lblQuais
@@ -539,7 +539,7 @@
             this.bunifuSeparator4.Location = new System.Drawing.Point(12, 801);
             this.bunifuSeparator4.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuSeparator4.Name = "bunifuSeparator4";
-            this.bunifuSeparator4.Size = new System.Drawing.Size(959, 26);
+            this.bunifuSeparator4.Size = new System.Drawing.Size(958, 26);
             this.bunifuSeparator4.TabIndex = 152;
             this.bunifuSeparator4.Transparency = 255;
             this.bunifuSeparator4.Vertical = false;
@@ -557,7 +557,7 @@
             this.textEmail.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textEmail.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textEmail.LineThickness = 3;
-            this.textEmail.Location = new System.Drawing.Point(630, 402);
+            this.textEmail.Location = new System.Drawing.Point(629, 402);
             this.textEmail.Margin = new System.Windows.Forms.Padding(5);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(341, 29);
@@ -570,7 +570,7 @@
             this.bunifuCustomLabel12.AutoSize = true;
             this.bunifuCustomLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel12.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel12.Location = new System.Drawing.Point(569, 413);
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(568, 413);
             this.bunifuCustomLabel12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
             this.bunifuCustomLabel12.Size = new System.Drawing.Size(52, 20);
@@ -594,7 +594,7 @@
             this.textRaca.Location = new System.Drawing.Point(72, 162);
             this.textRaca.Margin = new System.Windows.Forms.Padding(5);
             this.textRaca.Name = "textRaca";
-            this.textRaca.Size = new System.Drawing.Size(486, 29);
+            this.textRaca.Size = new System.Drawing.Size(485, 29);
             this.textRaca.TabIndex = 149;
             this.textRaca.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -639,7 +639,7 @@
             this.textAlegMedic.Location = new System.Drawing.Point(296, 579);
             this.textAlegMedic.Margin = new System.Windows.Forms.Padding(5);
             this.textAlegMedic.Name = "textAlegMedic";
-            this.textAlegMedic.Size = new System.Drawing.Size(675, 29);
+            this.textAlegMedic.Size = new System.Drawing.Size(674, 29);
             this.textAlegMedic.TabIndex = 146;
             this.textAlegMedic.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textAlegMedic.Visible = false;
@@ -686,7 +686,7 @@
             this.textTelefone.Location = new System.Drawing.Point(98, 402);
             this.textTelefone.Margin = new System.Windows.Forms.Padding(5);
             this.textTelefone.Name = "textTelefone";
-            this.textTelefone.Size = new System.Drawing.Size(462, 29);
+            this.textTelefone.Size = new System.Drawing.Size(461, 29);
             this.textTelefone.TabIndex = 143;
             this.textTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -719,7 +719,7 @@
             this.textNome.Location = new System.Drawing.Point(72, 222);
             this.textNome.Margin = new System.Windows.Forms.Padding(5);
             this.textNome.Name = "textNome";
-            this.textNome.Size = new System.Drawing.Size(487, 29);
+            this.textNome.Size = new System.Drawing.Size(486, 29);
             this.textNome.TabIndex = 141;
             this.textNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -812,7 +812,7 @@
             this.bunifuSeparator1.Location = new System.Drawing.Point(14, 25);
             this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(960, 22);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(959, 22);
             this.bunifuSeparator1.TabIndex = 134;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;

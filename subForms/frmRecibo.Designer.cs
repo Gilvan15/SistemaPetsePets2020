@@ -51,8 +51,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbldata = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnFecharRecibo = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.textNumeroRecibo = new System.Windows.Forms.TextBox();
             this.textValorRecibo = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -60,6 +58,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.comboPrinter1 = new System.Windows.Forms.ComboBox();
+            this.btnFecharRecibo = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.textPesquisar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -72,6 +73,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dbpetsepetsDataSet = new SistemaPet.dbpetsepetsDataSet();
             this.dbpetsepetsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.labelSelecionePrint = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -400,44 +402,6 @@
             this.panel1.Size = new System.Drawing.Size(857, 576);
             this.panel1.TabIndex = 98;
             // 
-            // btnFecharRecibo
-            // 
-            this.btnFecharRecibo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFecharRecibo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnFecharRecibo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFecharRecibo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(101)))), ((int)(((byte)(39)))));
-            this.btnFecharRecibo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.btnFecharRecibo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFecharRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFecharRecibo.ForeColor = System.Drawing.Color.White;
-            this.btnFecharRecibo.Location = new System.Drawing.Point(666, 603);
-            this.btnFecharRecibo.Name = "btnFecharRecibo";
-            this.btnFecharRecibo.Size = new System.Drawing.Size(113, 25);
-            this.btnFecharRecibo.TabIndex = 117;
-            this.btnFecharRecibo.Text = "Fechar Recibo";
-            this.btnFecharRecibo.UseVisualStyleBackColor = false;
-            this.btnFecharRecibo.Visible = false;
-            this.btnFecharRecibo.Click += new System.EventHandler(this.btnFecharRecibo_Click);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(101)))), ((int)(((byte)(39)))));
-            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.ForeColor = System.Drawing.Color.White;
-            this.btnImprimir.Location = new System.Drawing.Point(785, 603);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(82, 25);
-            this.btnImprimir.TabIndex = 116;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.Visible = false;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
             // textNumeroRecibo
             // 
             this.textNumeroRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -463,16 +427,16 @@
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Location = new System.Drawing.Point(546, 397);
+            this.panel3.Location = new System.Drawing.Point(537, 397);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(297, 172);
+            this.panel3.Size = new System.Drawing.Size(306, 172);
             this.panel3.TabIndex = 100;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(33, 150);
+            this.label10.Location = new System.Drawing.Point(33, 152);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(242, 15);
             this.label10.TabIndex = 104;
@@ -482,7 +446,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(62, 135);
+            this.label9.Location = new System.Drawing.Point(64, 136);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(154, 15);
             this.label9.TabIndex = 103;
@@ -492,11 +456,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(33, 118);
+            this.label8.Location = new System.Drawing.Point(2, 119);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(229, 15);
+            this.label8.Size = new System.Drawing.Size(299, 15);
             this.label8.TabIndex = 102;
-            this.label8.Text = "End: Rua da Paz Bairro Compensa";
+            this.label8.Text = "End: Rua Júlio Ribeiro 362 Bairro: Compensa";
             // 
             // pictureBox3
             // 
@@ -507,6 +471,57 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 101;
             this.pictureBox3.TabStop = false;
+            // 
+            // comboPrinter1
+            // 
+            this.comboPrinter1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboPrinter1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.comboPrinter1.FormattingEnabled = true;
+            this.comboPrinter1.Items.AddRange(new object[] {
+            "SELECIONE UMA IMPRESSORA"});
+            this.comboPrinter1.Location = new System.Drawing.Point(450, 598);
+            this.comboPrinter1.Name = "comboPrinter1";
+            this.comboPrinter1.Size = new System.Drawing.Size(201, 21);
+            this.comboPrinter1.TabIndex = 119;
+            this.comboPrinter1.Visible = false;
+            // 
+            // btnFecharRecibo
+            // 
+            this.btnFecharRecibo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFecharRecibo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnFecharRecibo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFecharRecibo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(101)))), ((int)(((byte)(39)))));
+            this.btnFecharRecibo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.btnFecharRecibo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFecharRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFecharRecibo.ForeColor = System.Drawing.Color.White;
+            this.btnFecharRecibo.Location = new System.Drawing.Point(655, 596);
+            this.btnFecharRecibo.Name = "btnFecharRecibo";
+            this.btnFecharRecibo.Size = new System.Drawing.Size(113, 25);
+            this.btnFecharRecibo.TabIndex = 117;
+            this.btnFecharRecibo.Text = "Fechar Recibo";
+            this.btnFecharRecibo.UseVisualStyleBackColor = false;
+            this.btnFecharRecibo.Visible = false;
+            this.btnFecharRecibo.Click += new System.EventHandler(this.btnFecharRecibo_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(101)))), ((int)(((byte)(39)))));
+            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.Location = new System.Drawing.Point(774, 596);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(82, 25);
+            this.btnImprimir.TabIndex = 116;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Visible = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // textPesquisar
             // 
@@ -685,6 +700,18 @@
             this.dbpetsepetsDataSetBindingSource.DataSource = this.dbpetsepetsDataSet;
             this.dbpetsepetsDataSetBindingSource.Position = 0;
             // 
+            // labelSelecionePrint
+            // 
+            this.labelSelecionePrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSelecionePrint.AutoSize = true;
+            this.labelSelecionePrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelecionePrint.Location = new System.Drawing.Point(256, 601);
+            this.labelSelecionePrint.Name = "labelSelecionePrint";
+            this.labelSelecionePrint.Size = new System.Drawing.Size(191, 15);
+            this.labelSelecionePrint.TabIndex = 105;
+            this.labelSelecionePrint.Text = "Selecione uma Impressora >";
+            this.labelSelecionePrint.Visible = false;
+            // 
             // frmRecibo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -692,6 +719,8 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(880, 788);
+            this.Controls.Add(this.labelSelecionePrint);
+            this.Controls.Add(this.comboPrinter1);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnFecharRecibo);
             this.Controls.Add(this.dataGridView1);
@@ -714,6 +743,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -760,5 +790,7 @@
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnFecharRecibo;
+        private System.Windows.Forms.ComboBox comboPrinter1;
+        private System.Windows.Forms.Label labelSelecionePrint;
     }
 }
