@@ -954,7 +954,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(93)))), ((int)(((byte)(36)))));
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(110)))), ((int)(((byte)(42)))));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTLog.SetDecoration(this.richTextBox1, BunifuAnimatorNS.DecorationType.None);

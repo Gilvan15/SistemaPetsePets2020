@@ -153,8 +153,13 @@ namespace SistemaPet.subForms
                 dataGridView1.Columns[7].HeaderText = "CUIDADOS ESPECIAIS";
                 dataGridView1.Columns[8].HeaderText = "ALÉRGICO";
                 dataGridView1.Columns[9].HeaderText = "FOTO";
-                
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                
+                dataGridView1.Columns[6].Visible = false;
+                dataGridView1.Columns[7].Visible = false;
+                //dataGridView1.Columns[8].Visible = false;
+                dataGridView1.Columns[9].Visible = false;
+
 
             }
             catch (Exception ex)

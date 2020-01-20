@@ -97,7 +97,6 @@ namespace SistemaPet.subForms
             }
 
         }
-
         private void CarregarGrid() 
         {
             try
@@ -113,6 +112,8 @@ namespace SistemaPet.subForms
                 dataGridView1.Columns[4].HeaderText = "SENHA";
                 dataGridView1.Columns[5].HeaderText = "FUNÇÃO";
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                
+                //dataGridView1.Columns[5].Visible = false;
             }
             catch (Exception ex)
             {
@@ -158,13 +159,9 @@ namespace SistemaPet.subForms
             {
                 MessageBox.Show("Error DataGrid: TESTE! " + ex.Message);
             }
-        }
-        
-        
-        
+        }        
         private void textConfSenha_OnValueChanged(object sender, EventArgs e)
         {
-
             textConfSenha.isPassword = true;
 
             if (textSenha.Text == textConfSenha.Text)
@@ -181,7 +178,6 @@ namespace SistemaPet.subForms
                 btnSalvar.Enabled = false;
             }
         }
-
         private void textPesquisar_OnValueChanged_1(object sender, EventArgs e)
         {
             if (textPesquisar.Text == "")
