@@ -18,9 +18,9 @@ namespace Entidades
         private string numero;
         private string bairro;
         private string comp;
-        private DateTime admissao;
-        private DateTime demissao;
-        private DateTime nascimento;
+        private string admissao;
+        private string demissao;
+        private string nascimento;
         private string status;
         private string jtInic;
         private string jtFinal;
@@ -39,9 +39,9 @@ namespace Entidades
         public string Numero { get => numero; set => numero = value; }
         public string Bairro { get => bairro; set => bairro = value; }
         public string Comp { get => comp; set => comp = value; }
-        public DateTime Admissao { get => admissao; set => admissao = value; }
-        public DateTime Demissao { get => demissao; set => demissao = value; }
-        public DateTime Nascimento { get => nascimento; set => nascimento = value; }
+        public string Admissao { get => admissao; set => admissao = value; }
+        public string Demissao { get => demissao; set => demissao = value; }
+        public string Nascimento { get => nascimento; set => nascimento = value; }
         public string Status { get => status; set => status = value; }
         public string JtInic { get => jtInic; set => jtInic = value; }
         public string JtFinal { get => jtFinal; set => jtFinal = value; }

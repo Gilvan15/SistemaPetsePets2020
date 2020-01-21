@@ -13,6 +13,7 @@ using Model;
 using Bunifu.Framework.UI;
 using System.Data.SqlClient;
 using SistemaPet.Properties;
+using System.Data.SqlTypes;
 
 namespace SistemaPet.subForms
 {
@@ -20,7 +21,8 @@ namespace SistemaPet.subForms
     {
         FuncionarioEnt objTabela = new FuncionarioEnt();
         FuncaoEnt objFuncao = new FuncaoEnt();
-
+        
+        string ContentmaskAdmin;
         string pasta_aplicacao = "";
         private string opc = "";
         int id_funcao;
@@ -104,30 +106,6 @@ namespace SistemaPet.subForms
 
         private void HabilitarCampos()
         {
-            /*
-            textNome.Enabled = true;
-            textEmail.Enabled = true;
-            textRg.Enabled = true;
-            textCpf.Enabled = true;
-            textTelefone.Enabled = true;
-            textEmail.Enabled = true;
-            textRua.Enabled = true;
-            textNumero.Enabled = true;
-            textBairro.Enabled = true;
-            textComp.Enabled = true;
-            comboFuncao.Enabled = true;
-            maskAdmin.Enabled = true;
-            maskDemi.Enabled = true;
-            maskNascimento.Enabled = true;
-            comboStatus.Enabled = true;
-            comboJtInic.Enabled = true;
-            comboJtFinal.Enabled = true;
-            maskHora1.Enabled = true;
-            maskHora2.Enabled = true;
-            textSalario.Enabled = true;
-            textPesquisar.Enabled = true;
-            btnSalvar.Enabled = true;
-            */
 
             foreach (Control ctrl in panel1.Controls)
             {
@@ -146,8 +124,27 @@ namespace SistemaPet.subForms
                 {
                     ((ComboBox)ctrl).Enabled = true;
                 }
-
             }
+
+            foreach (Control ctrl in groupDadosAdicionais.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+
+                    ((TextBox)ctrl).Enabled = true;
+                }
+
+                if (ctrl is ComboBox)
+                {
+                    ((ComboBox)ctrl).Enabled = true;
+                }
+
+                if (ctrl is MaskedTextBox)
+                {
+                    ((MaskedTextBox)ctrl).Enabled = true;
+                }
+            }
+
             textCod.Enabled = false; 
             btnSalvar.Enabled = true;
 
@@ -155,29 +152,6 @@ namespace SistemaPet.subForms
         private void DesabilitarCampos()
         {
             textCod.Enabled = false;
-            /*
-            textNome.Enabled = false;
-            textEmail.Enabled = false;
-            textRg.Enabled = false;
-            textCpf.Enabled = false;
-            textTelefone.Enabled = false;
-            textEmail.Enabled = false;
-            textRua.Enabled = false;
-            textNumero.Enabled = false;
-            textBairro.Enabled = false;
-            textComp.Enabled = false;
-            comboFuncao.Enabled = false;
-            maskAdmin.Enabled = false;
-            maskDemi.Enabled = false;
-            maskNascimento.Enabled = false;
-            comboStatus.Enabled = false;
-            comboJtInic.Enabled = false;
-            comboJtFinal.Enabled = false;
-            maskHora1.Enabled = false;
-            maskHora2.Enabled = false;
-            textSalario.Enabled = false;
-            textPesquisar.Enabled = false;
-            */
             btnSalvar.Enabled = false;
 
             foreach (Control ctrl in panel1.Controls)
@@ -197,7 +171,6 @@ namespace SistemaPet.subForms
                 {
                     ((ComboBox)ctrl).Enabled = false;
                 }
-
             }
 
             foreach (Control ctrl in groupDadosAdicionais.Controls)
@@ -218,10 +191,7 @@ namespace SistemaPet.subForms
                     ((MaskedTextBox)ctrl).Enabled = false;
                 }
             }
-
-
         }
-
         private void LimparCampos()
         {
             textCod.Text = null;
@@ -241,7 +211,7 @@ namespace SistemaPet.subForms
             comboJtInic.Text = null;
             comboJtFinal.Text = null;
             maskHora1.Text = null;
-            maskHora1.Text = null;
+            maskHora2.Text = null;
             textSalario.Text = null;
             comboFuncao.Text = null;
             textPesquisar.Text = null;
@@ -376,12 +346,15 @@ namespace SistemaPet.subForms
                 pictureBox1.Visible = true;
                 textPesquisar.Visible = true;
                 textPesquisar.Text = null;
+                textPesquisar.Enabled = true;
                 textPesquisar.Focus();
             }
             else
             {
                 pictureBox1.Visible = false;
                 textPesquisar.Visible = false;
+                textPesquisar.Text = null;
+                textPesquisar.Enabled = false;
             }
         }
 
@@ -390,6 +363,7 @@ namespace SistemaPet.subForms
             sound2();
             LimparCampos();
             DesabilitarCampos();
+            textPesquisar.Enabled = true;
             btnSalvar.Enabled = false;
         }
 
@@ -414,9 +388,11 @@ namespace SistemaPet.subForms
                             objTabela.Bairro = textBairro.Text;
                             objTabela.Numero = textNumero.Text;
                             objTabela.Comp = textComp.Text;
-                            objTabela.Admissao = Convert.ToDateTime(maskAdmin.Text);
-                            objTabela.Demissao = Convert.ToDateTime(maskDemi.Text);
-                            objTabela.Nascimento = Convert.ToDateTime(maskNascimento.Text);
+
+                                objTabela.Admissao = maskAdmin.Text;
+                                objTabela.Demissao = maskDemi.Text;
+                                objTabela.Nascimento = maskNascimento.Text;
+
                             objTabela.Status = comboStatus.Text;
                             objTabela.JtInic = comboJtInic.Text;
                             objTabela.JtFinal = comboJtFinal .Text;
@@ -437,15 +413,15 @@ namespace SistemaPet.subForms
                             }
                             else
                             {
-                                MessageBox.Show("Error ao Tentar cadastrar Usuário!", "Aviso!", MessageBoxButtons.OK);
+                                MessageBox.Show("Error ao Tentar cadastrar Funcionário!", "Aviso!", MessageBoxButtons.OK);
                             }
                         }
                         else { return; }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Ocorreu um error tentar salvar Registro:" + ex.Message);
-                    }
+                        MessageBox.Show("Ocorreu um error tentar salvar REGISTRO:" + ex.Message);
+                       }
                     break;
 
                 case "Editar":
@@ -465,9 +441,11 @@ namespace SistemaPet.subForms
                             objTabela.Bairro = textBairro.Text;
                             objTabela.Numero = textNumero.Text;
                             objTabela.Comp = textComp.Text;
-                            objTabela.Admissao = Convert.ToDateTime(maskAdmin.Text);
-                            objTabela.Demissao = Convert.ToDateTime(maskDemi.Text);
-                            objTabela.Nascimento = Convert.ToDateTime(maskNascimento.Text);
+                            
+                                objTabela.Admissao = maskAdmin.Text;
+                                objTabela.Demissao = maskDemi.Text;
+                                objTabela.Nascimento = maskNascimento.Text;
+                            
                             objTabela.Status = comboStatus.Text;
                             objTabela.JtInic = comboJtInic.Text;
                             objTabela.JtFinal = comboJtFinal.Text;
@@ -539,7 +517,6 @@ namespace SistemaPet.subForms
                     MessageBox.Show("Error ao carregar Registro Funcao:  no comboBox!  " + ex.Message);
                 }
             }
-
         }
 
         private void frmFuncionario_Load(object sender, EventArgs e)
@@ -548,6 +525,7 @@ namespace SistemaPet.subForms
             CarregarCombo();
             CarregarGrid();
             DesabilitarCampos();
+            ContentmaskAdmin = maskAdmin.Text;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -564,9 +542,11 @@ namespace SistemaPet.subForms
                 textNumero.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
                 textBairro.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                 textComp.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+
                 maskAdmin.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
                 maskDemi.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
                 maskNascimento.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
+
                 comboStatus.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
                 comboJtInic.Text = dataGridView1.CurrentRow.Cells[14].Value.ToString();
                 comboJtFinal.Text = dataGridView1.CurrentRow.Cells[15].Value.ToString();
@@ -580,6 +560,31 @@ namespace SistemaPet.subForms
                 MessageBox.Show("Error DataGrid: TESTE! " + ex.Message);
             }
 
+
+        }
+
+        private void textPesquisar_OnValueChanged(object sender, EventArgs e)
+        {
+            if (textPesquisar.Text == "")
+            {
+                CarregarGrid();
+                return;
+            }
+            else
+            {
+                try
+                {
+                    objTabela.Nome = textPesquisar.Text;
+                    List<FuncionarioEnt> lista = new List<FuncionarioEnt>();
+                    lista = new FuncionarioModel().Buscar(objTabela);
+                    dataGridView1.AutoGenerateColumns = true;
+                    dataGridView1.DataSource = lista;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error ao Listar Dados: " + ex.Message);
+                }
+            }
 
         }
     }

@@ -15,7 +15,6 @@ namespace DAO
         public int qtd;
         public int Inserir(FuncionarioEnt objTabela)
         {
-
             using (SqlConnection con = new SqlConnection())
             {
                 try
@@ -39,9 +38,11 @@ namespace DAO
                     cn.Parameters.Add("numero", SqlDbType.VarChar).Value = objTabela.Numero;
                     cn.Parameters.Add("bairro", SqlDbType.VarChar).Value = objTabela.Bairro;
                     cn.Parameters.Add("comp", SqlDbType.VarChar).Value = objTabela.Comp;
-                    cn.Parameters.Add("admissao", SqlDbType.DateTime).Value = objTabela.Admissao;
-                    cn.Parameters.Add("demissao", SqlDbType.DateTime).Value = objTabela.Demissao;
-                    cn.Parameters.Add("nascimento", SqlDbType.DateTime).Value = objTabela.Nascimento;
+
+                    cn.Parameters.Add("admissao", SqlDbType.VarChar).Value = objTabela.Admissao;
+                    cn.Parameters.Add("demissao", SqlDbType.VarChar).Value = objTabela.Demissao;
+                    cn.Parameters.Add("nascimento", SqlDbType.VarChar).Value = objTabela.Nascimento; ;
+
                     cn.Parameters.Add("status", SqlDbType.VarChar).Value = objTabela.Status;
                     cn.Parameters.Add("jtinic", SqlDbType.VarChar).Value = objTabela.JtInic;
                     cn.Parameters.Add("jtfinal", SqlDbType.VarChar).Value = objTabela.JtFinal;
@@ -51,13 +52,11 @@ namespace DAO
                     cn.Parameters.Add("id_funcao", SqlDbType.Int).Value = objTabela.Id_funcao;
                     cn.Connection = con;
                     qtd = cn.ExecuteNonQuery();
-
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error DAO: " + ex.Message);
                 }
-
                 return qtd;
             }
 
@@ -93,9 +92,9 @@ namespace DAO
                         dado.Numero = Convert.ToString(dr["numero"]);
                         dado.Bairro = Convert.ToString(dr["bairro"]);
                         dado.Comp = Convert.ToString(dr["comp"]);
-                        dado.Admissao = Convert.ToDateTime(dr["admissao"]);
-                        dado.Demissao = Convert.ToDateTime(dr["demissao"]);
-                        dado.Nascimento = Convert.ToDateTime(dr["nascimento"]);
+                        dado.Admissao = Convert.ToString(dr["admissao"]);
+                        dado.Demissao = Convert.ToString(dr["demissao"]);
+                        dado.Nascimento = Convert.ToString(dr["nascimento"]);
                         dado.Status = Convert.ToString(dr["status"]);
                         dado.JtInic = Convert.ToString(dr["jtinic"]);
                         dado.JtFinal = Convert.ToString(dr["jtfinal"]);
@@ -135,9 +134,11 @@ namespace DAO
                 cn.Parameters.Add("bairro", SqlDbType.VarChar).Value = objTabela.Bairro;
                 cn.Parameters.Add("comp", SqlDbType.VarChar).Value = objTabela.Comp;
 
-                cn.Parameters.Add("admissao", SqlDbType.DateTime).Value = objTabela.Admissao;
-                cn.Parameters.Add("demissao", SqlDbType.DateTime).Value = objTabela.Demissao;
-                cn.Parameters.Add("nascimento", SqlDbType.DateTime).Value = objTabela.Nascimento;
+                                
+                cn.Parameters.Add("admissao", SqlDbType.VarChar).Value = objTabela.Admissao;
+                cn.Parameters.Add("demissao", SqlDbType.VarChar).Value = objTabela.Demissao;
+                cn.Parameters.Add("nascimento", SqlDbType.VarChar).Value = objTabela.Nascimento;
+                               
 
                 cn.Parameters.Add("status", SqlDbType.VarChar).Value = objTabela.Status;
                 cn.Parameters.Add("jtinic", SqlDbType.VarChar).Value = objTabela.JtInic;
