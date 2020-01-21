@@ -94,6 +94,11 @@ namespace SistemaPet.subForms
                 dataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+                dataGridView1.Columns[7].Visible = false;
+                dataGridView1.Columns[8].Visible = false;
+                dataGridView1.Columns[9].Visible = false;
+                dataGridView1.Columns[10].Visible = false;
+
             }
             catch (Exception ex)
             {

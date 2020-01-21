@@ -122,12 +122,12 @@ namespace DAO
                 cn.CommandText = "UPDATE Funcionario SET nome = @nome, rg = @rg, " +
                     "cpf = @cpf, telefone = @telefone,   email = @email, rua = @rua, " +
                     "numero = @numero, bairro = @bairro, comp = @comp, admissao = @admissao, " +
-                    "demissao = @demissao, demisaao = @demissao,  nascimento = @nascimento, " +
+                    "demissao = @demissao, nascimento = @nascimento, " +
                     "status = @status, jtinic = @jtinic, jtFinal = @jtfinal, hora1 = @hora1," +
                     "hora2 = @hora2, salario = @salario, id_funcao = @id_funcao WHERE id = @id";
                 cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Nome;
-                cn.Parameters.Add("rg", SqlDbType.VarChar).Value = objTabela.Rua;
-                cn.Parameters.Add("cpf", SqlDbType.VarChar).Value = objTabela.Nome;
+                cn.Parameters.Add("rg", SqlDbType.VarChar).Value = objTabela.Rg;
+                cn.Parameters.Add("cpf", SqlDbType.VarChar).Value = objTabela.Cpf;
                 cn.Parameters.Add("telefone", SqlDbType.VarChar).Value = objTabela.Telefone;
                 cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
                 cn.Parameters.Add("rua", SqlDbType.VarChar).Value = objTabela.Rua;
@@ -169,6 +169,27 @@ namespace DAO
                 return qtd;
             }
         }
+
+        public DataTable ListaJonn()
+        {
+            using (SqlConnection con = new SqlConnection())
+            {
+                
+                    con.ConnectionString = DAO.Properties.Settings.Default.banco;
+                    con.Open();
+                    string query = "SELECT Funcionario.[id], [Nome], [rg], [cpf], [telefone], [email], [rua], [numero], [bairro], [comp], [admissao], [demissao], [nascimento],[status], [jtInic], [jtFinal], [hora1], [hora2],[salario], [descricao] FROM Funcionario INNER JOIN Funcao ON Funcionario.id_funcao = Funcao.id";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.ExecuteNonQuery();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    return dt;
+            }
+        }
+
+
+
+
         public List<FuncionarioEnt> Lista()
         {
             using (SqlConnection con = new SqlConnection())
@@ -177,9 +198,10 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "SELECT Funcionario.[id], [Nome], [rg], [cpf], [telefone], [email], " +
-                    "[rua], [numero], [bairro], [comp], [admissao, [demissao], [nascimento], [status],   " +
-                    "[jtInic], [jtFinal], [hora1], [hora2],[salario], [descricao] FROM Funcionario INNER JOIN Funcao ON Funcionario.id_funcao = Funcao.id";
+                cn.CommandText = "SELECT Funcionario.[id], [Nome], [rg], [cpf], [telefone], " +
+                    "[email],[rua], [numero], [bairro], [comp], [admissao], [demissao], [nascimento], " +
+                    "[status], [jtinic], [jtfinal], [hora1], [hora2],[salario], [descricao] " +
+                    "FROM Funcionario INNER JOIN Funcao ON Funcionario.id_funcao = Funcao.id";
                 //"SELECT * FROM Usuario ORDER BY nome ASC";
 
                 cn.Connection = con;

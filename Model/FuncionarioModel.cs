@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using DAO;
-
-
+using System.Data;
 
 namespace Model
 {
@@ -22,12 +21,11 @@ namespace Model
             return new FuncionarioDAO().Lista();
         }
 
-        /*
         public DataTable ListaJonn()
         {
             return new FuncionarioDAO().ListaJonn();
         }
-        */
+        
         public static int Excluir(FuncionarioEnt objTabela)
         {
             return new FuncionarioDAO().Excluir(objTabela);

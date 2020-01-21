@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFuncionario));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupDadosAdicionais = new System.Windows.Forms.GroupBox();
@@ -138,7 +138,7 @@
             // 
             // groupDadosAdicionais
             // 
-            this.groupDadosAdicionais.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupDadosAdicionais.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupDadosAdicionais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.groupDadosAdicionais.Controls.Add(this.maskHora1);
             this.groupDadosAdicionais.Controls.Add(this.maskHora2);
@@ -158,7 +158,7 @@
             this.groupDadosAdicionais.Controls.Add(this.bunifuCustomLabel14);
             this.groupDadosAdicionais.Controls.Add(this.maskAdmin);
             this.groupDadosAdicionais.Controls.Add(this.bunifuCustomLabel13);
-            this.groupDadosAdicionais.Location = new System.Drawing.Point(355, 263);
+            this.groupDadosAdicionais.Location = new System.Drawing.Point(355, 51);
             this.groupDadosAdicionais.Name = "groupDadosAdicionais";
             this.groupDadosAdicionais.Size = new System.Drawing.Size(381, 156);
             this.groupDadosAdicionais.TabIndex = 143;
@@ -510,6 +510,7 @@
             this.comboFuncao.Name = "comboFuncao";
             this.comboFuncao.Size = new System.Drawing.Size(204, 28);
             this.comboFuncao.TabIndex = 135;
+            this.comboFuncao.SelectedIndexChanged += new System.EventHandler(this.comboFuncao_SelectedIndexChanged);
             // 
             // bunifuCustomLabel10
             // 
@@ -778,14 +779,16 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(9, 427);
@@ -795,6 +798,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(857, 162);
             this.dataGridView1.TabIndex = 116;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // textPesquisar
             // 
@@ -939,6 +943,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmFuncionario";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.frmFuncionario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupDadosAdicionais.ResumeLayout(false);

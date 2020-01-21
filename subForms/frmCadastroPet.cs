@@ -26,8 +26,7 @@ namespace SistemaPet.subForms
         private bool DeviceExist = false;
         AnimalEnt objTabela = new AnimalEnt();
         private string opc = "";
-        string pasta_aplicacao = "";
-        //private bool DeviceExist = false;
+        string pasta_aplicacao = "";        
         public frmCadastroPet()
         {
             InitializeComponent();
