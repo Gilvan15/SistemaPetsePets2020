@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using DAO;
+using System.Data;
 
 namespace Model
 {
@@ -34,6 +35,10 @@ namespace Model
             return new AnimalDAO().Buscar(objTabela);
         }
 
+        public DataTable ListaDataTable()
+        {
+            return new AnimalDAO().ListaDataTable();
+        }
 
     }
 }

@@ -187,8 +187,12 @@ namespace SistemaPet.subForms
         {
             try
             {
-                List<FuncaoEnt> lista = new List<FuncaoEnt>();
-                lista = new FuncaoModel().Lista();
+                //List<FuncaoEnt> lista = new List<FuncaoEnt>();
+                //lista = new FuncaoModel().Lista();
+
+                DataTable lista;
+                lista = new FuncaoModel().ListaDataTable();
+
                 dataGridView1.AutoGenerateColumns = true;
                 dataGridView1.DataSource = lista;
                 
@@ -438,5 +442,6 @@ namespace SistemaPet.subForms
                     break;
             }
         }
+
     }
 }

@@ -137,8 +137,12 @@ namespace SistemaPet.subForms
         {
             try
             {
-                List<AnimalEnt> lista = new List<AnimalEnt>();
-                lista = new AnimalModel().Lista();
+                //List<AnimalEnt> lista = new List<AnimalEnt>();
+                //lista = new AnimalModel().Lista();
+
+                DataTable lista;
+                lista = new AnimalModel().ListaDataTable();
+
                 dataGridView1.AutoGenerateColumns = true;
                 dataGridView1.DataSource = lista;
                 
@@ -153,13 +157,10 @@ namespace SistemaPet.subForms
                 dataGridView1.Columns[8].HeaderText = "ALÉRGICO";
                 dataGridView1.Columns[9].HeaderText = "FOTO";
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                
                 dataGridView1.Columns[6].Visible = false;
                 dataGridView1.Columns[7].Visible = false;
                 //dataGridView1.Columns[8].Visible = false;
                 dataGridView1.Columns[9].Visible = false;
-
-
             }
             catch (Exception ex)
             {
@@ -682,6 +683,55 @@ namespace SistemaPet.subForms
             {
                 //pictureCamera.Image = null;
                 return;
+            }
+        }
+        private void textRaca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textNome.Focus();
+            }
+        }
+
+        private void textNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                cbIdade.Focus();
+            }
+        }
+
+        private void comboProprietario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textTelefone.Focus();
+            }
+        }
+
+        private void textTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textEmail.Focus();
+            }
+
+        }
+
+        private void textEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                richTextBoxCE.Focus();
+            }
+
+        }
+
+        private void textAlegMedic_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnSalvar.Focus();
             }
         }
     }

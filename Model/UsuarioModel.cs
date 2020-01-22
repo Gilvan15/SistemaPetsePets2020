@@ -27,8 +27,6 @@ namespace Model
             return new UsuarioDAO().ListaJonn();
         }
 
-
-
         public static int Excluir(UsuarioEnt objTabela) 
         {
             return new UsuarioDAO().Excluir(objTabela);

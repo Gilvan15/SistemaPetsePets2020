@@ -79,7 +79,7 @@
             // textUsername
             // 
             this.textUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textUsername.HintForeColor = System.Drawing.Color.Empty;
             this.textUsername.HintText = "";
@@ -87,7 +87,7 @@
             this.textUsername.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textUsername.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textUsername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textUsername.LineThickness = 3;
+            this.textUsername.LineThickness = 4;
             this.textUsername.Location = new System.Drawing.Point(370, 145);
             this.textUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textUsername.Name = "textUsername";
@@ -99,7 +99,7 @@
             // textSenha
             // 
             this.textSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textSenha.HintForeColor = System.Drawing.Color.Empty;
             this.textSenha.HintText = "";
@@ -107,7 +107,7 @@
             this.textSenha.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textSenha.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textSenha.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textSenha.LineThickness = 3;
+            this.textSenha.LineThickness = 4;
             this.textSenha.Location = new System.Drawing.Point(370, 255);
             this.textSenha.Margin = new System.Windows.Forms.Padding(4);
             this.textSenha.Name = "textSenha";

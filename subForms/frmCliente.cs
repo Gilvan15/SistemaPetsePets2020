@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Model;
-
+using SistemaPet.Utils;
 
 namespace SistemaPet.subForms
 {
@@ -75,11 +75,10 @@ namespace SistemaPet.subForms
         {
              try
             {
-                List<ClientesEnt> lista = new List<ClientesEnt>();
-                lista = new ClienteModel().Lista();
+                DataTable lista;
+                lista = new ClienteModel().ListaDataTable(); 
                 dataGridView1.AutoGenerateColumns = true;
                 dataGridView1.DataSource = lista;
-
                 dataGridView1.Columns[0].HeaderText = "ID";
                 dataGridView1.Columns[1].HeaderText = "NOME";
                 dataGridView1.Columns[2].HeaderText = "EMAIL";
@@ -93,7 +92,6 @@ namespace SistemaPet.subForms
                 dataGridView1.Columns[10].HeaderText = "COMPLEMENTO";
                 dataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
                 dataGridView1.Columns[7].Visible = false;
                 dataGridView1.Columns[8].Visible = false;
                 dataGridView1.Columns[9].Visible = false;
@@ -348,7 +346,6 @@ namespace SistemaPet.subForms
             LimparCampos();
             DesabilitarCampos();
         }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             sound1();
@@ -453,13 +450,11 @@ namespace SistemaPet.subForms
                     break;
             }
         }
-
         private void frmCliente_Load(object sender, EventArgs e)
         {
             CarregarGrid();
             DesabilitarCampos();
         }
-
         private void textPesquisar_OnValueChanged(object sender, EventArgs e)
         {
             if (textPesquisar.Text == "")
@@ -470,12 +465,10 @@ namespace SistemaPet.subForms
             opc = "Buscar";
             InicarOpc();
         }
-
         private void textNome_OnValueChanged(object sender, EventArgs e)
         {
            textNome.Text.ToUpper();
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -499,7 +492,42 @@ namespace SistemaPet.subForms
 
                 MessageBox.Show("Error DataGrid: " + ex.Message);
             }
-
+        }
+        private void textCpf_OnValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textCpf.Text.Length == 11)
+                {
+                    textCpf.Text = FormatCnpjCpf.FormatCPF(textCpf.Text);
+                }
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //HabilitarCampos();
+                textCod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textNome.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textEmail.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textRg.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textCpf.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textTelefone1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textTelefone2.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                textRua.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textNumero.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                textBairro.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                textComplemento.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error DataGrid: " + ex.Message);
+            }
         }
     }
 }

@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clienteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.dbpetsepetsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbpetsepetsDataSet = new SistemaPet.dbpetsepetsDataSet();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -69,24 +66,15 @@
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.clienteBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.dbpetsepetsDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbpetsepetsDataSet1 = new SistemaPet.dbpetsepetsDataSet();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteTableAdapter = new SistemaPet.dbpetsepetsDataSetTableAdapters.ClienteTableAdapter();
-            this.clienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -131,48 +119,6 @@
             this.panel1.Size = new System.Drawing.Size(880, 650);
             this.panel1.TabIndex = 0;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.clienteBindingSource2;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 380);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(859, 212);
-            this.dataGridView1.TabIndex = 161;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // clienteBindingSource2
-            // 
-            this.clienteBindingSource2.DataMember = "Cliente";
-            this.clienteBindingSource2.DataSource = this.dbpetsepetsDataSetBindingSource;
-            // 
-            // dbpetsepetsDataSetBindingSource
-            // 
-            this.dbpetsepetsDataSetBindingSource.DataSource = this.dbpetsepetsDataSet;
-            this.dbpetsepetsDataSetBindingSource.Position = 0;
-            // 
             // dbpetsepetsDataSet
             // 
             this.dbpetsepetsDataSet.DataSetName = "dbpetsepetsDataSet";
@@ -192,7 +138,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(615, 598);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(120, 40);
-            this.btnSalvar.TabIndex = 160;
+            this.btnSalvar.TabIndex = 11;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -210,7 +156,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(752, 598);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(120, 40);
-            this.btnLimpar.TabIndex = 159;
+            this.btnLimpar.TabIndex = 12;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -228,7 +174,7 @@
             this.btnPesquisar.Location = new System.Drawing.Point(752, 328);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(120, 40);
-            this.btnPesquisar.TabIndex = 158;
+            this.btnPesquisar.TabIndex = 13;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -246,7 +192,7 @@
             this.btnDeletar.Location = new System.Drawing.Point(752, 237);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(120, 40);
-            this.btnDeletar.TabIndex = 157;
+            this.btnDeletar.TabIndex = 14;
             this.btnDeletar.Text = "Deletar";
             this.btnDeletar.UseVisualStyleBackColor = false;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
@@ -264,7 +210,7 @@
             this.btnEditar.Location = new System.Drawing.Point(752, 146);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(120, 40);
-            this.btnEditar.TabIndex = 156;
+            this.btnEditar.TabIndex = 15;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -282,7 +228,7 @@
             this.btnNovo.Location = new System.Drawing.Point(753, 55);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(120, 40);
-            this.btnNovo.TabIndex = 155;
+            this.btnNovo.TabIndex = 16;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
@@ -304,7 +250,7 @@
             this.textTelefone2.Margin = new System.Windows.Forms.Padding(5);
             this.textTelefone2.Name = "textTelefone2";
             this.textTelefone2.Size = new System.Drawing.Size(280, 29);
-            this.textTelefone2.TabIndex = 153;
+            this.textTelefone2.TabIndex = 6;
             this.textTelefone2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel3
@@ -337,7 +283,7 @@
             this.textTelefone1.Margin = new System.Windows.Forms.Padding(5);
             this.textTelefone1.Name = "textTelefone1";
             this.textTelefone1.Size = new System.Drawing.Size(280, 29);
-            this.textTelefone1.TabIndex = 151;
+            this.textTelefone1.TabIndex = 5;
             this.textTelefone1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel2
@@ -380,7 +326,7 @@
             this.textEmail.Margin = new System.Windows.Forms.Padding(5);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(244, 29);
-            this.textEmail.TabIndex = 136;
+            this.textEmail.TabIndex = 2;
             this.textEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // textComplemento
@@ -400,7 +346,7 @@
             this.textComplemento.Margin = new System.Windows.Forms.Padding(5);
             this.textComplemento.Name = "textComplemento";
             this.textComplemento.Size = new System.Drawing.Size(270, 29);
-            this.textComplemento.TabIndex = 149;
+            this.textComplemento.TabIndex = 10;
             this.textComplemento.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // textBairro
@@ -421,7 +367,7 @@
             this.textBairro.Margin = new System.Windows.Forms.Padding(5);
             this.textBairro.Name = "textBairro";
             this.textBairro.Size = new System.Drawing.Size(244, 29);
-            this.textBairro.TabIndex = 148;
+            this.textBairro.TabIndex = 9;
             this.textBairro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // textNumero
@@ -441,7 +387,7 @@
             this.textNumero.Margin = new System.Windows.Forms.Padding(5);
             this.textNumero.Name = "textNumero";
             this.textNumero.Size = new System.Drawing.Size(151, 29);
-            this.textNumero.TabIndex = 147;
+            this.textNumero.TabIndex = 8;
             this.textNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // textRua
@@ -462,7 +408,7 @@
             this.textRua.Margin = new System.Windows.Forms.Padding(5);
             this.textRua.Name = "textRua";
             this.textRua.Size = new System.Drawing.Size(414, 29);
-            this.textRua.TabIndex = 146;
+            this.textRua.TabIndex = 7;
             this.textRua.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // textCpf
@@ -482,8 +428,9 @@
             this.textCpf.Margin = new System.Windows.Forms.Padding(5);
             this.textCpf.Name = "textCpf";
             this.textCpf.Size = new System.Drawing.Size(168, 29);
-            this.textCpf.TabIndex = 138;
+            this.textCpf.TabIndex = 4;
             this.textCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textCpf.OnValueChanged += new System.EventHandler(this.textCpf_OnValueChanged);
             // 
             // textRg
             // 
@@ -502,7 +449,7 @@
             this.textRg.Margin = new System.Windows.Forms.Padding(5);
             this.textRg.Name = "textRg";
             this.textRg.Size = new System.Drawing.Size(150, 29);
-            this.textRg.TabIndex = 137;
+            this.textRg.TabIndex = 3;
             this.textRg.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // textNome
@@ -523,7 +470,7 @@
             this.textNome.Margin = new System.Windows.Forms.Padding(5);
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(636, 29);
-            this.textNome.TabIndex = 135;
+            this.textNome.TabIndex = 1;
             this.textNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textNome.OnValueChanged += new System.EventHandler(this.textNome_OnValueChanged);
             // 
@@ -710,34 +657,46 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // clienteBindingSource3
-            // 
-            this.clienteBindingSource3.DataMember = "Cliente";
-            this.clienteBindingSource3.DataSource = this.dbpetsepetsDataSet1BindingSource;
-            // 
-            // dbpetsepetsDataSet1BindingSource
-            // 
-            this.dbpetsepetsDataSet1BindingSource.DataSource = this.dbpetsepetsDataSet1;
-            this.dbpetsepetsDataSet1BindingSource.Position = 0;
-            // 
-            // dbpetsepetsDataSet1
-            // 
-            this.dbpetsepetsDataSet1.DataSetName = "dbpetsepetsDataSet";
-            this.dbpetsepetsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // clienteBindingSource
             // 
             this.clienteBindingSource.DataMember = "Cliente";
-            this.clienteBindingSource.DataSource = this.dbpetsepetsDataSetBindingSource;
             // 
             // clienteTableAdapter
             // 
             this.clienteTableAdapter.ClearBeforeFill = true;
             // 
-            // clienteBindingSource1
+            // dataGridView1
             // 
-            this.clienteBindingSource1.DataMember = "Cliente";
-            this.clienteBindingSource1.DataSource = this.dbpetsepetsDataSetBindingSource;
+            this.dataGridView1.AllowDrop = true;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridView1.DataSource = this.clienteBindingSource;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 398);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(856, 162);
+            this.dataGridView1.TabIndex = 155;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // frmCliente
             // 
@@ -753,17 +712,11 @@
             this.Load += new System.EventHandler(this.frmCliente_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -804,15 +757,9 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.BindingSource dbpetsepetsDataSetBindingSource;
         private dbpetsepetsDataSet dbpetsepetsDataSet;
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private dbpetsepetsDataSetTableAdapters.ClienteTableAdapter clienteTableAdapter;
-        private System.Windows.Forms.BindingSource clienteBindingSource1;
-        private System.Windows.Forms.BindingSource clienteBindingSource2;
-        private System.Windows.Forms.BindingSource dbpetsepetsDataSet1BindingSource;
-        private dbpetsepetsDataSet dbpetsepetsDataSet1;
-        private System.Windows.Forms.BindingSource clienteBindingSource3;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

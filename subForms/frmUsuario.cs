@@ -103,6 +103,7 @@ namespace SistemaPet.subForms
             {
                 DataTable lista;
                 lista = new UsuarioModel().ListaJonn();
+
                 dataGridView1.AutoGenerateColumns = true;
                 dataGridView1.DataSource = lista;
                 dataGridView1.Columns[0].HeaderText = "ID";
@@ -112,7 +113,6 @@ namespace SistemaPet.subForms
                 dataGridView1.Columns[4].HeaderText = "SENHA";
                 dataGridView1.Columns[5].HeaderText = "FUNÇÃO";
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                
                 //dataGridView1.Columns[5].Visible = false;
             }
             catch (Exception ex)
@@ -244,7 +244,6 @@ namespace SistemaPet.subForms
                 }
             }
         }
-
         private void textNome_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -252,16 +251,13 @@ namespace SistemaPet.subForms
                 textEmail.Focus();
             }
         }
-
         private void textEmail_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
                 textUsername.Focus();
             }
-            
         }
-
         private void textSenha_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -269,17 +265,13 @@ namespace SistemaPet.subForms
                 textConfSenha.Focus();
             }
         }
-
         private void textConfSenha_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (e.KeyChar == 13)
             {
                 comboFuncao.Focus();
             }
-
         }
-
         private void comboFuncao_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)

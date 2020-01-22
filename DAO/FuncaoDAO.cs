@@ -66,11 +66,6 @@ namespace DAO
             }
         }
 
-
-
-
-
-
         public List<FuncaoEnt> Buscar(FuncaoEnt objTabela)
         {
             using (SqlConnection con = new SqlConnection())
@@ -132,9 +127,23 @@ namespace DAO
                 int qtd = cn.ExecuteNonQuery();
                 return qtd;
             }
-
         }
-
+        public DataTable ListaDataTable()
+        {
+            using (SqlConnection con = new SqlConnection())
+            {
+                con.ConnectionString = DAO.Properties.Settings.Default.banco;
+                con.Open();
+                string query = "SELECT * FROM Funcao ORDER BY descricao ASC";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                return dt;
+            }
+        }
+        
         public List<FuncaoEnt> Lista()
         {
             using (SqlConnection con = new SqlConnection())
@@ -165,6 +174,4 @@ namespace DAO
             }
         }
     }
-
 }
-

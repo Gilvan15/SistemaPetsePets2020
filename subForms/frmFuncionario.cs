@@ -14,6 +14,7 @@ using Bunifu.Framework.UI;
 using System.Data.SqlClient;
 using SistemaPet.Properties;
 using System.Data.SqlTypes;
+using SistemaPet.Utils;
 
 namespace SistemaPet.subForms
 {
@@ -21,7 +22,9 @@ namespace SistemaPet.subForms
     {
         FuncionarioEnt objTabela = new FuncionarioEnt();
         FuncaoEnt objFuncao = new FuncaoEnt();
-        
+
+        string CPFFormatado;
+
         string ContentmaskAdmin;
         string pasta_aplicacao = "";
         private string opc = "";
@@ -584,6 +587,36 @@ namespace SistemaPet.subForms
                 {
                     MessageBox.Show("Error ao Listar Dados: " + ex.Message);
                 }
+            }
+        }
+        private void textCpf_OnValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textCpf.Text.Length == 11)
+                {
+                    textCpf.Text = FormatCnpjCpf.FormatCPF(textCpf.Text);
+                }
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+
+        private void textTelefone_OnValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textTelefone.Text.Length == 11)
+                {
+                    textTelefone.Text = FormatCnpjCpf.FormatCelular(textTelefone.Text);
+                    
+                }
+            }
+            catch (Exception)
+            {
+                return;
             }
 
         }
