@@ -30,7 +30,7 @@ namespace SistemaPet
         private void ocutarPaineis()
         {
             panelSubMenuCadastrar.Visible = false;
-            panelSubVendas.Visible = false;
+            //panelSubVendas.Visible = false;
             panelSubRelatorio.Visible = false;
             panelSubValores.Visible = false;
 
@@ -78,8 +78,8 @@ namespace SistemaPet
             if (panelSubMenuCadastrar.Visible == true)
                  bunifuT.HideSync(panelSubMenuCadastrar);
 
-            if (panelSubVendas.Visible == true)
-                bunifuT.HideSync(panelSubVendas);
+            //if (panelSubVendas.Visible == true)
+            //    bunifuT.HideSync(panelSubVendas);
 
             if (panelSubRelatorio.Visible == true)
                 bunifuT.HideSync(panelSubRelatorio);
@@ -103,7 +103,7 @@ namespace SistemaPet
         }
         private void bunifuFlatButton6_Click(object sender, EventArgs e)
         {
-                                   
+            /*                       
             if (panelSubVendas.Visible == false)
             {
                showSubMenu(panelSubVendas);    
@@ -115,7 +115,7 @@ namespace SistemaPet
                 hideSubMenu();
                 //panelSubConfig.Visible = false;
                 //bunifuT.HideSync(panelSubConfig);
-            }
+            }*/
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)

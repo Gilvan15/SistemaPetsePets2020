@@ -28,7 +28,6 @@ namespace SistemaPet.subForms
             InitializeComponent();
             pasta_aplicacao = Application.StartupPath + @"\";
         }
-        
         private void HabilitarCampos() 
         {
             textNome.Enabled = true;
@@ -38,7 +37,6 @@ namespace SistemaPet.subForms
             textConfSenha.Enabled = true;
             comboFuncao.Enabled = true;
         }
-
         private void DesabilitarCampos()
         {
             textNome.Enabled = false;
@@ -61,7 +59,6 @@ namespace SistemaPet.subForms
             btnSalvar.Enabled = false;
             verificString = 0;
             VerificPlaceHolder();
-            
         }
         private void CarregarCombo()
         {
@@ -85,17 +82,13 @@ namespace SistemaPet.subForms
             DesabilitarCampos();
             VerificPlaceHolder();
         }
-
-
         private void VerificPlaceHolder() 
         {
-
             if (verificString == 0 )
             {
                 textUsername.Text = "Somente o primeiro nome";
                 textUsername.ForeColor = Color.Gray;
             }
-
         }
         private void CarregarGrid() 
         {
@@ -103,7 +96,6 @@ namespace SistemaPet.subForms
             {
                 DataTable lista;
                 lista = new UsuarioModel().ListaJonn();
-
                 dataGridView1.AutoGenerateColumns = true;
                 dataGridView1.DataSource = lista;
                 dataGridView1.Columns[0].HeaderText = "ID";
@@ -251,13 +243,6 @@ namespace SistemaPet.subForms
                 textEmail.Focus();
             }
         }
-        private void textEmail_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                textUsername.Focus();
-            }
-        }
         private void textSenha_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -265,12 +250,13 @@ namespace SistemaPet.subForms
                 textConfSenha.Focus();
             }
         }
-        private void textConfSenha_KeyPress(object sender, KeyPressEventArgs e)
+
+        public static bool ValidarEmail(string strEmail)
         {
-            if (e.KeyChar == 13)
-            {
-                comboFuncao.Focus();
-            }
+            string strModelo = "^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+            if (System.Text.RegularExpressions.Regex.IsMatch(strEmail, strModelo))
+            { return true; }
+            else { return false; }
         }
         private void comboFuncao_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -389,7 +375,6 @@ namespace SistemaPet.subForms
             textPesquisar.Text = null;
             btnSalvar.Enabled = false;
         }
-
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             sound2();
@@ -494,6 +479,21 @@ namespace SistemaPet.subForms
                                     */
                 default:
                     break;
+            }
+        }
+        private void textEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == 13)
+            {
+                if (ValidarEmail(textEmail.Text) == false)
+                {
+                    sound3();
+                    MessageBox.Show("Email com formato incorreto!", "Aviso!!!", MessageBoxButtons.OK);
+                    textEmail.Focus();
+                    return;
+                }
+                textUsername.Focus();
             }
         }
     }
