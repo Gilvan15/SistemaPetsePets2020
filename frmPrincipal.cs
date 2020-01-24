@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using SistemaPet.subForms;
 using System.Media;
 using System.Runtime.InteropServices;
-using System.Text.RegularExpressions;
+
 
 namespace SistemaPet
 {
@@ -30,7 +30,7 @@ namespace SistemaPet
         private void ocutarPaineis()
         {
             panelSubMenuCadastrar.Visible = false;
-            //panelSubVendas.Visible = false;
+            panelSubMenuServico.Visible = false;
             panelSubRelatorio.Visible = false;
             panelSubValores.Visible = false;
 
@@ -53,14 +53,14 @@ namespace SistemaPet
         {
             if (panelSubMenuCadastrar.Visible == false)
             {
-                showSubMenu(panelSubMenuCadastrar);
+                ShowSubMenu(panelSubMenuCadastrar);
             }
             else
             {
                   hideSubMenu();    
             }
         }
-        private void showSubMenu(Panel subMenu)
+        private void ShowSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
             {
@@ -78,16 +78,18 @@ namespace SistemaPet
             if (panelSubMenuCadastrar.Visible == true)
                  bunifuT.HideSync(panelSubMenuCadastrar);
 
-            //if (panelSubVendas.Visible == true)
-            //    bunifuT.HideSync(panelSubVendas);
+            if (panelSubMenuServico.Visible == true)
+                bunifuT.HideSync(panelSubMenuServico);
 
             if (panelSubRelatorio.Visible == true)
                 bunifuT.HideSync(panelSubRelatorio);
 
             if (panelSubValores.Visible == true)
                 bunifuT.HideSync(panelSubValores);
+
+
         }
-        private void showSubmenu(Panel subMenu)
+        private void ShowSubmenu(Panel subMenu)
         { 
             if(subMenu.Visible == false) 
             {
@@ -155,24 +157,13 @@ namespace SistemaPet
         {
             if (panelSubValores.Visible == false)
             {
-                showSubMenu(panelSubValores);
+                ShowSubMenu(panelSubValores);
             }
             else
             {
                 hideSubMenu();
             }
-        }
-        private void btnMenuRelatorio_Click(object sender, EventArgs e)
-        {
-            if (panelSubRelatorio.Visible == false)
-            {
-                showSubMenu(panelSubRelatorio);
-            }
-            else
-            {
-                hideSubMenu();
-            }
-        }
+        }        
         private void panelTop_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -182,10 +173,7 @@ namespace SistemaPet
         {
             AbrirFormWrapper(new frmRecibo());
         }
-        private void bunifuFlatButton5_Click(object sender, EventArgs e)
-        {
-            AbrirFormWrapper(new frmCamera());
-        }
+        
         private void btnMenuFuncao_Click(object sender, EventArgs e)
         {
             AbrirFormWrapper(new frmFuncao());
@@ -194,7 +182,6 @@ namespace SistemaPet
         {
             AbrirFormWrapper(new frmUsuario());
         }
-
         private void Fechar_Click(object sender, EventArgs e)
         {
             frmLogin frmLog = new frmLogin();
@@ -205,48 +192,87 @@ namespace SistemaPet
         {
             WindowState = FormWindowState.Minimized;
         }
-
         private void restaurar_Click_1(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Normal;
             maximizar.Visible = true;
             restaurar.Visible = false;
         }
-
         private void maximizar_Click_1(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;
             maximizar.Visible = false;
             restaurar.Visible = true;
         }
-        private void bunifuFlatButton5_Click_1(object sender, EventArgs e)
-        {
-            AbrirFormWrapper(new frmCadastroPet());
-        }
-        private void bunifuFlatButton4_Click(object sender, EventArgs e)
-        {
-            AbrirFormWrapper(new frmCliente());
-        }
-
+        
         private void richTextBox1_MouseHover(object sender, EventArgs e)
         {
             richTextBox1.ForeColor = Color.GreenYellow;
         }
-
         private void richTextBox1_MouseLeave(object sender, EventArgs e)
         {
             richTextBox1.ForeColor = Color.White;
         }
-
         private void richTextBox1_Click(object sender, EventArgs e)
         {
             ActiveControl = null;
             ocutarPaineis();
+            //bunifuTLog.Hide(pictlogo);
+            bunifuTLog.Show(pictlogo);
+            //sond1();
             AbrirFormWrapper(new frmLogo());
         }
         private void btnMenuFuncionario_Click(object sender, EventArgs e)
         {
             AbrirFormWrapper(new frmFuncionario());
         }
+        private void btnMenuServiços_Click(object sender, EventArgs e)
+        {
+            AbrirFormWrapper(new frmServico());
+        }
+        private void btnMenuClientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormWrapper(new frmCliente());
+        }
+
+        private void btnMenuAnimal_Click(object sender, EventArgs e)
+        {
+            AbrirFormWrapper(new frmCadastroPet());
+        }
+
+        private void btnMenuOS_Click(object sender, EventArgs e)
+        {
+            AbrirFormWrapper(new frmOS());
+        }
+
+        private void btnMenuServicos_Click(object sender, EventArgs e)
+        {
+            if (panelSubMenuServico.Visible == false)
+            {
+                ShowSubMenu(panelSubMenuServico);
+            }
+            else
+            {
+                hideSubMenu();
+            }
+        }
+
+        private void bunifuFlatButton1_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormWrapper(new frmOS());
+        }
+
+        private void btnMenuRelatorio_Click_1(object sender, EventArgs e)
+        {
+            if (panelSubRelatorio.Visible == false)
+            {
+                ShowSubMenu(panelSubRelatorio);
+            }
+            else
+            {
+                hideSubMenu();
+            }
+        }
+        
     }
 }

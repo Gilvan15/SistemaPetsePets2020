@@ -113,6 +113,12 @@
     <Compile Include="subForms\frmLogo.Designer.cs">
       <DependentUpon>frmLogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="subForms\frmOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subForms\frmOS.Designer.cs">
+      <DependentUpon>frmOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="subForms\frmPanodeFundo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,12 @@
     </Compile>
     <Compile Include="subForms\frmRecuperarSenha.Designer.cs">
       <DependentUpon>frmRecuperarSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="subForms\frmServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subForms\frmServico.Designer.cs">
+      <DependentUpon>frmServico.cs</DependentUpon>
     </Compile>
     <Compile Include="subForms\frmUsuario.cs">
       <SubType>Form</SubType>
@@ -171,6 +183,9 @@
     <EmbeddedResource Include="subForms\frmLogo.resx">
       <DependentUpon>frmLogo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="subForms\frmOS.resx">
+      <DependentUpon>frmOS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="subForms\frmPanodeFundo.resx">
       <DependentUpon>frmPanodeFundo.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="subForms\frmRecuperarSenha.resx">
       <DependentUpon>frmRecuperarSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subForms\FrmServico.resx">
+      <DependentUpon>frmServico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="subForms\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>

@@ -97,3 +97,5 @@ C:\Repositorio\SistemaPET2020\obj\Debug\SistemaPet.csproj.CopyComplete
 C:\Repositorio\SistemaPET2020\obj\Debug\SistemaPet.exe
 C:\Repositorio\SistemaPET2020\obj\Debug\SistemaPet.pdb
 C:\Repositorio\SistemaPET2020\obj\Debug\SistemaPet.subForms.frmFuncionario.resources
+C:\Repositorio\SistemaPET2020\obj\Debug\SistemaPet.subForms.frmServico.resources
+C:\Repositorio\SistemaPET2020\obj\Debug\SistemaPet.subForms.frmOS.resources
