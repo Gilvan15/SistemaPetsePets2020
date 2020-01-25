@@ -38,7 +38,6 @@ namespace SistemaPet.subForms
                     try
                     {
                         objTabela.Descricao = textDescricao.Text;
-                        
 
                         int x = FuncaoModel.Inseir(objTabela);
 
@@ -57,29 +56,23 @@ namespace SistemaPet.subForms
                     catch (Exception ex)
                     {
                         MessageBox.Show("Ocorreu um error tentar salvar Registro:" + ex.Message);
-
                     }
                     break;
 
                 case "Excluir":
                     try
                     {
-
                         if (textCod.Text == "")
                         {
                             sound3();
                             MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
                             return;
                         }
-
                         DialogResult result1 = MessageBox.Show("Confima exclusão do registro?", "Aviso!", MessageBoxButtons.YesNo);
                         if (result1 == DialogResult.Yes)
                         {
-
                             objTabela.Id = Convert.ToInt32(textCod.Text);
                             int x = FuncaoModel.Excluir(objTabela);
-
-
 
                             if (x > 0)
                             {
@@ -91,7 +84,6 @@ namespace SistemaPet.subForms
                             {
                                 MessageBox.Show("Error ao Tentar Excluir o Registro");
                             }
-
                         }
                         else { return; }
                     }
@@ -100,7 +92,6 @@ namespace SistemaPet.subForms
                     {
                         MessageBox.Show("Ocorreu um erro ao excluir: " + ex.Message);
                     }
-
                     break;
 
                 case "Editar":
@@ -119,7 +110,6 @@ namespace SistemaPet.subForms
                         {
                             objTabela.Id = Convert.ToInt32(textCod.Text);
                             objTabela.Descricao = textDescricao.Text;
-                            
 
                             int x = FuncaoModel.Editar(objTabela);
 

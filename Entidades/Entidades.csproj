@@ -47,6 +47,7 @@
     <Compile Include="ClientesEnt.cs" />
     <Compile Include="FuncionarioEnt.cs" />
     <Compile Include="ReciboEnt.cs" />
+    <Compile Include="ServicoEnt.cs" />
     <Compile Include="UsuarioEnt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

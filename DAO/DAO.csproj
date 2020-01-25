@@ -51,6 +51,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="ReciboDAO.cs" />
+    <Compile Include="ServicoDAO.cs" />
     <Compile Include="UsuarioDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

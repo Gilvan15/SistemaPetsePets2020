@@ -46,6 +46,7 @@
     <Compile Include="ClienteModel.cs" />
     <Compile Include="FuncionarioModel.cs" />
     <Compile Include="ReciboModel.cs" />
+    <Compile Include="ServicoModel.cs" />
     <Compile Include="UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

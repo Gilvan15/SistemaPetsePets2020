@@ -300,7 +300,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 399);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 390);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -373,7 +373,7 @@
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.ForeColor = System.Drawing.Color.White;
-            this.btnPesquisar.Location = new System.Drawing.Point(736, 337);
+            this.btnPesquisar.Location = new System.Drawing.Point(736, 338);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(120, 40);
             this.btnPesquisar.TabIndex = 107;
