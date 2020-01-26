@@ -122,8 +122,8 @@ namespace SistemaPet
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            string str = "" +  Convert.ToChar(174);
-            lblFooter.Text = "PETS E PETS RAÇÕES E ACESSÓRIOS " + str + " CNPJ: 33.555.177/0001-03 | Fone: (92) 98433-8895";
+            //string str = "" +  Convert.ToChar(174);
+            //lblFooter.Text = "PETS & PETS RAÇÕES E ACESSÓRIOS " + str + " CNPJ: 33.555.177/0001-03 | Fone: (92) 98433-8895";
             //string tmp = "0";
             //label1.Text = Convert.ToString($"Pets " + tmp.Replace("0","e" ) + " Pets");
             ocutarPaineis();
@@ -207,11 +207,11 @@ namespace SistemaPet
         
         private void richTextBox1_MouseHover(object sender, EventArgs e)
         {
-            richTextBox1.ForeColor = Color.GreenYellow;
+            //richTextBox1.ForeColor = Color.GreenYellow;
         }
         private void richTextBox1_MouseLeave(object sender, EventArgs e)
         {
-            richTextBox1.ForeColor = Color.White;
+            //richTextBox1.ForeColor = Color.White;
         }
         private void richTextBox1_Click(object sender, EventArgs e)
         {
@@ -273,6 +273,28 @@ namespace SistemaPet
                 hideSubMenu();
             }
         }
-        
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = true;
+            AtualizaLogo();
+
+        }
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            pictureBox3.Visible = true;
+            pictureBox4.Visible = false;
+            AtualizaLogo();
+        }
+        private void AtualizaLogo()
+        {
+            ActiveControl = null;
+            ocutarPaineis();
+            //bunifuTLog.Hide(pictlogo);
+            bunifuTLog.Show(pictlogo);
+            //sond1();
+            AbrirFormWrapper(new frmLogo());
+        }
     }
 }

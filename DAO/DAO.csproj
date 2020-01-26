@@ -45,6 +45,7 @@
     <Compile Include="FuncaoDAO.cs" />
     <Compile Include="ClientesDAO.cs" />
     <Compile Include="FuncionarioDAO.cs" />
+    <Compile Include="OsDAO.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

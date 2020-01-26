@@ -33,11 +33,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.restaurar = new System.Windows.Forms.PictureBox();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.maximizar = new System.Windows.Forms.PictureBox();
             this.Fechar = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panelWrapper = new System.Windows.Forms.Panel();
             this.pictlogo = new System.Windows.Forms.PictureBox();
             this.bunifuElipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -61,15 +61,17 @@
             this.btnMenuFuncao = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenuCadastro = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuT = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panelSideBarhost = new System.Windows.Forms.Panel();
-            this.lblFooter = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.bunifuTLog = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.restaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -82,19 +84,22 @@
             this.panelSubValores.SuspendLayout();
             this.panelSubMenuCadastrar.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSideBarhost.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.panelTop.Controls.Add(this.pictureBox2);
             this.panelTop.Controls.Add(this.restaurar);
             this.panelTop.Controls.Add(this.minimizar);
             this.panelTop.Controls.Add(this.maximizar);
             this.panelTop.Controls.Add(this.Fechar);
-            this.panelTop.Controls.Add(this.label2);
             this.bunifuTLog.SetDecoration(this.panelTop, BunifuAnimatorNS.DecorationType.None);
             this.bunifuT.SetDecoration(this.panelTop, BunifuAnimatorNS.DecorationType.None);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -103,6 +108,18 @@
             this.panelTop.Size = new System.Drawing.Size(1100, 50);
             this.panelTop.TabIndex = 0;
             this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
+            // 
+            // pictureBox2
+            // 
+            this.bunifuT.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTLog.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(4, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(757, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
             // restaurar
             // 
@@ -161,20 +178,6 @@
             this.Fechar.TabStop = false;
             this.Fechar.Click += new System.EventHandler(this.Fechar_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuT.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTLog.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
-            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(3, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(643, 22);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Sistema de Controle de Serviços  |  Pets e Pets Rações e Acessórios.";
-            // 
             // panelWrapper
             // 
             this.panelWrapper.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -186,7 +189,7 @@
             this.bunifuT.SetDecoration(this.panelWrapper, BunifuAnimatorNS.DecorationType.None);
             this.panelWrapper.Location = new System.Drawing.Point(220, 50);
             this.panelWrapper.Name = "panelWrapper";
-            this.panelWrapper.Size = new System.Drawing.Size(880, 623);
+            this.panelWrapper.Size = new System.Drawing.Size(880, 629);
             this.panelWrapper.TabIndex = 2;
             // 
             // pictlogo
@@ -826,7 +829,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.bunifuSeparator1);
             this.bunifuTLog.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
@@ -837,25 +841,34 @@
             this.panel1.Size = new System.Drawing.Size(210, 102);
             this.panel1.TabIndex = 0;
             // 
-            // richTextBox1
+            // pictureBox4
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(110)))), ((int)(((byte)(42)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTLog.SetDecoration(this.richTextBox1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuT.SetDecoration(this.richTextBox1, BunifuAnimatorNS.DecorationType.None);
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(70, 38);
-            this.richTextBox1.Multiline = false;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(129, 25);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "Pets & Pets";
-            this.richTextBox1.Click += new System.EventHandler(this.richTextBox1_Click);
-            this.richTextBox1.MouseLeave += new System.EventHandler(this.richTextBox1_MouseLeave);
-            this.richTextBox1.MouseHover += new System.EventHandler(this.richTextBox1_MouseHover);
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuT.SetDecoration(this.pictureBox4, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTLog.SetDecoration(this.pictureBox4, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(70, 42);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(128, 19);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Visible = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuT.SetDecoration(this.pictureBox3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTLog.SetDecoration(this.pictureBox3, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(70, 42);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(128, 19);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox1
             // 
@@ -918,28 +931,31 @@
             this.panelSideBarhost.Size = new System.Drawing.Size(220, 650);
             this.panelSideBarhost.TabIndex = 1;
             // 
-            // lblFooter
-            // 
-            this.lblFooter.AutoSize = true;
-            this.bunifuT.SetDecoration(this.lblFooter, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTLog.SetDecoration(this.lblFooter, BunifuAnimatorNS.DecorationType.None);
-            this.lblFooter.Location = new System.Drawing.Point(3, 3);
-            this.lblFooter.Name = "lblFooter";
-            this.lblFooter.Size = new System.Drawing.Size(0, 13);
-            this.lblFooter.TabIndex = 0;
-            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.panel2.Controls.Add(this.lblFooter);
+            this.panel2.Controls.Add(this.pictureBox5);
             this.bunifuTLog.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuT.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
-            this.panel2.Location = new System.Drawing.Point(220, 673);
+            this.panel2.Location = new System.Drawing.Point(220, 675);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(880, 27);
-            this.panel2.TabIndex = 3;
+            this.panel2.Size = new System.Drawing.Size(880, 25);
+            this.panel2.TabIndex = 0;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuT.SetDecoration(this.pictureBox5, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTLog.SetDecoration(this.pictureBox5, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(620, 17);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 5;
+            this.pictureBox5.TabStop = false;
             // 
             // bunifuTLog
             // 
@@ -977,9 +993,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.restaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).EndInit();
@@ -992,10 +1009,12 @@
             this.panelSubValores.ResumeLayout(false);
             this.panelSubMenuCadastrar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSideBarhost.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1018,7 +1037,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelSideBarhost;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuServicos;
-        private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuClientes;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuFuncionario;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuUsuario;
@@ -1026,10 +1044,8 @@
         private System.Windows.Forms.PictureBox minimizar;
         private System.Windows.Forms.PictureBox maximizar;
         private System.Windows.Forms.PictureBox Fechar;
-        private System.Windows.Forms.Label lblFooter;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuAnimal;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuServiços;
@@ -1039,6 +1055,10 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuRelatorio;
         private System.Windows.Forms.Panel panelSubMenuServico;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 

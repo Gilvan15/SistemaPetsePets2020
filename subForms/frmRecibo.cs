@@ -137,19 +137,7 @@ namespace SistemaPet.subForms
 
         private void DesabilitarCampos()
         {
-            /*
-            textNumeroRecibo.Enabled = false;
-            textValorRecibo.Enabled = false;
-            textRecebemosde.Enabled = false;
-            textImportanciade1.Enabled = false;
-            textImportanciade2.Enabled = false;
-            textReferentea1.Enabled = false;
-            textReferentea2.Enabled = false;
-            textEmitente.Enabled = false;
-            textCnpj.Enabled = false;
-            textAssinatura.Enabled = false;
-            */
-
+            
             foreach (Control ctrl in panel1.Controls)
             {
                 if (ctrl is TextBox)
@@ -175,8 +163,7 @@ namespace SistemaPet.subForms
             textReferentea1.Text = null;
             textReferentea2.Text = null;
             textPesquisar.Text = null;
-            //textEmitente.Text = null;
-            //textCnpj.Text = null;
+            
         }
 
         private void CarregarGrid()
@@ -209,7 +196,6 @@ namespace SistemaPet.subForms
                 MessageBox.Show("Error ao Carregar DataGrid: " + ex.Message);
             }
         }
-
         public void sound1()
         {
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
