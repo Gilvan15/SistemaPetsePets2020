@@ -22,6 +22,14 @@ namespace SistemaPet.subForms
         
         string pasta_aplicacao = "";
 
+        decimal valor1 = 0;
+        decimal valor2 = 0;
+        decimal valor3 = 0;
+        decimal valor4 = 0;
+        decimal desconto = 0;
+        decimal valorTotal = 0;
+
+
         private string opc = "";
         public frmOS()
         {
@@ -451,6 +459,47 @@ namespace SistemaPet.subForms
             }
         }
 
+        private void verifyValue() 
+        {
+            
+            if(textValor1.Text == string.Empty) { return; }
+
+
+            if (textValor2.Text == string.Empty)
+            {
+                valorTotal = (valor1);
+            }
+            else if (textValor2.Text != string.Empty && textValor3.Text == string.Empty)
+            {
+                valor2 = Convert.ToDecimal(textValor2.Text);
+                valorTotal = (valor1 + valor2);
+            }
+            else if (textValor2.Text != string.Empty && textValor3.Text != string.Empty && textValor4.Text == string.Empty)
+            {
+                valor2 = Convert.ToDecimal(textValor2.Text);
+                valor3 = Convert.ToDecimal(textValor2.Text);
+                valorTotal = (valor1 + valor2 + valor3);
+            }
+            else if (textValor2.Text != string.Empty && textValor3.Text != string.Empty && textValor4.Text != string.Empty)
+            {
+                valor2 = Convert.ToDecimal(textValor2.Text);
+                valor3 = Convert.ToDecimal(textValor3.Text);
+                valor4 = Convert.ToDecimal(textValor4.Text);
+                valorTotal = (valor1 + valor2 + valor3 + valor4);
+            }
+
+            if(textDesconto.Text != string.Empty || textDesconto.Text == "0,00" ) 
+            {
+                desconto = Convert.ToDecimal(textDesconto.Text);
+                textValorTotal.Text = Convert.ToString(valorTotal - desconto );
+            }
+            else 
+            {
+                textValorTotal.Text = Convert.ToString(valorTotal);
+            }
+            
+        }
+
 
         private void comboServico1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -470,6 +519,112 @@ namespace SistemaPet.subForms
         private void comboServico4_SelectedIndexChanged(object sender, EventArgs e)
         {
             SelectIndexComboServico(4);
+        }
+
+        private void textValor1_OnValueChanged(object sender, EventArgs e)
+        {
+
+            if (textValor1.Text == string.Empty)
+            {
+                valor1 = 0;
+                verifyValue();
+            }
+            else
+            {
+                valor1 = Convert.ToDecimal(textValor1.Text);
+                verifyValue();
+            }
+
+            
+        }
+
+        private void textValor2_OnValueChanged(object sender, EventArgs e)
+        {
+            if(textValor2.Text == string.Empty) 
+            { 
+                valor2 = 0; 
+                verifyValue();
+            }
+            else 
+            {
+                valor2 = Convert.ToDecimal(textValor2.Text);
+                verifyValue();
+            }
+        }
+
+        private void textValor3_OnValueChanged(object sender, EventArgs e)
+        {
+
+            if (textValor3.Text == string.Empty)
+            {
+                valor3 = 0;
+                verifyValue();
+            }
+            else
+            {
+                valor3 = Convert.ToDecimal(textValor3.Text);
+                verifyValue();
+            }
+
+        }
+
+        private void textValor4_OnValueChanged(object sender, EventArgs e)
+        {
+
+            if (textValor4.Text == string.Empty)
+            {
+                valor4 = 0;
+                verifyValue();
+            }
+            else
+            {
+                valor4 = Convert.ToDecimal(textValor4.Text);
+                verifyValue();
+            }
+
+
+        }
+
+        private void Moeda(ref TextBox txt)
+        {
+            //procedure para formatar textbox em formato moeda c/2 casas decimais
+            string n = string.Empty;
+            double v = 0;
+            try
+            {
+                n = txt.Text.Replace(",", "").Replace(".", "");
+                if (n.Equals(""))
+                    n = "";
+                n = n.PadLeft(3, '0');
+                if (n.Length > 3 & n.Substring(0, 1) == "0")
+                    n = n.Substring(1, n.Length - 1);
+                v = Convert.ToDouble(n) / 100;
+                txt.Text = string.Format("{0:N}", v);
+                txt.SelectionStart = txt.Text.Length;
+            }
+            catch (Exception c)
+            {
+                //MessageBox.Show(c.Message);
+            }
+        }
+        private void textDesconto_TextChanged(object sender, EventArgs e)
+        {
+            
+            if(textDesconto.Text == string.Empty) { return; }
+            
+            try
+            {
+                Moeda(ref textDesconto);
+                verifyValue();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
+            
+
         }
     }
 }
