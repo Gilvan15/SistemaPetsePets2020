@@ -273,7 +273,7 @@ namespace SistemaPet.subForms
                 textPesquisar.Visible = false;
             }
         }        
-        private void comboProprietario_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void comboProprietario_SelectedIndexChanged(object sender, EventArgs e)
         {
             using (SqlConnection con = new SqlConnection())
             {

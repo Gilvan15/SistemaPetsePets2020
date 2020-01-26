@@ -109,7 +109,7 @@ namespace DAO
                 con.Open();
                 cn.CommandText = "UPDATE Servico SET servico = @servico, valor = @valor  WHERE id = @id";
                 cn.Parameters.Add("servico", SqlDbType.VarChar).Value = objTabela.Servico;
-                cn.Parameters.Add("valor", SqlDbType.Float).Value = objTabela.Valor;
+                cn.Parameters.Add("valor", SqlDbType.VarChar).Value = objTabela.Valor;
                 cn.Parameters.Add("id", SqlDbType.Int).Value = Convert.ToInt32(objTabela.Id);
                 cn.Connection = con;
                 int qtd = cn.ExecuteNonQuery();

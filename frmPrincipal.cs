@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using SistemaPet.subForms;
 using System.Media;
 using System.Runtime.InteropServices;
-
+using System.Globalization;
 
 namespace SistemaPet
 {
@@ -21,21 +21,23 @@ namespace SistemaPet
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
         string pasta_aplicacao = "";
         public frmPrincipal()
         {
             InitializeComponent();
             pasta_aplicacao = Application.StartupPath + @"\";
         }
+                       
+
+
         private void ocutarPaineis()
         {
             panelSubMenuCadastrar.Visible = false;
             panelSubMenuServico.Visible = false;
             panelSubRelatorio.Visible = false;
             panelSubValores.Visible = false;
-
         }
-
         private void AbrirFormWrapper(object formwapper) 
         {
             if (this.panelWrapper.Controls.Count > 0)
@@ -86,8 +88,6 @@ namespace SistemaPet
 
             if (panelSubValores.Visible == true)
                 bunifuT.HideSync(panelSubValores);
-
-
         }
         private void ShowSubmenu(Panel subMenu)
         { 
@@ -122,10 +122,6 @@ namespace SistemaPet
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            //string str = "" +  Convert.ToChar(174);
-            //lblFooter.Text = "PETS & PETS RAÇÕES E ACESSÓRIOS " + str + " CNPJ: 33.555.177/0001-03 | Fone: (92) 98433-8895";
-            //string tmp = "0";
-            //label1.Text = Convert.ToString($"Pets " + tmp.Replace("0","e" ) + " Pets");
             ocutarPaineis();
             bunifuTLog.Show(pictlogo);
             sond1();
@@ -163,11 +159,11 @@ namespace SistemaPet
             {
                 hideSubMenu();
             }
-        }        
+        }
         private void panelTop_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            //ReleaseCapture();
+            //SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         private void bunifuFlatButton18_Click(object sender, EventArgs e)
         {
@@ -192,19 +188,22 @@ namespace SistemaPet
         {
             WindowState = FormWindowState.Minimized;
         }
+        /*
         private void restaurar_Click_1(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Normal;
             maximizar.Visible = true;
             restaurar.Visible = false;
         }
+        
         private void maximizar_Click_1(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;
             maximizar.Visible = false;
             restaurar.Visible = true;
         }
-        
+        */
+
         private void richTextBox1_MouseHover(object sender, EventArgs e)
         {
             //richTextBox1.ForeColor = Color.GreenYellow;
@@ -295,6 +294,11 @@ namespace SistemaPet
             bunifuTLog.Show(pictlogo);
             //sond1();
             AbrirFormWrapper(new frmLogo());
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //labelHora.Text = String.Format("Dia: {0:dd/MM/yyyy} Hora: {1:HH:mm:ss}", DateTime.Now, DateTime.Now);
         }
     }
 }
