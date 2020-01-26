@@ -31,3 +31,14 @@ C:\Repositorio\SistemaPET2020\Model\obj\Debug\Model.csprojAssemblyReference.cach
 C:\Repositorio\SistemaPET2020\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Repositorio\SistemaPET2020\Model\obj\Debug\Model.dll
 C:\Repositorio\SistemaPET2020\Model\obj\Debug\Model.pdb
+C:\Repositorio\SistemaPetsePets2020\Model\bin\Debug\Model.dll
+C:\Repositorio\SistemaPetsePets2020\Model\bin\Debug\Model.pdb
+C:\Repositorio\SistemaPetsePets2020\Model\bin\Debug\DAO.dll
+C:\Repositorio\SistemaPetsePets2020\Model\bin\Debug\Entidades.dll
+C:\Repositorio\SistemaPetsePets2020\Model\bin\Debug\DAO.pdb
+C:\Repositorio\SistemaPetsePets2020\Model\bin\Debug\DAO.dll.config
+C:\Repositorio\SistemaPetsePets2020\Model\bin\Debug\Entidades.pdb
+C:\Repositorio\SistemaPetsePets2020\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Repositorio\SistemaPetsePets2020\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Repositorio\SistemaPetsePets2020\Model\obj\Debug\Model.dll
+C:\Repositorio\SistemaPetsePets2020\Model\obj\Debug\Model.pdb

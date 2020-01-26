@@ -38,6 +38,7 @@
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textDesconto = new System.Windows.Forms.TextBox();
             this.comboServico4 = new System.Windows.Forms.ComboBox();
             this.comboServico1 = new System.Windows.Forms.ComboBox();
             this.comboServico2 = new System.Windows.Forms.ComboBox();
@@ -62,6 +63,7 @@
             this.textObservacao = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel19 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.checkServico1 = new System.Windows.Forms.CheckBox();
+            this.textValorTotal = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.comboNomePet = new System.Windows.Forms.ComboBox();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -85,8 +87,6 @@
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textDesconto = new System.Windows.Forms.TextBox();
-            this.textValorTotal = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -110,7 +110,7 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1072, 803);
+            this.panel1.Size = new System.Drawing.Size(1079, 803);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -122,7 +122,7 @@
             this.panel2.Controls.Add(this.btnEditar);
             this.panel2.Controls.Add(this.btnPesquisar);
             this.panel2.Controls.Add(this.btnLimpar);
-            this.panel2.Location = new System.Drawing.Point(977, 122);
+            this.panel2.Location = new System.Drawing.Point(984, 122);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(105, 324);
             this.panel2.TabIndex = 109;
@@ -277,10 +277,21 @@
             this.panel3.Controls.Add(this.textValor1);
             this.panel3.Controls.Add(this.bunifuSeparator1);
             this.panel3.Controls.Add(this.bunifuSeparator2);
-            this.panel3.Location = new System.Drawing.Point(99, 12);
+            this.panel3.Location = new System.Drawing.Point(78, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(871, 619);
             this.panel3.TabIndex = 108;
+            // 
+            // textDesconto
+            // 
+            this.textDesconto.BackColor = System.Drawing.Color.White;
+            this.textDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDesconto.Location = new System.Drawing.Point(693, 509);
+            this.textDesconto.Name = "textDesconto";
+            this.textDesconto.Size = new System.Drawing.Size(166, 26);
+            this.textDesconto.TabIndex = 155;
+            this.textDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textDesconto.TextChanged += new System.EventHandler(this.textDesconto_TextChanged);
             // 
             // comboServico4
             // 
@@ -641,6 +652,26 @@
             this.checkServico1.UseVisualStyleBackColor = true;
             this.checkServico1.CheckedChanged += new System.EventHandler(this.checkServico1_CheckedChanged);
             // 
+            // textValorTotal
+            // 
+            this.textValorTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textValorTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textValorTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textValorTotal.HintForeColor = System.Drawing.Color.Empty;
+            this.textValorTotal.HintText = "";
+            this.textValorTotal.isPassword = false;
+            this.textValorTotal.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textValorTotal.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textValorTotal.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textValorTotal.LineThickness = 4;
+            this.textValorTotal.Location = new System.Drawing.Point(693, 554);
+            this.textValorTotal.Margin = new System.Windows.Forms.Padding(5);
+            this.textValorTotal.Name = "textValorTotal";
+            this.textValorTotal.Size = new System.Drawing.Size(169, 29);
+            this.textValorTotal.TabIndex = 90;
+            this.textValorTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // bunifuCustomLabel18
             // 
             this.bunifuCustomLabel18.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -978,39 +1009,8 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(15, 637);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1007, 121);
+            this.dataGridView1.Size = new System.Drawing.Size(1014, 121);
             this.dataGridView1.TabIndex = 110;
-            // 
-            // textDesconto
-            // 
-            this.textDesconto.BackColor = System.Drawing.Color.White;
-            this.textDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDesconto.Location = new System.Drawing.Point(693, 509);
-            this.textDesconto.Name = "textDesconto";
-            this.textDesconto.Size = new System.Drawing.Size(166, 26);
-            this.textDesconto.TabIndex = 155;
-            this.textDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textDesconto.TextChanged += new System.EventHandler(this.textDesconto_TextChanged);
-            // 
-            // textValorTotal
-            // 
-            this.textValorTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textValorTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textValorTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textValorTotal.HintForeColor = System.Drawing.Color.Empty;
-            this.textValorTotal.HintText = "";
-            this.textValorTotal.isPassword = false;
-            this.textValorTotal.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textValorTotal.LineIdleColor = System.Drawing.Color.Chocolate;
-            this.textValorTotal.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textValorTotal.LineThickness = 4;
-            this.textValorTotal.Location = new System.Drawing.Point(693, 554);
-            this.textValorTotal.Margin = new System.Windows.Forms.Padding(5);
-            this.textValorTotal.Name = "textValorTotal";
-            this.textValorTotal.Size = new System.Drawing.Size(169, 29);
-            this.textValorTotal.TabIndex = 90;
-            this.textValorTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // frmOS
             // 
