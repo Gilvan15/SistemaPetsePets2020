@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFuncao));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textPesquisar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.funcaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -69,7 +69,7 @@
             this.textPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textPesquisar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textPesquisar.HintForeColor = System.Drawing.Color.Empty;
             this.textPesquisar.HintText = "";
@@ -77,11 +77,11 @@
             this.textPesquisar.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textPesquisar.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textPesquisar.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textPesquisar.LineThickness = 3;
-            this.textPesquisar.Location = new System.Drawing.Point(305, 93);
+            this.textPesquisar.LineThickness = 4;
+            this.textPesquisar.Location = new System.Drawing.Point(305, 89);
             this.textPesquisar.Margin = new System.Windows.Forms.Padding(5);
             this.textPesquisar.Name = "textPesquisar";
-            this.textPesquisar.Size = new System.Drawing.Size(386, 29);
+            this.textPesquisar.Size = new System.Drawing.Size(386, 33);
             this.textPesquisar.TabIndex = 62;
             this.textPesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textPesquisar.Visible = false;
@@ -165,7 +165,7 @@
             this.textDescricao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textDescricao.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDescricao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textDescricao.HintForeColor = System.Drawing.Color.Empty;
             this.textDescricao.HintText = "";
@@ -173,11 +173,11 @@
             this.textDescricao.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textDescricao.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textDescricao.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textDescricao.LineThickness = 3;
-            this.textDescricao.Location = new System.Drawing.Point(117, 160);
+            this.textDescricao.LineThickness = 4;
+            this.textDescricao.Location = new System.Drawing.Point(117, 156);
             this.textDescricao.Margin = new System.Windows.Forms.Padding(5);
             this.textDescricao.Name = "textDescricao";
-            this.textDescricao.Size = new System.Drawing.Size(574, 29);
+            this.textDescricao.Size = new System.Drawing.Size(574, 33);
             this.textDescricao.TabIndex = 46;
             this.textDescricao.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textDescricao.OnValueChanged += new System.EventHandler(this.textDescricao_OnValueChanged);
@@ -187,7 +187,7 @@
             // 
             this.textCod.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textCod.Enabled = false;
-            this.textCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textCod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textCod.HintForeColor = System.Drawing.Color.Empty;
             this.textCod.HintText = "";
@@ -195,11 +195,11 @@
             this.textCod.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textCod.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textCod.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textCod.LineThickness = 3;
-            this.textCod.Location = new System.Drawing.Point(117, 93);
+            this.textCod.LineThickness = 4;
+            this.textCod.Location = new System.Drawing.Point(117, 89);
             this.textCod.Margin = new System.Windows.Forms.Padding(5);
             this.textCod.Name = "textCod";
-            this.textCod.Size = new System.Drawing.Size(124, 29);
+            this.textCod.Size = new System.Drawing.Size(124, 33);
             this.textCod.TabIndex = 41;
             this.textCod.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -281,22 +281,22 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.EnableHeadersVisualStyles = false;

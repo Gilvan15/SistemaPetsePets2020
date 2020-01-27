@@ -16,8 +16,8 @@ namespace Entidades
         private string telefone;
         private string email;
         private string c_especiais;
-        private string obervacao;
-
+        private string alergico;
+        private string observacao;
         private string servico1;
         private string checkserv1;
         private string valorserv1;
@@ -41,7 +41,8 @@ namespace Entidades
         public string Telefone { get => telefone; set => telefone = value; }
         public string Email { get => email; set => email = value; }
         public string C_especiais { get => c_especiais; set => c_especiais = value; }
-        public string Obervacao { get => obervacao; set => obervacao = value; }
+        public string Alergico { get => alergico; set => alergico = value; }
+        public string Observacao { get => observacao; set => observacao = value; }
         public string Servico1 { get => servico1; set => servico1 = value; }
         public string Checkserv1 { get => checkserv1; set => checkserv1 = value; }
         public string Valorserv1 { get => valorserv1; set => valorserv1 = value; }

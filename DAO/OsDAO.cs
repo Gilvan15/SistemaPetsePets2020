@@ -22,10 +22,15 @@ namespace DAO
                     SqlCommand cn = new SqlCommand();
                     cn.CommandType = CommandType.Text;
                     con.Open();
-                    cn.CommandText = "INSERT INTO OrdemServico ([valor], [recebemosde], [importanciade1], " +
-                        "[importanciade2], [referentea1], [referentea2], [emitente], [cnpj], [data]) " +
-                        "VALUES (@valor, @recebemosde, @importanciade1, @importanciade2, " +
-                        "@referentea1, @referentea2, @emitente, @cnpj, @data)";
+                    cn.CommandText = "INSERT INTO Oservico ([nomepet], [especie], [raca], " +
+                        "[proprietario], [telefone], [email], [c_especiais], [alergico], [observacao], [servico1], " +
+                        "[checkserv1], [valorserv1], [servico2], [checkserv2], [valorserv2], [servico3], " +
+                        "[checkserv3], [valorserv3], [servico4],  [valorserv4], [data], [desconto], [valortotal])" +
+
+                        "VALUES (@nomepet, @especie, @raca, @proprietario, @telefone, @email, @c_especiais, @alergico," +
+                        "@observacao, @servico1, @checkserv1, @valorserv1, @servico2, @checkserv2, @valorserv2," +
+                        "@servico3, @checkserv3, @valorserv3, @servico4, @valorserv4, @data, @desconto, @valortotal)";
+                        
 
                     cn.Parameters.Add("nomepet", SqlDbType.VarChar).Value = objTabela.Nomepet;
                     cn.Parameters.Add("especie", SqlDbType.VarChar).Value = objTabela.Especie;
@@ -34,7 +39,8 @@ namespace DAO
                     cn.Parameters.Add("telefone", SqlDbType.VarChar).Value = objTabela.Telefone;
                     cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
                     cn.Parameters.Add("c_especiais", SqlDbType.VarChar).Value = objTabela.C_especiais;
-                    cn.Parameters.Add("obervacao", SqlDbType.VarChar).Value = objTabela.Obervacao;
+                    cn.Parameters.Add("alergico", SqlDbType.VarChar).Value = objTabela.Alergico;
+                    cn.Parameters.Add("observacao", SqlDbType.VarChar).Value = objTabela.Observacao;
 
                     cn.Parameters.Add("servico1", SqlDbType.VarChar).Value = objTabela.Servico1;
                     cn.Parameters.Add("checkserv1", SqlDbType.VarChar).Value = objTabela.Checkserv1;
@@ -44,7 +50,6 @@ namespace DAO
                     cn.Parameters.Add("checkserv2", SqlDbType.VarChar).Value = objTabela.Checkserv2;
                     cn.Parameters.Add("valorserv2", SqlDbType.VarChar).Value = objTabela.Valorserv2;
 
-
                     cn.Parameters.Add("servico3", SqlDbType.VarChar).Value = objTabela.Servico3;
                     cn.Parameters.Add("checkserv3", SqlDbType.VarChar).Value = objTabela.Checkserv3;
                     cn.Parameters.Add("valorserv3", SqlDbType.VarChar).Value = objTabela.Valorserv3;
@@ -53,10 +58,10 @@ namespace DAO
                     cn.Parameters.Add("valorserv4", SqlDbType.VarChar).Value = objTabela.Valorserv4;
                     cn.Parameters.Add("data", SqlDbType.DateTime).Value = objTabela.Data;
 
-                    cn.Parameters.Add("desconto", SqlDbType.VarChar).Value = objTabela.Servico4;
-                    cn.Parameters.Add("valortotal", SqlDbType.VarChar).Value = objTabela.Valorserv4;
+                    cn.Parameters.Add("desconto", SqlDbType.VarChar).Value = objTabela.Desconto;
+                    cn.Parameters.Add("valortotal", SqlDbType.VarChar).Value = objTabela.Valortotal;
 
-                    cn.Parameters.Add("data", SqlDbType.DateTime).Value = objTabela.Data;
+
                     cn.Connection = con;
                     qtd = cn.ExecuteNonQuery();
                 }
@@ -67,9 +72,23 @@ namespace DAO
                 return qtd;
             }
         }
+        public DataTable ListaDataTable()
+        {
+            using (SqlConnection con = new SqlConnection())
+            {
+                con.ConnectionString = DAO.Properties.Settings.Default.banco;
+                con.Open();
+                string query = "SELECT * FROM Oservico ORDER BY nomepet ASC";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                return dt;
+            }
+        }
 
-
-
+        /*
         public List<OSEnt> Buscar(OSEnt objTabela)
         {
             using (SqlConnection con = new SqlConnection())

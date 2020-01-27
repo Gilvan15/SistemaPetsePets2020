@@ -45,6 +45,7 @@
     <Compile Include="FuncaoModel.cs" />
     <Compile Include="ClienteModel.cs" />
     <Compile Include="FuncionarioModel.cs" />
+    <Compile Include="OsModel.cs" />
     <Compile Include="ReciboModel.cs" />
     <Compile Include="ServicoModel.cs" />
     <Compile Include="UsuarioModel.cs" />

@@ -21,16 +21,16 @@ namespace SistemaPet.subForms
     {
         
         string pasta_aplicacao = "";
-
         decimal valor1 = 0;
         decimal valor2 = 0;
         decimal valor3 = 0;
         decimal valor4 = 0;
         decimal desconto = 0;
         decimal valorTotal = 0;
-
-
+        Bitmap memoryImage;
+        string nomeImpessora = "";
         private string opc = "";
+        OSEnt objTabela = new OSEnt();
         public frmOS()
         {
             InitializeComponent();
@@ -58,35 +58,53 @@ namespace SistemaPet.subForms
         }
         private void CarregarGrid()
         {
-            /*try
+            try
             {
-                List<ServicoEnt> lista = new List<ServicoEnt>();
-                lista = new ServicoModel().Lista();
+                DataTable lista;
+                lista = new OsModel().ListaDataTable();
 
                 dataGridView1.AutoGenerateColumns = true;
                 dataGridView1.DataSource = lista;
                 dataGridView1.Columns[0].HeaderText = "ID";
-                dataGridView1.Columns[1].HeaderText = "VALOR";
-                dataGridView1.Columns[2].HeaderText = "RECEBEMOSDE";
-                dataGridView1.Columns[3].HeaderText = "IMPORTÂNCIA";
-                dataGridView1.Columns[4].HeaderText = "IMPORTÂNCIA...";
-                dataGridView1.Columns[5].HeaderText = "REFERENTE";
-                dataGridView1.Columns[6].HeaderText = "REFERENTE...";
-                dataGridView1.Columns[7].HeaderText = "EMITENTE";
-                dataGridView1.Columns[8].HeaderText = "CNPJ";
-                dataGridView1.Columns[9].HeaderText = "DATA/HORA";
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.Columns[1].HeaderText = "NOME PET";
+                dataGridView1.Columns[2].HeaderText = "ESPÉCIE";
+                dataGridView1.Columns[3].HeaderText = "RAÇA";
+                dataGridView1.Columns[4].HeaderText = "DONO";
+                dataGridView1.Columns[5].HeaderText = "TELEFONE";
+                dataGridView1.Columns[6].HeaderText = "EMAIL";
+                dataGridView1.Columns[7].HeaderText = "CUID.ESPECIAIS";
+                dataGridView1.Columns[8].HeaderText = "ALERGICO";
+                dataGridView1.Columns[9].HeaderText = "OBS";
+                dataGridView1.Columns[10].HeaderText = "SERVICO1";
+                dataGridView1.Columns[11].HeaderText = "CHECKADO1";
+                dataGridView1.Columns[12].HeaderText = "VALORSERV1";
 
-                dataGridView1.Columns[4].Visible = false;
-                dataGridView1.Columns[6].Visible = false;
-                dataGridView1.Columns[7].Visible = false;
-                dataGridView1.Columns[8].Visible = false;
+                dataGridView1.Columns[13].HeaderText = "SERVICO2";
+                dataGridView1.Columns[14].HeaderText = "CHECKADO2";
+                dataGridView1.Columns[15].HeaderText = "VALORSERV2";
+
+                dataGridView1.Columns[16].HeaderText = "SERVICO3";
+                dataGridView1.Columns[17].HeaderText = "CHECKADO3";
+                dataGridView1.Columns[18].HeaderText = "VALORSERV3";
+
+                dataGridView1.Columns[19].HeaderText = "SERVICO4";
+                dataGridView1.Columns[20].HeaderText = "VALORSERV4";
+
+                dataGridView1.Columns[21].HeaderText = "DATA";
+                dataGridView1.Columns[22].HeaderText = "DESCONTO";
+                dataGridView1.Columns[23].HeaderText = "VALORTOTAL";
+
+
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                //dataGridView1.Columns[5].Visible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error ao Carregar DataGrid: " + ex.Message);
-            }*/
+            }
         }
+
+
         public void sound1()
         {
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
@@ -243,6 +261,8 @@ namespace SistemaPet.subForms
 
         }
 
+
+
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             sound2();
@@ -250,9 +270,119 @@ namespace SistemaPet.subForms
             DesabilitarCampos();
             btnSalvar.Enabled = false;
         }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            sound1();
+            if (opc == "") { return; }
+
+            switch (opc)
+            {
+                case "Salvar":
+                    try
+                    {
+                        DialogResult result1 = MessageBox.Show("Confima salvação do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        if (result1 == DialogResult.Yes)
+                        {
+
+                            objTabela.Nomepet = comboNomePet.Text;
+                            objTabela.Especie = textEspecie.Text;
+                            objTabela.Raca = textRaca.Text;
+                            objTabela.Proprietario = textProprietario.Text;
+                            objTabela.Telefone = textTelefone.Text;
+                            objTabela.Email = textEmail.Text;
+                            objTabela.C_especiais = textCespeciais.Text;
+                            objTabela.Alergico = textAlergico.Text;
+                            objTabela.Observacao = textObservacao.Text;
+                            
+                            objTabela.Servico1   = comboServico1.Text;
+                            if(checkServico1.Checked == true){objTabela.Checkserv1 = "1";}else{objTabela.Checkserv1 = "0";}
+                            objTabela.Valorserv1 = textValor1.Text;
+
+                            objTabela.Servico2 = comboServico2.Text;
+                            if (checkServico2.Checked == true) { objTabela.Checkserv2 = "1"; } else { objTabela.Checkserv2 = "0"; }
+                            objTabela.Valorserv2 = textValor2.Text;
+
+                            objTabela.Servico3 = comboServico3.Text;
+                            if (checkServico3.Checked == true) { objTabela.Checkserv3 = "1"; } else { objTabela.Checkserv3 = "0"; }
+                            objTabela.Valorserv3 = textValor3.Text;
+                            
+                            objTabela.Servico4 = comboServico4.Text;
+                            objTabela.Valorserv4 = textValor4.Text;
+                            objTabela.Data = DateTime.Now;
+
+                            objTabela.Desconto= textDesconto.Text;
+                            objTabela.Valortotal = textValorTotal.Text;
+
+                            int x = OsModel.Inseir(objTabela);
+
+                            if (x > 0)
+                            {
+                                MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
+                                LimparCampos();
+                                DesabilitarCampos();
+                                CarregarGrid();
+                                btnSalvar.Enabled = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error ao Tentar cadastrar Usuário!", "Aviso!", MessageBoxButtons.OK);
+                            }
+                        }
+                        else { return; }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocorreu um error tentar salvar Registro:" + ex.Message);
+                        btnSalvar.Enabled = false;
+                    }
+                    break;
+
+                case "Editar":
+                    /*
+                    try
+                    {
+                        DialogResult result2 = MessageBox.Show("Confima a Edição do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        if (result2 == DialogResult.Yes)
+                        {
+                            objTabela.Id = Convert.ToInt32(textNumeroRecibo.Text);
+                            objTabela.Valor = textValorRecibo.Text;
+                            objTabela.Recebemosde = textRecebemosde.Text;
+                            objTabela.Importancia1 = textImportanciade1.Text;
+                            objTabela.Importancia2 = textImportanciade2.Text;
+                            objTabela.Referentea1 = textReferentea1.Text;
+                            objTabela.Referentea2 = textReferentea2.Text;
+                            objTabela.Emitente = textEmitente.Text;
+                            objTabela.Cnpj = textCnpj.Text;
+
+
+                            int x = ReciboModel.Editar(objTabela);
+
+                            if (x > 0)
+                            {
+                                MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
+                                LimparCampos();
+                                DesabilitarCampos();
+                                CarregarGrid();
+                                btnSalvar.Enabled = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error ao Tentar Editar o Registro", "Aviso!", MessageBoxButtons.OK);
+                                btnSalvar.Enabled = false;
+                            }
+                        }
+                        else { return; }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Editar ERROR: " + ex.Message);
+                    }
+                    break;
+                    */
+                default:
+                    break;
+            }
+
 
         }
 
@@ -368,7 +498,7 @@ namespace SistemaPet.subForms
                         textTelefone.Text = dr["telefone"].ToString();
                         textEmail.Text = dr["email"].ToString();
                         textCespeciais.Text = dr["cuidados_esp"].ToString();
-                        textObservacao.Text = dr["alergico"].ToString();
+                        textAlergico.Text = dr["alergico"].ToString();
                     }
                     con.Close();
                 }
@@ -624,6 +754,25 @@ namespace SistemaPet.subForms
 
             
             
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //HabilitarCampos();
+                int codId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                
+                textCod.Text = codId.ToString("D5");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error DataGrid: " + ex.Message);
+            }
+
 
         }
     }
