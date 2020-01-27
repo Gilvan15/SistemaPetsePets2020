@@ -391,7 +391,7 @@ namespace SistemaPet.subForms
                         LimparCampos();
                         DesabilitarCampos();
                         CarregarGrid();
-                        MessageBox.Show(string.Format("Registro  excluído com sucesso!"));
+                        MessageBox.Show(string.Format("Registro excluído com sucesso!"));
                     }
                     else
                     {
@@ -483,7 +483,7 @@ namespace SistemaPet.subForms
                 case "Salvar":
                     try
                     {
-                        DialogResult result1 = MessageBox.Show("Confima o cadastro do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        DialogResult result1 = MessageBox.Show("Confirma a inclusão do registro?", "Aviso!", MessageBoxButtons.YesNo);
                         if (result1 == DialogResult.Yes)
                         {
                             objTabela.Especie = comboEspecie.Text;

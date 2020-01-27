@@ -21,6 +21,9 @@ namespace SistemaPet.subForms
     {
         
         string pasta_aplicacao = "";
+
+        int verify = 1;
+
         decimal valor1 = 0;
         decimal valor2 = 0;
         decimal valor3 = 0;
@@ -54,7 +57,15 @@ namespace SistemaPet.subForms
                 {
                     ((ComboBox)ctrl).Text = string.Empty;
                 }
+
+                if (ctrl is TextBox)
+                {
+                    ((TextBox)ctrl).Text = string.Empty;
+                }
             }
+
+            verify = 1;
+
         }
         private void CarregarGrid()
         {
@@ -167,7 +178,13 @@ namespace SistemaPet.subForms
                 {
                     ((CheckBox)ctrl).Enabled = false;
                 }
+
+                if (ctrl is TextBox)
+                {
+                    ((TextBox)ctrl).Enabled = false;
+                }
             }
+            btnSalvar.Enabled = false;
         }
 
 
@@ -189,6 +206,11 @@ namespace SistemaPet.subForms
                 if (ctrl is CheckBox)
                 {
                     ((CheckBox)ctrl).Enabled = true;
+                }
+
+                if (ctrl is TextBox)
+                {
+                    ((TextBox)ctrl).Enabled = true;
                 }
             }
 
@@ -274,13 +296,15 @@ namespace SistemaPet.subForms
         {
             sound1();
             if (opc == "") { return; }
+            if(comboNomePet.Text == string.Empty){MessageBox.Show("Selecione PET antes de salvar!"); return;}
+            if (textValorTotal.Text == string.Empty) { MessageBox.Show("Lançe algum valor na OS, antes de salvar!"); return; }
 
             switch (opc)
             {
                 case "Salvar":
                     try
                     {
-                        DialogResult result1 = MessageBox.Show("Confima salvação do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        DialogResult result1 = MessageBox.Show("Confima a inclusão do registro?", "Aviso!", MessageBoxButtons.YesNo);
                         if (result1 == DialogResult.Yes)
                         {
 
@@ -507,12 +531,10 @@ namespace SistemaPet.subForms
                     MessageBox.Show("Error ao carregar Registro: " + ex.Message);
                 }
             }
-
         }
 
         private void SelectIndexComboServico(int index) 
         {
-            sound4();
             using (SqlConnection con = new SqlConnection())
             {
                 
@@ -633,21 +655,24 @@ namespace SistemaPet.subForms
 
         private void comboServico1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (verify == 1){sound4();} 
             SelectIndexComboServico(1);
         }
 
         private void comboServico2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (verify == 1) { sound4();}
             SelectIndexComboServico(2);
         }
 
         private void comboServico3_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (verify == 1) { sound4();}
             SelectIndexComboServico(3);
         }
-
         private void comboServico4_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (verify == 1) { sound4(); }
             SelectIndexComboServico(4);
         }
 
@@ -752,21 +777,46 @@ namespace SistemaPet.subForms
                 MessageBox.Show(ex.Message);
             }
 
-            
-            
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                //HabilitarCampos();
+                verify = 0;
+                DesabilitarCampos();
+
                 int codId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                
                 textCod.Text = codId.ToString("D5");
+                comboNomePet.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textEspecie.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textRaca.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textProprietario.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textTelefone.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textEmail.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                textCespeciais.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textAlergico.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                textObservacao.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                
+                comboServico1.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                if(dataGridView1.CurrentRow.Cells[11].Value.ToString() == "1"){checkServico1.Checked = true;}else{checkServico1.Checked = false;}
+                textValor1.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
 
+                comboServico2.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
+                if (dataGridView1.CurrentRow.Cells[14].Value.ToString() == "1") { checkServico2.Checked = true; } else { checkServico2.Checked = false; }
+                textValor2.Text = dataGridView1.CurrentRow.Cells[15].Value.ToString();
 
+                comboServico3.Text = dataGridView1.CurrentRow.Cells[16].Value.ToString();
+                if (dataGridView1.CurrentRow.Cells[17].Value.ToString() == "1") { checkServico3.Checked = true; } else { checkServico3.Checked = false; }
+                textValor3.Text = dataGridView1.CurrentRow.Cells[18].Value.ToString();
+
+                comboServico4.Text = dataGridView1.CurrentRow.Cells[19].Value.ToString();
+                textValor4.Text = dataGridView1.CurrentRow.Cells[20].Value.ToString();
+
+                lbldata.Text = dataGridView1.CurrentRow.Cells[21].Value.ToString();
+
+                textDesconto.Text = dataGridView1.CurrentRow.Cells[22].Value.ToString();
+                textValorTotal.Text = dataGridView1.CurrentRow.Cells[23].Value.ToString();
             }
             catch (Exception ex)
             {
