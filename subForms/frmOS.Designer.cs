@@ -110,7 +110,7 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1075, 803);
+            this.panel1.Size = new System.Drawing.Size(990, 803);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -122,7 +122,7 @@
             this.panel2.Controls.Add(this.btnEditar);
             this.panel2.Controls.Add(this.btnPesquisar);
             this.panel2.Controls.Add(this.btnLimpar);
-            this.panel2.Location = new System.Drawing.Point(980, 122);
+            this.panel2.Location = new System.Drawing.Point(895, 122);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(105, 324);
             this.panel2.TabIndex = 109;
@@ -277,7 +277,7 @@
             this.panel3.Controls.Add(this.textValor1);
             this.panel3.Controls.Add(this.bunifuSeparator1);
             this.panel3.Controls.Add(this.bunifuSeparator2);
-            this.panel3.Location = new System.Drawing.Point(76, 12);
+            this.panel3.Location = new System.Drawing.Point(34, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(871, 619);
             this.panel3.TabIndex = 108;
@@ -548,20 +548,20 @@
             // lbldata
             // 
             this.lbldata.AutoSize = true;
-            this.lbldata.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldata.Location = new System.Drawing.Point(149, 505);
+            this.lbldata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldata.Location = new System.Drawing.Point(134, 601);
             this.lbldata.Name = "lbldata";
-            this.lbldata.Size = new System.Drawing.Size(59, 20);
+            this.lbldata.Size = new System.Drawing.Size(51, 16);
             this.lbldata.TabIndex = 123;
             this.lbldata.Text = "lblData";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(8, 504);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(21, 601);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(135, 20);
+            this.label11.Size = new System.Drawing.Size(115, 16);
             this.label11.TabIndex = 122;
             this.label11.Text = "Data de Emissão:";
             // 
@@ -578,7 +578,7 @@
             this.bunifuMaterialTextbox21.LineIdleColor = System.Drawing.Color.Chocolate;
             this.bunifuMaterialTextbox21.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.bunifuMaterialTextbox21.LineThickness = 3;
-            this.bunifuMaterialTextbox21.Location = new System.Drawing.Point(24, 559);
+            this.bunifuMaterialTextbox21.Location = new System.Drawing.Point(24, 541);
             this.bunifuMaterialTextbox21.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuMaterialTextbox21.Name = "bunifuMaterialTextbox21";
             this.bunifuMaterialTextbox21.Size = new System.Drawing.Size(391, 29);
@@ -590,7 +590,7 @@
             this.bunifuCustomLabel21.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCustomLabel21.AutoSize = true;
             this.bunifuCustomLabel21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel21.Location = new System.Drawing.Point(162, 593);
+            this.bunifuCustomLabel21.Location = new System.Drawing.Point(162, 575);
             this.bunifuCustomLabel21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel21.Name = "bunifuCustomLabel21";
             this.bunifuCustomLabel21.Size = new System.Drawing.Size(87, 18);
@@ -666,7 +666,7 @@
             this.textValorTotal.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textValorTotal.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textValorTotal.LineThickness = 4;
-            this.textValorTotal.Location = new System.Drawing.Point(693, 554);
+            this.textValorTotal.Location = new System.Drawing.Point(693, 549);
             this.textValorTotal.Margin = new System.Windows.Forms.Padding(5);
             this.textValorTotal.Name = "textValorTotal";
             this.textValorTotal.Size = new System.Drawing.Size(169, 29);
@@ -678,7 +678,7 @@
             this.bunifuCustomLabel18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCustomLabel18.AutoSize = true;
             this.bunifuCustomLabel18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel18.Location = new System.Drawing.Point(564, 559);
+            this.bunifuCustomLabel18.Location = new System.Drawing.Point(564, 554);
             this.bunifuCustomLabel18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel18.Name = "bunifuCustomLabel18";
             this.bunifuCustomLabel18.Size = new System.Drawing.Size(117, 24);
@@ -1010,7 +1010,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(15, 637);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1010, 154);
+            this.dataGridView1.Size = new System.Drawing.Size(925, 154);
             this.dataGridView1.TabIndex = 110;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 

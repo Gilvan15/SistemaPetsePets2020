@@ -146,7 +146,6 @@ namespace DAO
             }
 
         }
-        /*
 
         public int Editar(OSEnt objTabela)
         {
@@ -156,24 +155,41 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "UPDATE Recibo SET  valor = @valor, recebemosde = @recebemosde, " +
-                    "importanciade1 = @importanciade1, importanciade2 = @importanciade2, referentea1 = @referentea1, " +
-                    "referentea2 = @referentea2, emitente = @emitente, cnpj = @cnpj " + "WHERE id = @id";
-                cn.Parameters.Add("valor", SqlDbType.VarChar).Value = objTabela.Valor;
-                cn.Parameters.Add("recebemosde", SqlDbType.VarChar).Value = objTabela.Recebemosde;
-                cn.Parameters.Add("importanciade1", SqlDbType.VarChar).Value = objTabela.Importancia1;
-                cn.Parameters.Add("importanciade2", SqlDbType.VarChar).Value = objTabela.Importancia2;
-                cn.Parameters.Add("referentea1", SqlDbType.VarChar).Value = objTabela.Referentea1;
-                cn.Parameters.Add("referentea2", SqlDbType.VarChar).Value = objTabela.Referentea2;
-                cn.Parameters.Add("emitente", SqlDbType.VarChar).Value = objTabela.Emitente;
-                cn.Parameters.Add("cnpj", SqlDbType.VarChar).Value = objTabela.Cnpj;
-                //cn.Parameters.Add("data", SqlDbType.DateTime).Value = objTabela.Data;
+                cn.CommandText = "UPDATE Oservico SET  nomepet = @nomepet, especie = @especie, raca = @raca, " +
+                    "proprietario = @proprietario, telefone = @telefone, email = @email, c_especiais = @c_especiais, alergico = @alergico," +
+                        "observacao = @observacao, servico1 = @servico1, checkserv1 = @checkserv1, valorserv1 = @valorserv1, servico2 = @servico2, checkserv2 = @checkserv2, valorserv2 = @valorserv2," +
+                        "servico3 = @servico3, checkserv3 = @checkserv3, valorserv3 = @valorserv3, servico4 = @servico4, valorserv4 = @valorserv4, data = @data, desconto = @desconto, valortotal = @valortotal " + "WHERE id = @id";
+
+                cn.Parameters.Add("nomepet", SqlDbType.VarChar).Value = objTabela.Nomepet;
+                cn.Parameters.Add("especie", SqlDbType.VarChar).Value = objTabela.Especie;
+                cn.Parameters.Add("raca", SqlDbType.VarChar).Value = objTabela.Especie;
+                cn.Parameters.Add("proprietario", SqlDbType.VarChar).Value = objTabela.Raca;
+                cn.Parameters.Add("telefone", SqlDbType.VarChar).Value = objTabela.Telefone;
+                cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
+                cn.Parameters.Add("c_especiais", SqlDbType.VarChar).Value = objTabela.C_especiais;
+                cn.Parameters.Add("alergico", SqlDbType.VarChar).Value = objTabela.Alergico;
+                cn.Parameters.Add("observacao", SqlDbType.VarChar).Value = objTabela.Observacao;
+                cn.Parameters.Add("servico1", SqlDbType.VarChar).Value = objTabela.Servico1;
+                cn.Parameters.Add("checkserv1", SqlDbType.VarChar).Value = objTabela.Checkserv1;
+                cn.Parameters.Add("valorserv1", SqlDbType.VarChar).Value = objTabela.Valorserv1;
+                cn.Parameters.Add("servico2", SqlDbType.VarChar).Value = objTabela.Servico2;
+                cn.Parameters.Add("checkserv2", SqlDbType.VarChar).Value = objTabela.Checkserv2;
+                cn.Parameters.Add("valorserv2", SqlDbType.VarChar).Value = objTabela.Valorserv2;
+                cn.Parameters.Add("servico3", SqlDbType.VarChar).Value = objTabela.Servico3;
+                cn.Parameters.Add("checkserv3", SqlDbType.VarChar).Value = objTabela.Checkserv3;
+                cn.Parameters.Add("valorserv3", SqlDbType.VarChar).Value = objTabela.Valorserv3;
+                cn.Parameters.Add("servico4", SqlDbType.VarChar).Value = objTabela.Servico4;
+                cn.Parameters.Add("valorserv4", SqlDbType.VarChar).Value = objTabela.Valorserv4;
+                cn.Parameters.Add("data", SqlDbType.DateTime).Value = objTabela.Data;
+                cn.Parameters.Add("desconto", SqlDbType.VarChar).Value = objTabela.Desconto;
+                cn.Parameters.Add("valortotal", SqlDbType.VarChar).Value = objTabela.Valorserv1;
                 cn.Parameters.Add("id", SqlDbType.Int).Value = Convert.ToInt32(objTabela.Id);
                 cn.Connection = con;
                 int qtd = cn.ExecuteNonQuery();
                 return qtd;
             }
         }
+        /*
         public int Excluir(OSEnt objTabela)
         {
             using (SqlConnection con = new SqlConnection())

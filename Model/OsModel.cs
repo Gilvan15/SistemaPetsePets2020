@@ -21,6 +21,12 @@ namespace Model
             return new OsDAO().ListaDataTable();
         }
 
+        public static int Editar(OSEnt objTabela)
+        {
+            return new OsDAO().Editar(objTabela);
+        }
+
+
         /*
         public List<OSEnt> Lista()
         {
@@ -31,12 +37,7 @@ namespace Model
         public static int Excluir(OSEnt objTabela)
         {
             return new OsDAO().Excluir(objTabela);
-        }
-
-        public static int Editar(OSEnt objTabela)
-        {
-            return new OsDAO().Editar(objTabela);
-        }
+        }       
         */
         public List<OSEnt> Buscar(OSEnt objTabela)
         {

@@ -215,21 +215,16 @@ namespace SistemaPet.subForms
                     ((TextBox)ctrl).Enabled = true;
                 }
             }
-
             fixaEnablecCampos();
-
         }
 
         private void fixaEnablecCampos() {
-
             textValor1.Enabled = false;
             textValor2.Enabled = false;
             textValor3.Enabled = false;
             textValor4.Enabled = false;
-
+            textCod.Enabled = false; 
         }
-
-
 
         private void atualizaData()
         {
@@ -292,8 +287,10 @@ namespace SistemaPet.subForms
         {
             sound1();
             if (opc == "") { return; }
-            if(comboNomePet.Text == string.Empty){MessageBox.Show("Selecione PET antes de salvar!"); return;}
-            if (textValorTotal.Text == string.Empty) { MessageBox.Show("Lançe algum valor na OS, antes de salvar!"); return; }
+
+            if(comboNomePet.Text == string.Empty){ sound3(); MessageBox.Show("Selecione um PET antes de salvar!"); return;}
+
+            if (textValorTotal.Text == string.Empty) { sound3();  MessageBox.Show("Lançe algum valor na OS, antes de salvar!"); return; }
 
             switch (opc)
             {
@@ -358,24 +355,42 @@ namespace SistemaPet.subForms
                     break;
 
                 case "Editar":
-                    /*
+                    
                     try
                     {
                         DialogResult result2 = MessageBox.Show("Confima a Edição do registro?", "Aviso!", MessageBoxButtons.YesNo);
                         if (result2 == DialogResult.Yes)
                         {
-                            objTabela.Id = Convert.ToInt32(textNumeroRecibo.Text);
-                            objTabela.Valor = textValorRecibo.Text;
-                            objTabela.Recebemosde = textRecebemosde.Text;
-                            objTabela.Importancia1 = textImportanciade1.Text;
-                            objTabela.Importancia2 = textImportanciade2.Text;
-                            objTabela.Referentea1 = textReferentea1.Text;
-                            objTabela.Referentea2 = textReferentea2.Text;
-                            objTabela.Emitente = textEmitente.Text;
-                            objTabela.Cnpj = textCnpj.Text;
+                            objTabela.Id = Convert.ToInt32(textCod.Text);
+                            objTabela.Nomepet = comboNomePet.Text;
+                            objTabela.Especie = textEspecie.Text;
+                            objTabela.Raca = textRaca.Text;
+                            objTabela.Proprietario = textProprietario.Text;
+                            objTabela.Telefone = textTelefone.Text;
+                            objTabela.Email    = textEmail.Text;
+                            objTabela.C_especiais = textCespeciais.Text;
+                            objTabela.Alergico = textAlergico.Text;
+                            objTabela.Observacao = textObservacao.Text;
 
+                            objTabela.Servico1 = comboServico1.Text;
+                            if (checkServico1.Checked == true) { objTabela.Checkserv1 = "1"; } else { objTabela.Checkserv1 = "0"; }
+                            objTabela.Valorserv1 = textValor1.Text;
 
-                            int x = ReciboModel.Editar(objTabela);
+                            objTabela.Servico2 = comboServico2.Text;
+                            if (checkServico2.Checked == true) { objTabela.Checkserv2 = "1"; } else { objTabela.Checkserv2 = "0"; }
+                            objTabela.Valorserv2 = textValor2.Text;
+
+                            objTabela.Servico3 = comboServico3.Text;
+                            if (checkServico3.Checked == true) { objTabela.Checkserv3 = "1"; } else { objTabela.Checkserv3 = "0"; }
+                            objTabela.Valorserv3 = textValor3.Text;
+
+                            objTabela.Servico4 = comboServico4.Text;
+                            objTabela.Valorserv4 = textValor4.Text;
+                            objTabela.Data = DateTime.Now;
+
+                            objTabela.Desconto = textDesconto.Text;
+                            objTabela.Valortotal = textValorTotal.Text;
+                            int x = OsModel.Editar(objTabela);
 
                             if (x > 0)
                             {
@@ -398,17 +413,25 @@ namespace SistemaPet.subForms
                         MessageBox.Show("Editar ERROR: " + ex.Message);
                     }
                     break;
-                    */
                 default:
                     break;
             }
-
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            sound1();
+            if (textCod.Text == "")
+            {
+                sound3();
+                MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
+                return;
+            }
+            opc = "Editar";
+            HabilitarCampos();
 
+            comboNomePet.Focus();
+            btnSalvar.Enabled = true;
         }
 
         private void btnPrepararImpressao_Click(object sender, EventArgs e)
