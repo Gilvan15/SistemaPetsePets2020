@@ -73,7 +73,6 @@ namespace SistemaPet.subForms
             {
                 DataTable lista;
                 lista = new OsModel().ListaDataTable();
-
                 dataGridView1.AutoGenerateColumns = true;
                 dataGridView1.DataSource = lista;
                 dataGridView1.Columns[0].HeaderText = "ID";
@@ -104,10 +103,13 @@ namespace SistemaPet.subForms
                 dataGridView1.Columns[21].HeaderText = "DATA";
                 dataGridView1.Columns[22].HeaderText = "DESCONTO";
                 dataGridView1.Columns[23].HeaderText = "VALORTOTAL";
-
-
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                //dataGridView1.Columns[5].Visible = false;
+
+                for (int i = 7; i <= 20; i++)
+                {
+                    dataGridView1.Columns[i].Visible = false;
+                }
+
             }
             catch (Exception ex)
             {
@@ -266,8 +268,6 @@ namespace SistemaPet.subForms
                 groupBox1.Visible = false;
                 textPesquisar.Text = string.Empty;
             }
-
-
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -280,11 +280,7 @@ namespace SistemaPet.subForms
             atualizaData();
             //textValorRecibo.Text = Convert.ToDouble(textValorRecibo.Text).ToString("C");
             comboNomePet.Focus();
-
         }
-
-
-
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             sound2();
@@ -480,8 +476,6 @@ namespace SistemaPet.subForms
                 comboNomePet.Items.Add(item.Nome);
             }
         }
-
-
         private void CarregarComboServicos()
         {
             List<ServicoEnt> ServicoFList = new List<ServicoEnt>();
@@ -532,12 +526,10 @@ namespace SistemaPet.subForms
                 }
             }
         }
-
         private void SelectIndexComboServico(int index) 
         {
             using (SqlConnection con = new SqlConnection())
             {
-                
                 if (comboServico1.Text == string.Empty)
                 { 
                     return; 
@@ -610,10 +602,8 @@ namespace SistemaPet.subForms
                 }
             }
         }
-
         private void verifyValue() 
         {
-            
             if(textValor1.Text == string.Empty) { return; }
 
 
@@ -649,9 +639,7 @@ namespace SistemaPet.subForms
             {
                 textValorTotal.Text = Convert.ToString(valorTotal);
             }
-            
         }
-
 
         private void comboServico1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -689,8 +677,6 @@ namespace SistemaPet.subForms
                 valor1 = Convert.ToDecimal(textValor1.Text);
                 verifyValue();
             }
-
-            
         }
 
         private void textValor2_OnValueChanged(object sender, EventArgs e)
@@ -725,7 +711,6 @@ namespace SistemaPet.subForms
 
         private void textValor4_OnValueChanged(object sender, EventArgs e)
         {
-
             if (textValor4.Text == string.Empty)
             {
                 valor4 = 0;
@@ -736,8 +721,6 @@ namespace SistemaPet.subForms
                 valor4 = Convert.ToDecimal(textValor4.Text);
                 verifyValue();
             }
-
-
         }
 
         private void Moeda(ref TextBox txt)
@@ -764,9 +747,7 @@ namespace SistemaPet.subForms
         }
         private void textDesconto_TextChanged(object sender, EventArgs e)
         {
-            
             if(textDesconto.Text == string.Empty) { return; }
-            
             try
             {
                 Moeda(ref textDesconto);
@@ -776,7 +757,6 @@ namespace SistemaPet.subForms
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -785,7 +765,6 @@ namespace SistemaPet.subForms
             {
                 verify = 0;
                 DesabilitarCampos();
-
                 int codId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                 textCod.Text = codId.ToString("D5");
                 comboNomePet.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -797,30 +776,50 @@ namespace SistemaPet.subForms
                 textCespeciais.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
                 textAlergico.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                 textObservacao.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                
                 comboServico1.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
                 if(dataGridView1.CurrentRow.Cells[11].Value.ToString() == "1"){checkServico1.Checked = true;}else{checkServico1.Checked = false;}
                 textValor1.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
-
                 comboServico2.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
                 if (dataGridView1.CurrentRow.Cells[14].Value.ToString() == "1") { checkServico2.Checked = true; } else { checkServico2.Checked = false; }
                 textValor2.Text = dataGridView1.CurrentRow.Cells[15].Value.ToString();
-
                 comboServico3.Text = dataGridView1.CurrentRow.Cells[16].Value.ToString();
                 if (dataGridView1.CurrentRow.Cells[17].Value.ToString() == "1") { checkServico3.Checked = true; } else { checkServico3.Checked = false; }
                 textValor3.Text = dataGridView1.CurrentRow.Cells[18].Value.ToString();
-
                 comboServico4.Text = dataGridView1.CurrentRow.Cells[19].Value.ToString();
                 textValor4.Text = dataGridView1.CurrentRow.Cells[20].Value.ToString();
-
                 lbldata.Text = dataGridView1.CurrentRow.Cells[21].Value.ToString();
-
                 textDesconto.Text = dataGridView1.CurrentRow.Cells[22].Value.ToString();
                 textValorTotal.Text = dataGridView1.CurrentRow.Cells[23].Value.ToString();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error DataGrid: " + ex.Message);
+            }
+        }
+
+        private void textPesquisar_OnValueChanged(object sender, EventArgs e)
+        {
+
+            if (textPesquisar.Text == "")
+            {
+                CarregarGrid();
+                return;
+            }
+            else
+            {
+                try
+                {
+                    objTabela.Nomepet = textPesquisar.Text;
+                    List<OSEnt> lista = new List<OSEnt>();
+                    lista = new OsModel().Buscar(objTabela);
+
+                    dataGridView1.AutoGenerateColumns = true;
+                    dataGridView1.DataSource = lista;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error ao Listar Dados: " + ex.Message);
+                }
             }
 
 

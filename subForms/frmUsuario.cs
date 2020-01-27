@@ -185,6 +185,7 @@ namespace SistemaPet.subForms
                     List<UsuarioEnt> lista = new List<UsuarioEnt>();
                     lista = new UsuarioModel().Buscar(objTabela);
                     dataGridView1.AutoGenerateColumns = true;
+
                     dataGridView1.DataSource = lista;
                 }
                 catch (Exception ex)

@@ -110,7 +110,7 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1045, 803);
+            this.panel1.Size = new System.Drawing.Size(1075, 803);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -122,7 +122,7 @@
             this.panel2.Controls.Add(this.btnEditar);
             this.panel2.Controls.Add(this.btnPesquisar);
             this.panel2.Controls.Add(this.btnLimpar);
-            this.panel2.Location = new System.Drawing.Point(950, 122);
+            this.panel2.Location = new System.Drawing.Point(980, 122);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(105, 324);
             this.panel2.TabIndex = 109;
@@ -277,7 +277,7 @@
             this.panel3.Controls.Add(this.textValor1);
             this.panel3.Controls.Add(this.bunifuSeparator1);
             this.panel3.Controls.Add(this.bunifuSeparator2);
-            this.panel3.Location = new System.Drawing.Point(61, 12);
+            this.panel3.Location = new System.Drawing.Point(76, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(871, 619);
             this.panel3.TabIndex = 108;
@@ -416,6 +416,7 @@
             this.textPesquisar.Size = new System.Drawing.Size(483, 35);
             this.textPesquisar.TabIndex = 112;
             this.textPesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textPesquisar.OnValueChanged += new System.EventHandler(this.textPesquisar_OnValueChanged);
             // 
             // textValor4
             // 
@@ -1009,7 +1010,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(15, 637);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(980, 121);
+            this.dataGridView1.Size = new System.Drawing.Size(1010, 154);
             this.dataGridView1.TabIndex = 110;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 

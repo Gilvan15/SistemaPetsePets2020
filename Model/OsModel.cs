@@ -21,13 +21,13 @@ namespace Model
             return new OsDAO().ListaDataTable();
         }
 
-
         /*
         public List<OSEnt> Lista()
         {
             return new OsDAO().Lista();
         }
 
+        /*
         public static int Excluir(OSEnt objTabela)
         {
             return new OsDAO().Excluir(objTabela);
@@ -37,9 +37,10 @@ namespace Model
         {
             return new OsDAO().Editar(objTabela);
         }
+        */
         public List<OSEnt> Buscar(OSEnt objTabela)
         {
             return new OsDAO().Buscar(objTabela);
-        }*/
+        }
     }
 }
