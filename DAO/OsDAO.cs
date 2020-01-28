@@ -25,11 +25,11 @@ namespace DAO
                     cn.CommandText = "INSERT INTO Oservico ([nomepet], [especie], [raca], " +
                         "[proprietario], [telefone], [email], [c_especiais], [alergico], [observacao], [servico1], " +
                         "[checkserv1], [valorserv1], [servico2], [checkserv2], [valorserv2], [servico3], " +
-                        "[checkserv3], [valorserv3], [servico4],  [valorserv4], [data], [desconto], [valortotal])" +
+                        "[checkserv3], [valorserv3], [servico4],  [valorserv4], [data], [valortotal], [desconto], [valorfinal])" +
 
                         "VALUES (@nomepet, @especie, @raca, @proprietario, @telefone, @email, @c_especiais, @alergico," +
                         "@observacao, @servico1, @checkserv1, @valorserv1, @servico2, @checkserv2, @valorserv2," +
-                        "@servico3, @checkserv3, @valorserv3, @servico4, @valorserv4, @data, @desconto, @valortotal)";
+                        "@servico3, @checkserv3, @valorserv3, @servico4, @valorserv4, @data, @valortotal,  @desconto, @valorfinal)";
                         
 
                     cn.Parameters.Add("nomepet", SqlDbType.VarChar).Value = objTabela.Nomepet;
@@ -58,9 +58,9 @@ namespace DAO
                     cn.Parameters.Add("valorserv4", SqlDbType.VarChar).Value = objTabela.Valorserv4;
                     cn.Parameters.Add("data", SqlDbType.DateTime).Value = objTabela.Data;
 
-                    cn.Parameters.Add("desconto", SqlDbType.VarChar).Value = objTabela.Desconto;
                     cn.Parameters.Add("valortotal", SqlDbType.VarChar).Value = objTabela.Valortotal;
-
+                    cn.Parameters.Add("desconto", SqlDbType.VarChar).Value = objTabela.Desconto;
+                    cn.Parameters.Add("valorfinal", SqlDbType.VarChar).Value = objTabela.Valorfinal;
 
                     cn.Connection = con;
                     qtd = cn.ExecuteNonQuery();
@@ -137,14 +137,14 @@ namespace DAO
                         dado.Valorserv4 = Convert.ToString(dr["valorserv4"]);
                         dado.Data = Convert.ToDateTime(dr["data"]);
 
-                        dado.Desconto = Convert.ToString(dr["desconto"]);
                         dado.Valortotal = Convert.ToString(dr["valortotal"]);
+                        dado.Desconto = Convert.ToString(dr["desconto"]);
+                        dado.Valorfinal = Convert.ToString(dr["valorfinal"]);
                         lista.Add(dado);
                     }
                 }
                 return lista;
             }
-
         }
 
         public int Editar(OSEnt objTabela)
@@ -158,7 +158,7 @@ namespace DAO
                 cn.CommandText = "UPDATE Oservico SET  nomepet = @nomepet, especie = @especie, raca = @raca, " +
                     "proprietario = @proprietario, telefone = @telefone, email = @email, c_especiais = @c_especiais, alergico = @alergico," +
                         "observacao = @observacao, servico1 = @servico1, checkserv1 = @checkserv1, valorserv1 = @valorserv1, servico2 = @servico2, checkserv2 = @checkserv2, valorserv2 = @valorserv2," +
-                        "servico3 = @servico3, checkserv3 = @checkserv3, valorserv3 = @valorserv3, servico4 = @servico4, valorserv4 = @valorserv4, data = @data, desconto = @desconto, valortotal = @valortotal " + "WHERE id = @id";
+                        "servico3 = @servico3, checkserv3 = @checkserv3, valorserv3 = @valorserv3, servico4 = @servico4, valorserv4 = @valorserv4, data = @data, valortotal = @valortotal, desconto = @desconto, valorfinal = @valorfinal " + "WHERE id = @id";
 
                 cn.Parameters.Add("nomepet", SqlDbType.VarChar).Value = objTabela.Nomepet;
                 cn.Parameters.Add("especie", SqlDbType.VarChar).Value = objTabela.Especie;
@@ -181,8 +181,10 @@ namespace DAO
                 cn.Parameters.Add("servico4", SqlDbType.VarChar).Value = objTabela.Servico4;
                 cn.Parameters.Add("valorserv4", SqlDbType.VarChar).Value = objTabela.Valorserv4;
                 cn.Parameters.Add("data", SqlDbType.DateTime).Value = objTabela.Data;
-                cn.Parameters.Add("desconto", SqlDbType.VarChar).Value = objTabela.Desconto;
+
                 cn.Parameters.Add("valortotal", SqlDbType.VarChar).Value = objTabela.Valortotal;
+                cn.Parameters.Add("desconto", SqlDbType.VarChar).Value = objTabela.Desconto;
+                cn.Parameters.Add("valorfinal", SqlDbType.VarChar).Value = objTabela.Valorfinal;
                 cn.Parameters.Add("id", SqlDbType.Int).Value = Convert.ToInt32(objTabela.Id);
                 cn.Connection = con;
                 int qtd = cn.ExecuteNonQuery();
@@ -241,12 +243,10 @@ namespace DAO
                         lista.Add(dado);
                     }
                 }
-
                 return lista;
             }
         }
         */
-
 
     }
 }

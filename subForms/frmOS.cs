@@ -76,7 +76,7 @@ namespace SistemaPet.subForms
             textValor4.Text = vtextvalor4;
 
             textDesconto.Text = vdesconto;
-            textValorTotal.Text = vvalortotal;
+            textValorFinal.Text = vvalortotal;
             //DesabilitarCampos();
             apenasLeitura();
             //HabilitarCampos();
@@ -184,11 +184,12 @@ namespace SistemaPet.subForms
                 dataGridView1.Columns[20].HeaderText = "VALORSERV4";
 
                 dataGridView1.Columns[21].HeaderText = "DATA";
-                dataGridView1.Columns[22].HeaderText = "DESCONTO";
-                dataGridView1.Columns[23].HeaderText = "VALORTOTAL";
+                dataGridView1.Columns[22].HeaderText = "VALOR TOTAL";
+                dataGridView1.Columns[23].HeaderText = "DESCONTO";
+                dataGridView1.Columns[24].HeaderText = "VALOR FINAL";
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                for (int i = 7; i <= 20; i++)
+                for (int i = 7; i <= 21; i++)
                 {
                     dataGridView1.Columns[i].Visible = false;
                 }
@@ -371,7 +372,7 @@ namespace SistemaPet.subForms
 
             if(comboNomePet.Text == string.Empty){ sound3(); MessageBox.Show("Selecione um PET antes de salvar!"); return;}
 
-            if (textValorTotal.Text == string.Empty) { sound3();  MessageBox.Show("Lançe algum valor na OS, antes de salvar!"); return; }
+            if (textValorFinal.Text == string.Empty) { sound3();  MessageBox.Show("Lançe algum valor na OS, antes de salvar!"); return; }
 
             switch (opc)
             {
@@ -407,9 +408,9 @@ namespace SistemaPet.subForms
                             objTabela.Servico4 = comboServico4.Text;
                             objTabela.Valorserv4 = textValor4.Text;
                             objTabela.Data = DateTime.Now;
-
+                            objTabela.Valortotal = textTotal.Text;
                             objTabela.Desconto= textDesconto.Text;
-                            objTabela.Valortotal = textValorTotal.Text;
+                            objTabela.Valorfinal = textValorFinal.Text;
 
                             int x = OsModel.Inseir(objTabela);
 
@@ -469,8 +470,9 @@ namespace SistemaPet.subForms
                             objTabela.Valorserv4 = textValor4.Text;
                             objTabela.Data = DateTime.Now;
 
+                            objTabela.Valortotal = textTotal.Text;
                             objTabela.Desconto = textDesconto.Text;
-                            objTabela.Valortotal = textValorTotal.Text;
+                            objTabela.Valorfinal = textValorFinal.Text;
                             int x = OsModel.Editar(objTabela);
 
                             if (x > 0)
@@ -551,7 +553,7 @@ namespace SistemaPet.subForms
                     textRaca.Text, textProprietario.Text, textTelefone.Text, textEmail.Text, textCespeciais.Text, 
                     textAlergico.Text, textObservacao.Text, comboServico1.Text, checkServico1.Checked, textValor1.Text,
                     comboServico2.Text, checkServico2.Checked, textValor2.Text, comboServico3.Text, checkServico3.Checked, textValor3.Text,
-                    comboServico4.Text, textValor4.Text, textDesconto.Text, textValorTotal.Text);
+                    comboServico4.Text, textValor4.Text, textDesconto.Text, textValorFinal.Text);
                 frmrec.TopMost = true;
                 frmrec.StartPosition = FormStartPosition.CenterScreen;
                 frmrec.Show();
@@ -733,11 +735,11 @@ namespace SistemaPet.subForms
             if(textDesconto.Text != string.Empty || textDesconto.Text == "0,00" ) 
             {
                 desconto = Convert.ToDecimal(textDesconto.Text);
-                textValorTotal.Text = Convert.ToString(valorTotal - desconto );
+                textValorFinal.Text = Convert.ToString(valorTotal - desconto );
             }
             else 
             {
-                textValorTotal.Text = Convert.ToString(valorTotal);
+                textValorFinal.Text = Convert.ToString(valorTotal);
             }
         }        
         private void Moeda(ref TextBox txt)
@@ -1018,8 +1020,9 @@ namespace SistemaPet.subForms
                 comboServico4.Text = dataGridView1.CurrentRow.Cells[19].Value.ToString();
                 textValor4.Text = dataGridView1.CurrentRow.Cells[20].Value.ToString();
                 lbldata.Text = dataGridView1.CurrentRow.Cells[21].Value.ToString();
-                textDesconto.Text = dataGridView1.CurrentRow.Cells[22].Value.ToString();
-                textValorTotal.Text = dataGridView1.CurrentRow.Cells[23].Value.ToString();
+                textTotal.Text = dataGridView1.CurrentRow.Cells[22].Value.ToString();
+                textDesconto.Text = dataGridView1.CurrentRow.Cells[23].Value.ToString();
+                textValorFinal.Text = dataGridView1.CurrentRow.Cells[24].Value.ToString();
             }
             catch (Exception ex)
             {

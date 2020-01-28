@@ -32,8 +32,9 @@ namespace Entidades
         private string servico4;
         private string valorserv4;
         private DateTime data;
-        private string desconto;
         private string valortotal;
+        private string desconto;
+        private string valorfinal;
 
         public int Id { get => id; set => id = value; }
         public string Nomepet { get => nomepet; set => nomepet = value; }
@@ -57,7 +58,9 @@ namespace Entidades
         public string Servico4 { get => servico4; set => servico4 = value; }
         public string Valorserv4 { get => valorserv4; set => valorserv4 = value; }
         public DateTime Data { get => data; set => data = value; }
-        public string Desconto { get => desconto; set => desconto = value; }
         public string Valortotal { get => valortotal; set => valortotal = value; }
+        public string Desconto { get => desconto; set => desconto = value; }
+        public string Valorfinal { get => valorfinal; set => valorfinal = value; }
+
     }
 }
