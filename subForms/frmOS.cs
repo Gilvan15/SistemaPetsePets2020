@@ -703,20 +703,22 @@ namespace SistemaPet.subForms
         {
             if(textValor1.Text == string.Empty) { return; }
 
-
             if (textValor2.Text == string.Empty)
             {
+                textTotal.Text = Convert.ToString(valor1);
                 valorTotal = (valor1);
             }
             else if (textValor2.Text != string.Empty && textValor3.Text == string.Empty)
             {
                 valor2 = Convert.ToDecimal(textValor2.Text);
+                textTotal.Text =  Convert.ToString(valor1 + valor2);
                 valorTotal = (valor1 + valor2);
             }
             else if (textValor2.Text != string.Empty && textValor3.Text != string.Empty && textValor4.Text == string.Empty)
             {
                 valor2 = Convert.ToDecimal(textValor2.Text);
                 valor3 = Convert.ToDecimal(textValor2.Text);
+                textTotal.Text = Convert.ToString(valor1 + valor2 + valor3);
                 valorTotal = (valor1 + valor2 + valor3);
             }
             else if (textValor2.Text != string.Empty && textValor3.Text != string.Empty && textValor4.Text != string.Empty)
@@ -724,6 +726,7 @@ namespace SistemaPet.subForms
                 valor2 = Convert.ToDecimal(textValor2.Text);
                 valor3 = Convert.ToDecimal(textValor3.Text);
                 valor4 = Convert.ToDecimal(textValor4.Text);
+                textTotal.Text = Convert.ToString(valor1 + valor2 + valor3 + valor4);
                 valorTotal = (valor1 + valor2 + valor3 + valor4);
             }
 
