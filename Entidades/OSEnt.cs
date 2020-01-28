@@ -18,9 +18,11 @@ namespace Entidades
         private string c_especiais;
         private string alergico;
         private string observacao;
+
         private string servico1;
         private string checkserv1;
         private string valorserv1;
+
         private string servico2;
         private string checkserv2;
         private string valorserv2;

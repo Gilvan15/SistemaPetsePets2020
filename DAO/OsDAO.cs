@@ -182,7 +182,7 @@ namespace DAO
                 cn.Parameters.Add("valorserv4", SqlDbType.VarChar).Value = objTabela.Valorserv4;
                 cn.Parameters.Add("data", SqlDbType.DateTime).Value = objTabela.Data;
                 cn.Parameters.Add("desconto", SqlDbType.VarChar).Value = objTabela.Desconto;
-                cn.Parameters.Add("valortotal", SqlDbType.VarChar).Value = objTabela.Valorserv1;
+                cn.Parameters.Add("valortotal", SqlDbType.VarChar).Value = objTabela.Valortotal;
                 cn.Parameters.Add("id", SqlDbType.Int).Value = Convert.ToInt32(objTabela.Id);
                 cn.Connection = con;
                 int qtd = cn.ExecuteNonQuery();

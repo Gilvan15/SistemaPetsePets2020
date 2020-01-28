@@ -526,7 +526,7 @@ namespace SistemaPet.subForms
         {
             frmPanodeFundo.AbrirPanodeFundo();
         }
-        public void FecharPanodeFundo() 
+        public void FecharPanodeFundo()
         {
             int tot = Application.OpenForms.OfType<frmRecibo>().Count();
             //MessageBox.Show("total de janelas abertas: " + tot);
@@ -535,7 +535,6 @@ namespace SistemaPet.subForms
                 frmPanodeFundo.FecharPanodeFundo();
             }
         }
-
         private void btnPrepararImpressao_Click(object sender, EventArgs e)
         {
             sound1();
@@ -556,7 +555,7 @@ namespace SistemaPet.subForms
                 Form frmrec = new frmRecibo(textValorRecibo.Text, textNumeroRecibo.Text,
                     textRecebemosde.Text, textImportanciade1.Text, textImportanciade2.Text,
                     textReferentea1.Text, textReferentea2.Text, textEmitente.Text, textCnpj.Text);
-                frmrec.TopMost = false;
+                frmrec.TopMost = true;
                 frmrec.Show();
             }
         }
@@ -631,7 +630,7 @@ namespace SistemaPet.subForms
                             comboPrinter1.Visible = true;
                             labelSelecionePrint.Visible = true;
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
                             //MessageBox.Show("Error de Impressão: "  + ex);
                         }
