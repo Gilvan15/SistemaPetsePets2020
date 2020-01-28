@@ -140,7 +140,12 @@ namespace SistemaPet
         {
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\Entrada.wav");
             player.Play();
-        }        
+        }
+        private void sound2()
+        {
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\clicklatido.wav");
+            player.Play();
+        }
         private void textPetsePets_Click_1(object sender, EventArgs e)
         {
             AbrirFormWrapper(new frmLogo());
@@ -275,6 +280,7 @@ namespace SistemaPet
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            sound2();
             pictureBox3.Visible = false;
             pictureBox4.Visible = true;
             AtualizaLogo();
@@ -282,6 +288,7 @@ namespace SistemaPet
         }
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+            sound2();
             pictureBox3.Visible = true;
             pictureBox4.Visible = false;
             AtualizaLogo();
