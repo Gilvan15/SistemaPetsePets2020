@@ -285,7 +285,8 @@ namespace SistemaPet.subForms
             try
             {
                 //HabilitarCampos();
-                textCod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                int codId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                textCod.Text = codId.ToString("D5");
                 textServico.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 textValor.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             }

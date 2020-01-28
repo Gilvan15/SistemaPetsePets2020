@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dbpetsepetsDataSet = new SistemaPet.dbpetsepetsDataSet();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -66,15 +67,14 @@
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbpetsepetsDataSet = new SistemaPet.dbpetsepetsDataSet();
             this.clienteTableAdapter = new SistemaPet.dbpetsepetsDataSetTableAdapters.ClienteTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -119,10 +119,42 @@
             this.panel1.Size = new System.Drawing.Size(880, 650);
             this.panel1.TabIndex = 0;
             // 
-            // dbpetsepetsDataSet
+            // dataGridView1
             // 
-            this.dbpetsepetsDataSet.DataSetName = "dbpetsepetsDataSet";
-            this.dbpetsepetsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataGridView1.AllowDrop = true;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridView1.DataSource = this.clienteBindingSource;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 398);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(856, 162);
+            this.dataGridView1.TabIndex = 155;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "Cliente";
             // 
             // btnSalvar
             // 
@@ -237,7 +269,7 @@
             // 
             this.textTelefone2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textTelefone2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textTelefone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textTelefone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textTelefone2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textTelefone2.HintForeColor = System.Drawing.Color.Empty;
             this.textTelefone2.HintText = "";
@@ -245,7 +277,7 @@
             this.textTelefone2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textTelefone2.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textTelefone2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textTelefone2.LineThickness = 3;
+            this.textTelefone2.LineThickness = 4;
             this.textTelefone2.Location = new System.Drawing.Point(430, 234);
             this.textTelefone2.Margin = new System.Windows.Forms.Padding(5);
             this.textTelefone2.Name = "textTelefone2";
@@ -270,7 +302,7 @@
             this.textTelefone1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textTelefone1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textTelefone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textTelefone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textTelefone1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textTelefone1.HintForeColor = System.Drawing.Color.Empty;
             this.textTelefone1.HintText = "";
@@ -278,7 +310,7 @@
             this.textTelefone1.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textTelefone1.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textTelefone1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textTelefone1.LineThickness = 3;
+            this.textTelefone1.LineThickness = 4;
             this.textTelefone1.Location = new System.Drawing.Point(74, 234);
             this.textTelefone1.Margin = new System.Windows.Forms.Padding(5);
             this.textTelefone1.Name = "textTelefone1";
@@ -313,7 +345,7 @@
             this.textEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textEmail.HintForeColor = System.Drawing.Color.Empty;
             this.textEmail.HintText = "";
@@ -321,7 +353,7 @@
             this.textEmail.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textEmail.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textEmail.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textEmail.LineThickness = 3;
+            this.textEmail.LineThickness = 4;
             this.textEmail.Location = new System.Drawing.Point(74, 178);
             this.textEmail.Margin = new System.Windows.Forms.Padding(5);
             this.textEmail.Name = "textEmail";
@@ -333,7 +365,7 @@
             // 
             this.textComplemento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textComplemento.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textComplemento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textComplemento.HintForeColor = System.Drawing.Color.Empty;
             this.textComplemento.HintText = "";
@@ -341,7 +373,7 @@
             this.textComplemento.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textComplemento.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textComplemento.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textComplemento.LineThickness = 3;
+            this.textComplemento.LineThickness = 4;
             this.textComplemento.Location = new System.Drawing.Point(440, 343);
             this.textComplemento.Margin = new System.Windows.Forms.Padding(5);
             this.textComplemento.Name = "textComplemento";
@@ -354,7 +386,7 @@
             this.textBairro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBairro.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBairro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBairro.HintForeColor = System.Drawing.Color.Empty;
             this.textBairro.HintText = "";
@@ -362,7 +394,7 @@
             this.textBairro.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textBairro.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textBairro.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textBairro.LineThickness = 3;
+            this.textBairro.LineThickness = 4;
             this.textBairro.Location = new System.Drawing.Point(74, 343);
             this.textBairro.Margin = new System.Windows.Forms.Padding(5);
             this.textBairro.Name = "textBairro";
@@ -374,7 +406,7 @@
             // 
             this.textNumero.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textNumero.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNumero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textNumero.HintForeColor = System.Drawing.Color.Empty;
             this.textNumero.HintText = "";
@@ -382,7 +414,7 @@
             this.textNumero.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textNumero.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textNumero.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textNumero.LineThickness = 3;
+            this.textNumero.LineThickness = 4;
             this.textNumero.Location = new System.Drawing.Point(559, 290);
             this.textNumero.Margin = new System.Windows.Forms.Padding(5);
             this.textNumero.Name = "textNumero";
@@ -395,7 +427,7 @@
             this.textRua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textRua.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textRua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textRua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textRua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textRua.HintForeColor = System.Drawing.Color.Empty;
             this.textRua.HintText = "";
@@ -403,7 +435,7 @@
             this.textRua.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textRua.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textRua.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textRua.LineThickness = 3;
+            this.textRua.LineThickness = 4;
             this.textRua.Location = new System.Drawing.Point(74, 290);
             this.textRua.Margin = new System.Windows.Forms.Padding(5);
             this.textRua.Name = "textRua";
@@ -415,7 +447,7 @@
             // 
             this.textCpf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textCpf.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textCpf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textCpf.HintForeColor = System.Drawing.Color.Empty;
             this.textCpf.HintText = "";
@@ -423,7 +455,7 @@
             this.textCpf.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textCpf.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textCpf.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textCpf.LineThickness = 3;
+            this.textCpf.LineThickness = 4;
             this.textCpf.Location = new System.Drawing.Point(542, 178);
             this.textCpf.Margin = new System.Windows.Forms.Padding(5);
             this.textCpf.Name = "textCpf";
@@ -436,7 +468,7 @@
             // 
             this.textRg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textRg.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textRg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textRg.HintForeColor = System.Drawing.Color.Empty;
             this.textRg.HintText = "";
@@ -444,7 +476,7 @@
             this.textRg.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textRg.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textRg.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textRg.LineThickness = 3;
+            this.textRg.LineThickness = 4;
             this.textRg.Location = new System.Drawing.Point(348, 178);
             this.textRg.Margin = new System.Windows.Forms.Padding(5);
             this.textRg.Name = "textRg";
@@ -457,7 +489,7 @@
             this.textNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textNome.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textNome.HintForeColor = System.Drawing.Color.Empty;
             this.textNome.HintText = "";
@@ -465,7 +497,7 @@
             this.textNome.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textNome.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textNome.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textNome.LineThickness = 3;
+            this.textNome.LineThickness = 4;
             this.textNome.Location = new System.Drawing.Point(74, 122);
             this.textNome.Margin = new System.Windows.Forms.Padding(5);
             this.textNome.Name = "textNome";
@@ -560,7 +592,7 @@
             this.textPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textPesquisar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textPesquisar.HintForeColor = System.Drawing.Color.Empty;
             this.textPesquisar.HintText = "";
@@ -568,7 +600,7 @@
             this.textPesquisar.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textPesquisar.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textPesquisar.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textPesquisar.LineThickness = 3;
+            this.textPesquisar.LineThickness = 4;
             this.textPesquisar.Location = new System.Drawing.Point(277, 67);
             this.textPesquisar.Margin = new System.Windows.Forms.Padding(5);
             this.textPesquisar.Name = "textPesquisar";
@@ -582,7 +614,7 @@
             // 
             this.textCod.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textCod.Enabled = false;
-            this.textCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textCod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textCod.HintForeColor = System.Drawing.Color.Empty;
             this.textCod.HintText = "";
@@ -590,7 +622,7 @@
             this.textCod.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textCod.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textCod.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textCod.LineThickness = 3;
+            this.textCod.LineThickness = 4;
             this.textCod.Location = new System.Drawing.Point(74, 66);
             this.textCod.Margin = new System.Windows.Forms.Padding(5);
             this.textCod.Name = "textCod";
@@ -657,46 +689,14 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // clienteBindingSource
+            // dbpetsepetsDataSet
             // 
-            this.clienteBindingSource.DataMember = "Cliente";
+            this.dbpetsepetsDataSet.DataSetName = "dbpetsepetsDataSet";
+            this.dbpetsepetsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // clienteTableAdapter
             // 
             this.clienteTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowDrop = true;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridView1.DataSource = this.clienteBindingSource;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 398);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(856, 162);
-            this.dataGridView1.TabIndex = 155;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // frmCliente
             // 
@@ -712,11 +712,11 @@
             this.Load += new System.EventHandler(this.frmCliente_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

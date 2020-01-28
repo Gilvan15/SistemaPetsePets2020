@@ -258,7 +258,9 @@ namespace SistemaPet.subForms
         {
             try
             {
-                textNumeroRecibo.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                DesabilitarCampos();
+                int codId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                textNumeroRecibo.Text = codId.ToString("D5");
                 textValorRecibo.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 textRecebemosde.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 textImportanciade1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();

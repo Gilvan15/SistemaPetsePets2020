@@ -156,7 +156,7 @@
             this.textValor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textValor.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textValor.HintForeColor = System.Drawing.Color.Empty;
             this.textValor.HintText = "";
@@ -164,7 +164,7 @@
             this.textValor.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textValor.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textValor.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textValor.LineThickness = 3;
+            this.textValor.LineThickness = 4;
             this.textValor.Location = new System.Drawing.Point(100, 208);
             this.textValor.Margin = new System.Windows.Forms.Padding(5);
             this.textValor.Name = "textValor";
@@ -260,7 +260,7 @@
             this.textPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textPesquisar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textPesquisar.HintForeColor = System.Drawing.Color.Empty;
             this.textPesquisar.HintText = "";
@@ -268,7 +268,7 @@
             this.textPesquisar.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textPesquisar.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textPesquisar.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textPesquisar.LineThickness = 3;
+            this.textPesquisar.LineThickness = 4;
             this.textPesquisar.Location = new System.Drawing.Point(288, 81);
             this.textPesquisar.Margin = new System.Windows.Forms.Padding(5);
             this.textPesquisar.Name = "textPesquisar";
@@ -293,7 +293,7 @@
             this.textServico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textServico.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textServico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textServico.HintForeColor = System.Drawing.Color.Empty;
             this.textServico.HintText = "";
@@ -301,7 +301,7 @@
             this.textServico.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textServico.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textServico.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textServico.LineThickness = 3;
+            this.textServico.LineThickness = 4;
             this.textServico.Location = new System.Drawing.Point(100, 148);
             this.textServico.Margin = new System.Windows.Forms.Padding(5);
             this.textServico.Name = "textServico";
@@ -313,7 +313,7 @@
             // 
             this.textCod.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textCod.Enabled = false;
-            this.textCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textCod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textCod.HintForeColor = System.Drawing.Color.Empty;
             this.textCod.HintText = "";
@@ -321,7 +321,7 @@
             this.textCod.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textCod.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textCod.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textCod.LineThickness = 3;
+            this.textCod.LineThickness = 4;
             this.textCod.Location = new System.Drawing.Point(100, 81);
             this.textCod.Margin = new System.Windows.Forms.Padding(5);
             this.textCod.Name = "textCod";

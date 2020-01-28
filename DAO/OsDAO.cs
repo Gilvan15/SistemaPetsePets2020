@@ -162,8 +162,8 @@ namespace DAO
 
                 cn.Parameters.Add("nomepet", SqlDbType.VarChar).Value = objTabela.Nomepet;
                 cn.Parameters.Add("especie", SqlDbType.VarChar).Value = objTabela.Especie;
-                cn.Parameters.Add("raca", SqlDbType.VarChar).Value = objTabela.Especie;
-                cn.Parameters.Add("proprietario", SqlDbType.VarChar).Value = objTabela.Raca;
+                cn.Parameters.Add("raca", SqlDbType.VarChar).Value = objTabela.Raca;
+                cn.Parameters.Add("proprietario", SqlDbType.VarChar).Value = objTabela.Proprietario;
                 cn.Parameters.Add("telefone", SqlDbType.VarChar).Value = objTabela.Telefone;
                 cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
                 cn.Parameters.Add("c_especiais", SqlDbType.VarChar).Value = objTabela.C_especiais;
