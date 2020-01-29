@@ -59,6 +59,18 @@ namespace SistemaPet
         private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
         {
             sound1();
+
+            if(textUsername.Text == "" || textSenha.Text == "" )
+            {
+                sound3();
+                MessageBox.Show("Preencha o campo vazio!", "Aviso!", MessageBoxButtons.OK);
+                bunifuCheckbox1.Checked = false;
+                textUsername.Focus();
+                return;
+            
+            }
+
+
             if (bunifuCheckbox1.Checked == true) { LembrarLogin(); } else { LimparLogin(); }
         }
         private void frmLogin_Load(object sender, EventArgs e)
@@ -205,6 +217,21 @@ namespace SistemaPet
         private void bunifuCustomLabel5_MouseLeave(object sender, EventArgs e)
         {
             bunifuCustomLabel5.Font = new Font(bunifuCustomLabel5.Font, FontStyle.Regular);
+        }
+
+        private void textSenha_OnValueChanged(object sender, EventArgs e)
+        {
+            textSenha.isPassword = true;
+        }
+
+        private void textUsername_OnValueChanged(object sender, EventArgs e)
+        {
+            if(bunifuCheckbox1.Checked == true) 
+            {
+                bunifuCheckbox1.Checked = false;
+                LimparLogin();
+
+            }
         }
     }
 }

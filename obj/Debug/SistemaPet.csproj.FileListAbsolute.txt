@@ -104,7 +104,6 @@ C:\Repositorio\SistemaPetsePets2020\bin\Debug\SistemaPet.exe
 C:\Repositorio\SistemaPetsePets2020\bin\Debug\SistemaPet.pdb
 C:\Repositorio\SistemaPetsePets2020\bin\Debug\AForge.Video.DirectShow.dll
 C:\Repositorio\SistemaPetsePets2020\bin\Debug\AForge.Video.dll
-C:\Repositorio\SistemaPetsePets2020\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Repositorio\SistemaPetsePets2020\bin\Debug\DAO.dll
 C:\Repositorio\SistemaPetsePets2020\bin\Debug\Entidades.dll
 C:\Repositorio\SistemaPetsePets2020\bin\Debug\Model.dll

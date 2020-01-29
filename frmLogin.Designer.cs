@@ -94,6 +94,7 @@
             this.textUsername.Size = new System.Drawing.Size(301, 33);
             this.textUsername.TabIndex = 1;
             this.textUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textUsername.OnValueChanged += new System.EventHandler(this.textUsername_OnValueChanged);
             this.textUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEmail_KeyPress);
             // 
             // textSenha
@@ -114,6 +115,7 @@
             this.textSenha.Size = new System.Drawing.Size(301, 33);
             this.textSenha.TabIndex = 2;
             this.textSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textSenha.OnValueChanged += new System.EventHandler(this.textSenha_OnValueChanged);
             this.textSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textSenha_KeyPress);
             // 
             // btnLogar
