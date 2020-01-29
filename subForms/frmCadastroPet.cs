@@ -40,9 +40,7 @@ namespace SistemaPet.subForms
             textRaca.Enabled = false;
             textNome.Enabled = false;
             cbIdade.Enabled = false;
-            radioButton1.Enabled = false;
-            radioButton2.Enabled = false;
-            radioButton3.Enabled = false;
+            comboBox1.Enabled = false;
             comboProprietario.Enabled = false;
             textTelefone.Enabled = false;
             textEmail.Enabled = false;
@@ -57,9 +55,7 @@ namespace SistemaPet.subForms
             textRaca.Text = null;
             textNome.Text = null;
             cbIdade.Text = null;
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            radioButton3.Checked = false;
+            comboBox1.Text = null;
             comboProprietario.Text = null;
             textTelefone.Text = null;
             textEmail.Text = null;
@@ -76,9 +72,7 @@ namespace SistemaPet.subForms
             textRaca.Enabled = true;
             textNome.Enabled = true;
             cbIdade.Enabled = true;
-            radioButton1.Enabled = true;
-            radioButton2.Enabled = true;
-            radioButton3.Enabled = true;
+            comboBox1.Enabled = true;
             comboProprietario.Enabled = true;
             textTelefone.Enabled = true;
             textEmail.Enabled = true;

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOS));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnPrepararImpressao = new System.Windows.Forms.Button();
@@ -78,7 +78,6 @@
             this.textProprietario = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textEspecie = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -89,6 +88,7 @@
             this.textValor1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.labelSelecionePrint = new System.Windows.Forms.Label();
             this.comboPrinter1 = new System.Windows.Forms.ComboBox();
             this.btnImprimir = new System.Windows.Forms.Button();
@@ -117,7 +117,7 @@
             this.panel2.Controls.Add(this.btnEditar);
             this.panel2.Controls.Add(this.btnPesquisar);
             this.panel2.Controls.Add(this.btnLimpar);
-            this.panel2.Location = new System.Drawing.Point(910, 124);
+            this.panel2.Location = new System.Drawing.Point(921, 124);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(105, 324);
             this.panel2.TabIndex = 109;
@@ -274,7 +274,7 @@
             this.panel3.Controls.Add(this.bunifuSeparator1);
             this.panel3.Controls.Add(this.bunifuSeparator2);
             this.panel3.Controls.Add(this.bunifuCustomLabel14);
-            this.panel3.Location = new System.Drawing.Point(80, 9);
+            this.panel3.Location = new System.Drawing.Point(90, 9);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(857, 580);
             this.panel3.TabIndex = 110;
@@ -855,17 +855,6 @@
             this.textEspecie.TabIndex = 76;
             this.textEspecie.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuCustomLabel14
-            // 
-            this.bunifuCustomLabel14.AutoSize = true;
-            this.bunifuCustomLabel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel14.Location = new System.Drawing.Point(300, 137);
-            this.bunifuCustomLabel14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
-            this.bunifuCustomLabel14.Size = new System.Drawing.Size(105, 20);
-            this.bunifuCustomLabel14.TabIndex = 75;
-            this.bunifuCustomLabel14.Text = "Nome do Pet:";
-            // 
             // splitContainer2
             // 
             this.splitContainer2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -940,7 +929,7 @@
             this.textCod.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textCod.LineThickness = 4;
             this.textCod.Location = new System.Drawing.Point(142, 124);
-            this.textCod.Margin = new System.Windows.Forms.Padding(5);
+            this.textCod.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.textCod.Name = "textCod";
             this.textCod.Size = new System.Drawing.Size(156, 29);
             this.textCod.TabIndex = 71;
@@ -1020,12 +1009,23 @@
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
             // 
+            // bunifuCustomLabel14
+            // 
+            this.bunifuCustomLabel14.AutoSize = true;
+            this.bunifuCustomLabel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel14.Location = new System.Drawing.Point(300, 137);
+            this.bunifuCustomLabel14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
+            this.bunifuCustomLabel14.Size = new System.Drawing.Size(105, 20);
+            this.bunifuCustomLabel14.TabIndex = 75;
+            this.bunifuCustomLabel14.Text = "Nome do Pet:";
+            // 
             // labelSelecionePrint
             // 
             this.labelSelecionePrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSelecionePrint.AutoSize = true;
             this.labelSelecionePrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSelecionePrint.Location = new System.Drawing.Point(327, 612);
+            this.labelSelecionePrint.Location = new System.Drawing.Point(276, 612);
             this.labelSelecionePrint.Name = "labelSelecionePrint";
             this.labelSelecionePrint.Size = new System.Drawing.Size(191, 15);
             this.labelSelecionePrint.TabIndex = 125;
@@ -1039,7 +1039,7 @@
             this.comboPrinter1.FormattingEnabled = true;
             this.comboPrinter1.Items.AddRange(new object[] {
             "SELECIONE UMA IMPRESSORA"});
-            this.comboPrinter1.Location = new System.Drawing.Point(524, 609);
+            this.comboPrinter1.Location = new System.Drawing.Point(473, 609);
             this.comboPrinter1.Name = "comboPrinter1";
             this.comboPrinter1.Size = new System.Drawing.Size(201, 21);
             this.comboPrinter1.TabIndex = 128;
@@ -1055,7 +1055,7 @@
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.Color.White;
-            this.btnImprimir.Location = new System.Drawing.Point(848, 607);
+            this.btnImprimir.Location = new System.Drawing.Point(797, 607);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(82, 25);
             this.btnImprimir.TabIndex = 126;
@@ -1074,7 +1074,7 @@
             this.btnFecharRecibo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFecharRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFecharRecibo.ForeColor = System.Drawing.Color.White;
-            this.btnFecharRecibo.Location = new System.Drawing.Point(729, 607);
+            this.btnFecharRecibo.Location = new System.Drawing.Point(678, 607);
             this.btnFecharRecibo.Name = "btnFecharRecibo";
             this.btnFecharRecibo.Size = new System.Drawing.Size(113, 25);
             this.btnFecharRecibo.TabIndex = 127;
@@ -1088,21 +1088,21 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.EnableHeadersVisualStyles = false;
@@ -1111,7 +1111,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(988, 183);
+            this.dataGridView1.Size = new System.Drawing.Size(937, 183);
             this.dataGridView1.TabIndex = 129;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -1125,7 +1125,7 @@
             this.bunifuSeparator3.Location = new System.Drawing.Point(129, 802);
             this.bunifuSeparator3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bunifuSeparator3.Name = "bunifuSeparator3";
-            this.bunifuSeparator3.Size = new System.Drawing.Size(524, 15);
+            this.bunifuSeparator3.Size = new System.Drawing.Size(473, 15);
             this.bunifuSeparator3.TabIndex = 156;
             this.bunifuSeparator3.Transparency = 255;
             this.bunifuSeparator3.Vertical = false;
