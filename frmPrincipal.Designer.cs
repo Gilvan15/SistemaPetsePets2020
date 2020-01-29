@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.panelTop = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.minimizar = new System.Windows.Forms.PictureBox();
@@ -44,12 +44,12 @@
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton13 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenuRelatorio = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panelSubMenuServico = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnMenuServicos = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelSubValores = new System.Windows.Forms.Panel();
             this.bunifuFlatButton18 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenuValores = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panelSubMenuServico = new System.Windows.Forms.Panel();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnMenuServicos = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelSubMenuCadastrar = new System.Windows.Forms.Panel();
             this.btnMenuAnimal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenuServiços = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -77,8 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictlogo)).BeginInit();
             this.panelSidebarBunifu.SuspendLayout();
             this.panelSubRelatorio.SuspendLayout();
-            this.panelSubMenuServico.SuspendLayout();
             this.panelSubValores.SuspendLayout();
+            this.panelSubMenuServico.SuspendLayout();
             this.panelSubMenuCadastrar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -185,10 +185,10 @@
             this.panelSidebarBunifu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelSidebarBunifu.Controls.Add(this.panelSubRelatorio);
             this.panelSidebarBunifu.Controls.Add(this.btnMenuRelatorio);
-            this.panelSidebarBunifu.Controls.Add(this.panelSubMenuServico);
-            this.panelSidebarBunifu.Controls.Add(this.btnMenuServicos);
             this.panelSidebarBunifu.Controls.Add(this.panelSubValores);
             this.panelSidebarBunifu.Controls.Add(this.btnMenuValores);
+            this.panelSidebarBunifu.Controls.Add(this.panelSubMenuServico);
+            this.panelSidebarBunifu.Controls.Add(this.btnMenuServicos);
             this.panelSidebarBunifu.Controls.Add(this.panelSubMenuCadastrar);
             this.panelSidebarBunifu.Controls.Add(this.btnMenuCadastro);
             this.panelSidebarBunifu.Controls.Add(this.panel1);
@@ -212,10 +212,10 @@
             this.bunifuTLog.SetDecoration(this.panelSubRelatorio, BunifuAnimatorNS.DecorationType.None);
             this.bunifuT.SetDecoration(this.panelSubRelatorio, BunifuAnimatorNS.DecorationType.None);
             this.panelSubRelatorio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubRelatorio.Location = new System.Drawing.Point(0, 563);
+            this.panelSubRelatorio.Location = new System.Drawing.Point(0, 557);
             this.panelSubRelatorio.Name = "panelSubRelatorio";
             this.panelSubRelatorio.Size = new System.Drawing.Size(210, 80);
-            this.panelSubRelatorio.TabIndex = 18;
+            this.panelSubRelatorio.TabIndex = 21;
             this.panelSubRelatorio.Visible = false;
             // 
             // bunifuFlatButton2
@@ -253,7 +253,7 @@
             this.bunifuFlatButton2.Text = "     Relatório02";
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bunifuFlatButton13
             // 
@@ -290,7 +290,7 @@
             this.bunifuFlatButton13.Text = "     Relatório01";
             this.bunifuFlatButton13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton13.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton13.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton13.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnMenuRelatorio
             // 
@@ -316,19 +316,108 @@
             this.btnMenuRelatorio.IconVisible = true;
             this.btnMenuRelatorio.IconZoom = 60D;
             this.btnMenuRelatorio.IsTab = false;
-            this.btnMenuRelatorio.Location = new System.Drawing.Point(0, 515);
+            this.btnMenuRelatorio.Location = new System.Drawing.Point(0, 509);
             this.btnMenuRelatorio.Name = "btnMenuRelatorio";
             this.btnMenuRelatorio.Normalcolor = System.Drawing.Color.Transparent;
             this.btnMenuRelatorio.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(122)))), ((int)(((byte)(47)))));
             this.btnMenuRelatorio.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMenuRelatorio.selected = false;
             this.btnMenuRelatorio.Size = new System.Drawing.Size(210, 48);
-            this.btnMenuRelatorio.TabIndex = 17;
+            this.btnMenuRelatorio.TabIndex = 20;
             this.btnMenuRelatorio.Text = "RELATÓRIOS";
             this.btnMenuRelatorio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnMenuRelatorio.Textcolor = System.Drawing.Color.White;
             this.btnMenuRelatorio.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuRelatorio.Click += new System.EventHandler(this.btnMenuRelatorio_Click_1);
+            this.btnMenuRelatorio.Click += new System.EventHandler(this.btnMenuRelatorio_Click);
+            // 
+            // panelSubValores
+            // 
+            this.panelSubValores.BackColor = System.Drawing.Color.Transparent;
+            this.panelSubValores.Controls.Add(this.bunifuFlatButton18);
+            this.bunifuTLog.SetDecoration(this.panelSubValores, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuT.SetDecoration(this.panelSubValores, BunifuAnimatorNS.DecorationType.None);
+            this.panelSubValores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubValores.Location = new System.Drawing.Point(0, 471);
+            this.panelSubValores.Name = "panelSubValores";
+            this.panelSubValores.Size = new System.Drawing.Size(210, 38);
+            this.panelSubValores.TabIndex = 15;
+            this.panelSubValores.Visible = false;
+            // 
+            // bunifuFlatButton18
+            // 
+            this.bunifuFlatButton18.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(75)))), ((int)(((byte)(28)))));
+            this.bunifuFlatButton18.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton18.BorderRadius = 0;
+            this.bunifuFlatButton18.ButtonText = "     Recibo";
+            this.bunifuFlatButton18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuT.SetDecoration(this.bunifuFlatButton18, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTLog.SetDecoration(this.bunifuFlatButton18, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuFlatButton18.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton18.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuFlatButton18.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton18.Iconimage = null;
+            this.bunifuFlatButton18.Iconimage_right = null;
+            this.bunifuFlatButton18.Iconimage_right_Selected = null;
+            this.bunifuFlatButton18.Iconimage_Selected = null;
+            this.bunifuFlatButton18.IconMarginLeft = 0;
+            this.bunifuFlatButton18.IconMarginRight = 0;
+            this.bunifuFlatButton18.IconRightVisible = true;
+            this.bunifuFlatButton18.IconRightZoom = 0D;
+            this.bunifuFlatButton18.IconVisible = true;
+            this.bunifuFlatButton18.IconZoom = 60D;
+            this.bunifuFlatButton18.IsTab = false;
+            this.bunifuFlatButton18.Location = new System.Drawing.Point(0, 0);
+            this.bunifuFlatButton18.Name = "bunifuFlatButton18";
+            this.bunifuFlatButton18.Normalcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton18.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(122)))), ((int)(((byte)(47)))));
+            this.bunifuFlatButton18.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton18.selected = false;
+            this.bunifuFlatButton18.Size = new System.Drawing.Size(210, 30);
+            this.bunifuFlatButton18.TabIndex = 3;
+            this.bunifuFlatButton18.Text = "     Recibo";
+            this.bunifuFlatButton18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton18.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton18.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton18.Click += new System.EventHandler(this.bunifuFlatButton18_Click_1);
+            // 
+            // btnMenuValores
+            // 
+            this.btnMenuValores.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(75)))), ((int)(((byte)(28)))));
+            this.btnMenuValores.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenuValores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenuValores.BorderRadius = 0;
+            this.btnMenuValores.ButtonText = "VALORES";
+            this.btnMenuValores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuT.SetDecoration(this.btnMenuValores, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTLog.SetDecoration(this.btnMenuValores, BunifuAnimatorNS.DecorationType.None);
+            this.btnMenuValores.DisabledColor = System.Drawing.Color.Gray;
+            this.btnMenuValores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenuValores.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnMenuValores.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnMenuValores.Iconimage")));
+            this.btnMenuValores.Iconimage_right = null;
+            this.btnMenuValores.Iconimage_right_Selected = null;
+            this.btnMenuValores.Iconimage_Selected = null;
+            this.btnMenuValores.IconMarginLeft = 0;
+            this.btnMenuValores.IconMarginRight = 0;
+            this.btnMenuValores.IconRightVisible = true;
+            this.btnMenuValores.IconRightZoom = 0D;
+            this.btnMenuValores.IconVisible = true;
+            this.btnMenuValores.IconZoom = 60D;
+            this.btnMenuValores.IsTab = false;
+            this.btnMenuValores.Location = new System.Drawing.Point(0, 423);
+            this.btnMenuValores.Name = "btnMenuValores";
+            this.btnMenuValores.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnMenuValores.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(122)))), ((int)(((byte)(47)))));
+            this.btnMenuValores.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnMenuValores.selected = false;
+            this.btnMenuValores.Size = new System.Drawing.Size(210, 48);
+            this.btnMenuValores.TabIndex = 14;
+            this.btnMenuValores.Text = "VALORES";
+            this.btnMenuValores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnMenuValores.Textcolor = System.Drawing.Color.White;
+            this.btnMenuValores.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuValores.Click += new System.EventHandler(this.btnMenuValores_Click);
             // 
             // panelSubMenuServico
             // 
@@ -337,7 +426,7 @@
             this.bunifuTLog.SetDecoration(this.panelSubMenuServico, BunifuAnimatorNS.DecorationType.None);
             this.bunifuT.SetDecoration(this.panelSubMenuServico, BunifuAnimatorNS.DecorationType.None);
             this.panelSubMenuServico.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuServico.Location = new System.Drawing.Point(0, 475);
+            this.panelSubMenuServico.Location = new System.Drawing.Point(0, 383);
             this.panelSubMenuServico.Name = "panelSubMenuServico";
             this.panelSubMenuServico.Size = new System.Drawing.Size(210, 40);
             this.panelSubMenuServico.TabIndex = 13;
@@ -378,7 +467,7 @@
             this.bunifuFlatButton1.Text = "     OS - Órdem de Serviço";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click_1);
             // 
             // btnMenuServicos
@@ -405,7 +494,7 @@
             this.btnMenuServicos.IconVisible = true;
             this.btnMenuServicos.IconZoom = 60D;
             this.btnMenuServicos.IsTab = false;
-            this.btnMenuServicos.Location = new System.Drawing.Point(0, 427);
+            this.btnMenuServicos.Location = new System.Drawing.Point(0, 335);
             this.btnMenuServicos.Name = "btnMenuServicos";
             this.btnMenuServicos.Normalcolor = System.Drawing.Color.Transparent;
             this.btnMenuServicos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(122)))), ((int)(((byte)(47)))));
@@ -418,95 +507,6 @@
             this.btnMenuServicos.Textcolor = System.Drawing.Color.White;
             this.btnMenuServicos.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuServicos.Click += new System.EventHandler(this.btnMenuServicos_Click);
-            // 
-            // panelSubValores
-            // 
-            this.panelSubValores.BackColor = System.Drawing.Color.Transparent;
-            this.panelSubValores.Controls.Add(this.bunifuFlatButton18);
-            this.bunifuTLog.SetDecoration(this.panelSubValores, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuT.SetDecoration(this.panelSubValores, BunifuAnimatorNS.DecorationType.None);
-            this.panelSubValores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubValores.Location = new System.Drawing.Point(0, 383);
-            this.panelSubValores.Name = "panelSubValores";
-            this.panelSubValores.Size = new System.Drawing.Size(210, 44);
-            this.panelSubValores.TabIndex = 11;
-            this.panelSubValores.Visible = false;
-            // 
-            // bunifuFlatButton18
-            // 
-            this.bunifuFlatButton18.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(75)))), ((int)(((byte)(28)))));
-            this.bunifuFlatButton18.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton18.BorderRadius = 0;
-            this.bunifuFlatButton18.ButtonText = "     Recibo";
-            this.bunifuFlatButton18.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuT.SetDecoration(this.bunifuFlatButton18, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTLog.SetDecoration(this.bunifuFlatButton18, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuFlatButton18.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuFlatButton18.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton18.Iconimage = null;
-            this.bunifuFlatButton18.Iconimage_right = null;
-            this.bunifuFlatButton18.Iconimage_right_Selected = null;
-            this.bunifuFlatButton18.Iconimage_Selected = null;
-            this.bunifuFlatButton18.IconMarginLeft = 0;
-            this.bunifuFlatButton18.IconMarginRight = 0;
-            this.bunifuFlatButton18.IconRightVisible = true;
-            this.bunifuFlatButton18.IconRightZoom = 0D;
-            this.bunifuFlatButton18.IconVisible = true;
-            this.bunifuFlatButton18.IconZoom = 60D;
-            this.bunifuFlatButton18.IsTab = false;
-            this.bunifuFlatButton18.Location = new System.Drawing.Point(0, 0);
-            this.bunifuFlatButton18.Name = "bunifuFlatButton18";
-            this.bunifuFlatButton18.Normalcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton18.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(122)))), ((int)(((byte)(47)))));
-            this.bunifuFlatButton18.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton18.selected = false;
-            this.bunifuFlatButton18.Size = new System.Drawing.Size(210, 30);
-            this.bunifuFlatButton18.TabIndex = 3;
-            this.bunifuFlatButton18.Text = "     Recibo";
-            this.bunifuFlatButton18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton18.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton18.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton18.Click += new System.EventHandler(this.bunifuFlatButton18_Click);
-            // 
-            // btnMenuValores
-            // 
-            this.btnMenuValores.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(75)))), ((int)(((byte)(28)))));
-            this.btnMenuValores.BackColor = System.Drawing.Color.Transparent;
-            this.btnMenuValores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMenuValores.BorderRadius = 0;
-            this.btnMenuValores.ButtonText = "VALORES";
-            this.btnMenuValores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuT.SetDecoration(this.btnMenuValores, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTLog.SetDecoration(this.btnMenuValores, BunifuAnimatorNS.DecorationType.None);
-            this.btnMenuValores.DisabledColor = System.Drawing.Color.Gray;
-            this.btnMenuValores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMenuValores.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnMenuValores.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnMenuValores.Iconimage")));
-            this.btnMenuValores.Iconimage_right = null;
-            this.btnMenuValores.Iconimage_right_Selected = null;
-            this.btnMenuValores.Iconimage_Selected = null;
-            this.btnMenuValores.IconMarginLeft = 0;
-            this.btnMenuValores.IconMarginRight = 0;
-            this.btnMenuValores.IconRightVisible = true;
-            this.btnMenuValores.IconRightZoom = 0D;
-            this.btnMenuValores.IconVisible = true;
-            this.btnMenuValores.IconZoom = 60D;
-            this.btnMenuValores.IsTab = false;
-            this.btnMenuValores.Location = new System.Drawing.Point(0, 335);
-            this.btnMenuValores.Name = "btnMenuValores";
-            this.btnMenuValores.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnMenuValores.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(122)))), ((int)(((byte)(47)))));
-            this.btnMenuValores.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnMenuValores.selected = false;
-            this.btnMenuValores.Size = new System.Drawing.Size(210, 48);
-            this.btnMenuValores.TabIndex = 5;
-            this.btnMenuValores.Text = "VALORES";
-            this.btnMenuValores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnMenuValores.Textcolor = System.Drawing.Color.White;
-            this.btnMenuValores.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuValores.Click += new System.EventHandler(this.btnMenuValores_Click);
             // 
             // panelSubMenuCadastrar
             // 
@@ -561,7 +561,7 @@
             this.btnMenuAnimal.Text = "     Animal";
             this.btnMenuAnimal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuAnimal.Textcolor = System.Drawing.Color.White;
-            this.btnMenuAnimal.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuAnimal.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuAnimal.Click += new System.EventHandler(this.btnMenuAnimal_Click);
             // 
             // btnMenuServiços
@@ -599,7 +599,7 @@
             this.btnMenuServiços.Text = "     Serviço";
             this.btnMenuServiços.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuServiços.Textcolor = System.Drawing.Color.White;
-            this.btnMenuServiços.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuServiços.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuServiços.Click += new System.EventHandler(this.btnMenuServiços_Click);
             // 
             // btnMenuClientes
@@ -637,7 +637,7 @@
             this.btnMenuClientes.Text = "     Cliente";
             this.btnMenuClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuClientes.Textcolor = System.Drawing.Color.White;
-            this.btnMenuClientes.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuClientes.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuClientes.Click += new System.EventHandler(this.btnMenuClientes_Click);
             // 
             // btnMenuFuncionario
@@ -675,7 +675,7 @@
             this.btnMenuFuncionario.Text = "     Funcionário";
             this.btnMenuFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuFuncionario.Textcolor = System.Drawing.Color.White;
-            this.btnMenuFuncionario.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuFuncionario.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuFuncionario.Click += new System.EventHandler(this.btnMenuFuncionario_Click);
             // 
             // btnMenuUsuario
@@ -713,7 +713,7 @@
             this.btnMenuUsuario.Text = "     Usuário";
             this.btnMenuUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuUsuario.Textcolor = System.Drawing.Color.White;
-            this.btnMenuUsuario.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuUsuario.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuUsuario.Click += new System.EventHandler(this.btnMenuUsuario_Click);
             // 
             // btnMenuFuncao
@@ -751,7 +751,7 @@
             this.btnMenuFuncao.Text = "     Função";
             this.btnMenuFuncao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuFuncao.Textcolor = System.Drawing.Color.White;
-            this.btnMenuFuncao.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuFuncao.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuFuncao.Click += new System.EventHandler(this.btnMenuFuncao_Click);
             // 
             // btnMenuCadastro
@@ -867,22 +867,22 @@
             // 
             this.bunifuT.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.bunifuT.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.bunifuT.DefaultAnimation = animation4;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.bunifuT.DefaultAnimation = animation1;
             this.bunifuT.MaxAnimationTime = 3500;
             // 
             // panelSideBarhost
@@ -927,22 +927,22 @@
             // 
             this.bunifuTLog.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndRotate;
             this.bunifuTLog.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(30);
-            animation3.RotateCoeff = 0.5F;
-            animation3.RotateLimit = 0.2F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.bunifuTLog.DefaultAnimation = animation3;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(30);
+            animation2.RotateCoeff = 0.5F;
+            animation2.RotateLimit = 0.2F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.bunifuTLog.DefaultAnimation = animation2;
             this.bunifuTLog.TimeStep = 0.01F;
             // 
             // timer1
@@ -973,8 +973,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictlogo)).EndInit();
             this.panelSidebarBunifu.ResumeLayout(false);
             this.panelSubRelatorio.ResumeLayout(false);
-            this.panelSubMenuServico.ResumeLayout(false);
             this.panelSubValores.ResumeLayout(false);
+            this.panelSubMenuServico.ResumeLayout(false);
             this.panelSubMenuCadastrar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -996,9 +996,6 @@
         private System.Windows.Forms.PictureBox pictlogo;
         private BunifuAnimatorNS.BunifuTransition bunifuTLog;
         private Bunifu.Framework.UI.BunifuGradientPanel panelSidebarBunifu;
-        private System.Windows.Forms.Panel panelSubValores;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton18;
-        private Bunifu.Framework.UI.BunifuFlatButton btnMenuValores;
         private System.Windows.Forms.Panel panelSubMenuCadastrar;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuFuncao;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuCadastro;
@@ -1015,10 +1012,6 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuAnimal;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuServiços;
-        private System.Windows.Forms.Panel panelSubRelatorio;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton13;
-        private Bunifu.Framework.UI.BunifuFlatButton btnMenuRelatorio;
         private System.Windows.Forms.Panel panelSubMenuServico;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -1026,6 +1019,13 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panelSubRelatorio;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton13;
+        private Bunifu.Framework.UI.BunifuFlatButton btnMenuRelatorio;
+        private System.Windows.Forms.Panel panelSubValores;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton18;
+        private Bunifu.Framework.UI.BunifuFlatButton btnMenuValores;
     }
 }
 

@@ -153,27 +153,12 @@ namespace SistemaPet
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             AbrirFormWrapper(new frmCliente());
-        }
-        private void btnMenuValores_Click(object sender, EventArgs e)
-        {
-            if (panelSubValores.Visible == false)
-            {
-                ShowSubMenu(panelSubValores);
-            }
-            else
-            {
-                hideSubMenu();
-            }
-        }
+        }        
         private void panelTop_MouseDown(object sender, MouseEventArgs e)
         {
             //ReleaseCapture();
             //SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-        private void bunifuFlatButton18_Click(object sender, EventArgs e)
-        {
-            AbrirFormWrapper(new frmRecibo());
-        }
+        }        
         
         private void btnMenuFuncao_Click(object sender, EventArgs e)
         {
@@ -264,19 +249,7 @@ namespace SistemaPet
         private void bunifuFlatButton1_Click_1(object sender, EventArgs e)
         {
             AbrirFormWrapper(new frmOS());
-        }
-
-        private void btnMenuRelatorio_Click_1(object sender, EventArgs e)
-        {
-            if (panelSubRelatorio.Visible == false)
-            {
-                ShowSubMenu(panelSubRelatorio);
-            }
-            else
-            {
-                hideSubMenu();
-            }
-        }
+        }       
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -306,6 +279,35 @@ namespace SistemaPet
         private void timer1_Tick(object sender, EventArgs e)
         {
             //labelHora.Text = String.Format("Dia: {0:dd/MM/yyyy} Hora: {1:HH:mm:ss}", DateTime.Now, DateTime.Now);
+        }
+
+        private void btnMenuValores_Click(object sender, EventArgs e)
+        {
+            if (panelSubValores.Visible == false)
+            {
+                ShowSubMenu(panelSubValores);
+            }
+            else
+            {
+                hideSubMenu();
+            }
+        }
+
+        private void btnMenuRelatorio_Click(object sender, EventArgs e)
+        {
+            if (panelSubRelatorio.Visible == false)
+            {
+                ShowSubMenu(panelSubRelatorio);
+            }
+            else
+            {
+                hideSubMenu();
+            }
+        }
+
+        private void bunifuFlatButton18_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormWrapper(new frmRecibo());
         }
     }
 }
