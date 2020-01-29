@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFuncionario));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupDadosAdicionais = new System.Windows.Forms.GroupBox();
@@ -158,9 +158,9 @@
             this.groupDadosAdicionais.Controls.Add(this.bunifuCustomLabel14);
             this.groupDadosAdicionais.Controls.Add(this.maskAdmin);
             this.groupDadosAdicionais.Controls.Add(this.bunifuCustomLabel13);
-            this.groupDadosAdicionais.Location = new System.Drawing.Point(220, 161);
+            this.groupDadosAdicionais.Location = new System.Drawing.Point(202, 150);
             this.groupDadosAdicionais.Name = "groupDadosAdicionais";
-            this.groupDadosAdicionais.Size = new System.Drawing.Size(381, 156);
+            this.groupDadosAdicionais.Size = new System.Drawing.Size(384, 167);
             this.groupDadosAdicionais.TabIndex = 143;
             this.groupDadosAdicionais.TabStop = false;
             this.groupDadosAdicionais.Text = "Informações Adicionais";
@@ -169,7 +169,7 @@
             // maskHora1
             // 
             this.maskHora1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskHora1.Location = new System.Drawing.Point(124, 121);
+            this.maskHora1.Location = new System.Drawing.Point(124, 128);
             this.maskHora1.Mask = "90:00";
             this.maskHora1.Name = "maskHora1";
             this.maskHora1.Size = new System.Drawing.Size(40, 21);
@@ -179,7 +179,7 @@
             // maskHora2
             // 
             this.maskHora2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskHora2.Location = new System.Drawing.Point(186, 121);
+            this.maskHora2.Location = new System.Drawing.Point(186, 128);
             this.maskHora2.Mask = "90:00";
             this.maskHora2.Name = "maskHora2";
             this.maskHora2.Size = new System.Drawing.Size(40, 21);
@@ -196,7 +196,7 @@
             "Demitido",
             "Licença",
             "Férias"});
-            this.comboStatus.Location = new System.Drawing.Point(231, 52);
+            this.comboStatus.Location = new System.Drawing.Point(231, 59);
             this.comboStatus.Name = "comboStatus";
             this.comboStatus.Size = new System.Drawing.Size(141, 23);
             this.comboStatus.TabIndex = 15;
@@ -205,7 +205,7 @@
             // 
             this.bunifuCustomLabel21.AutoSize = true;
             this.bunifuCustomLabel21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel21.Location = new System.Drawing.Point(180, 58);
+            this.bunifuCustomLabel21.Location = new System.Drawing.Point(180, 65);
             this.bunifuCustomLabel21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel21.Name = "bunifuCustomLabel21";
             this.bunifuCustomLabel21.Size = new System.Drawing.Size(44, 15);
@@ -224,7 +224,7 @@
             "Sexta",
             "Sabado",
             "Domingo"});
-            this.comboJtFinal.Location = new System.Drawing.Point(266, 84);
+            this.comboJtFinal.Location = new System.Drawing.Point(266, 91);
             this.comboJtFinal.Name = "comboJtFinal";
             this.comboJtFinal.Size = new System.Drawing.Size(106, 23);
             this.comboJtFinal.TabIndex = 17;
@@ -233,7 +233,7 @@
             // 
             this.bunifuCustomLabel19.AutoSize = true;
             this.bunifuCustomLabel19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel19.Location = new System.Drawing.Point(245, 87);
+            this.bunifuCustomLabel19.Location = new System.Drawing.Point(245, 94);
             this.bunifuCustomLabel19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel19.Name = "bunifuCustomLabel19";
             this.bunifuCustomLabel19.Size = new System.Drawing.Size(14, 15);
@@ -252,7 +252,7 @@
             "Sexta",
             "Sabado",
             "Domingo"});
-            this.comboJtInic.Location = new System.Drawing.Point(127, 84);
+            this.comboJtInic.Location = new System.Drawing.Point(127, 91);
             this.comboJtInic.Name = "comboJtInic";
             this.comboJtInic.Size = new System.Drawing.Size(111, 23);
             this.comboJtInic.TabIndex = 16;
@@ -261,7 +261,7 @@
             // 
             this.bunifuCustomLabel18.AutoSize = true;
             this.bunifuCustomLabel18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel18.Location = new System.Drawing.Point(4, 92);
+            this.bunifuCustomLabel18.Location = new System.Drawing.Point(4, 99);
             this.bunifuCustomLabel18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel18.Name = "bunifuCustomLabel18";
             this.bunifuCustomLabel18.Size = new System.Drawing.Size(124, 15);
@@ -272,7 +272,7 @@
             // 
             this.bunifuCustomLabel17.AutoSize = true;
             this.bunifuCustomLabel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel17.Location = new System.Drawing.Point(165, 127);
+            this.bunifuCustomLabel17.Location = new System.Drawing.Point(165, 134);
             this.bunifuCustomLabel17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel17.Name = "bunifuCustomLabel17";
             this.bunifuCustomLabel17.Size = new System.Drawing.Size(20, 15);
@@ -283,7 +283,7 @@
             // 
             this.bunifuCustomLabel16.AutoSize = true;
             this.bunifuCustomLabel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel16.Location = new System.Drawing.Point(3, 127);
+            this.bunifuCustomLabel16.Location = new System.Drawing.Point(3, 134);
             this.bunifuCustomLabel16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel16.Name = "bunifuCustomLabel16";
             this.bunifuCustomLabel16.Size = new System.Drawing.Size(120, 15);
@@ -293,7 +293,7 @@
             // textSalario
             // 
             this.textSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSalario.Location = new System.Drawing.Point(274, 121);
+            this.textSalario.Location = new System.Drawing.Point(274, 128);
             this.textSalario.Name = "textSalario";
             this.textSalario.Size = new System.Drawing.Size(98, 21);
             this.textSalario.TabIndex = 20;
@@ -304,7 +304,7 @@
             // 
             this.bunifuCustomLabel15.AutoSize = true;
             this.bunifuCustomLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel15.Location = new System.Drawing.Point(227, 126);
+            this.bunifuCustomLabel15.Location = new System.Drawing.Point(227, 133);
             this.bunifuCustomLabel15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
             this.bunifuCustomLabel15.Size = new System.Drawing.Size(49, 15);
@@ -314,7 +314,7 @@
             // maskNascimento
             // 
             this.maskNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskNascimento.Location = new System.Drawing.Point(70, 52);
+            this.maskNascimento.Location = new System.Drawing.Point(70, 59);
             this.maskNascimento.Mask = "00/00/0000";
             this.maskNascimento.Name = "maskNascimento";
             this.maskNascimento.Size = new System.Drawing.Size(83, 21);
@@ -325,7 +325,7 @@
             // 
             this.bunifuCustomLabel20.AutoSize = true;
             this.bunifuCustomLabel20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel20.Location = new System.Drawing.Point(3, 57);
+            this.bunifuCustomLabel20.Location = new System.Drawing.Point(3, 64);
             this.bunifuCustomLabel20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
             this.bunifuCustomLabel20.Size = new System.Drawing.Size(67, 15);
@@ -335,7 +335,7 @@
             // maskDemi
             // 
             this.maskDemi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskDemi.Location = new System.Drawing.Point(221, 17);
+            this.maskDemi.Location = new System.Drawing.Point(221, 24);
             this.maskDemi.Mask = "00/00/0000";
             this.maskDemi.Name = "maskDemi";
             this.maskDemi.Size = new System.Drawing.Size(79, 21);
@@ -346,7 +346,7 @@
             // 
             this.bunifuCustomLabel14.AutoSize = true;
             this.bunifuCustomLabel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel14.Location = new System.Drawing.Point(153, 23);
+            this.bunifuCustomLabel14.Location = new System.Drawing.Point(153, 30);
             this.bunifuCustomLabel14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
             this.bunifuCustomLabel14.Size = new System.Drawing.Size(66, 15);
@@ -356,7 +356,7 @@
             // maskAdmin
             // 
             this.maskAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskAdmin.Location = new System.Drawing.Point(63, 16);
+            this.maskAdmin.Location = new System.Drawing.Point(63, 23);
             this.maskAdmin.Mask = "00/00/0000";
             this.maskAdmin.Name = "maskAdmin";
             this.maskAdmin.Size = new System.Drawing.Size(83, 21);
@@ -367,7 +367,7 @@
             // 
             this.bunifuCustomLabel13.AutoSize = true;
             this.bunifuCustomLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel13.Location = new System.Drawing.Point(2, 22);
+            this.bunifuCustomLabel13.Location = new System.Drawing.Point(2, 29);
             this.bunifuCustomLabel13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
             this.bunifuCustomLabel13.Size = new System.Drawing.Size(64, 15);
@@ -783,14 +783,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(9, 427);

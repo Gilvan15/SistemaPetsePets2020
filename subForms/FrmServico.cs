@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using Model;
+using SistemaPet.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,9 +49,10 @@ namespace SistemaPet.subForms
 
         private void HabilitarCampos()
         {
-            textCod.Enabled = true;
+            textCod.Enabled = false;
             textServico.Enabled = true;
             textValor.Enabled = true;
+
             
         }
         private void DesabilitarCampos()
@@ -59,13 +61,14 @@ namespace SistemaPet.subForms
             textCod.Enabled = false;
             textServico.Enabled = false;
             textValor.Enabled = false;
+            btnSalvar.Enabled = false;
         }
         private void LimparCampos()
         {
             textCod.Text = null;
             textServico.Text = null;
             textPesquisar.Text = null;
-            textValor.Text = null;
+            textValor.Text = Convert.ToString(0);
         }
         private void CarregarGrid()
         {
@@ -194,6 +197,7 @@ namespace SistemaPet.subForms
         {
             sound2();
             LimparCampos();
+            btnSalvar.Enabled = false;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -284,7 +288,7 @@ namespace SistemaPet.subForms
         {
             try
             {
-                //HabilitarCampos();
+                DesabilitarCampos();
                 int codId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                 textCod.Text = codId.ToString("D5");
                 textServico.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -294,8 +298,39 @@ namespace SistemaPet.subForms
             {
                 MessageBox.Show("Error DataGrid: " + ex.Message);
             }
+        }
 
 
+        private void textValor_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                FormatCnpjCpf.Moeda(ref textValor);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
+        private void textServico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == 13)
+            {
+                textValor.Focus();
+            }
+
+        }
+
+        private void textValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnSalvar.Focus();
+            }
         }
     }
 }

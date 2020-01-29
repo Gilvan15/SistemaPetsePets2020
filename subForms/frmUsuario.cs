@@ -12,6 +12,7 @@ using Model;
 using System.Media;
 using System.Data.SqlClient;
 using SistemaPet.Properties;
+using SistemaPet.Utils;
 
 namespace SistemaPet.subForms
 {
@@ -253,14 +254,6 @@ namespace SistemaPet.subForms
                 textConfSenha.Focus();
             }
         }
-
-        public static bool ValidarEmail(string strEmail)
-        {
-            string strModelo = "^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
-            if (System.Text.RegularExpressions.Regex.IsMatch(strEmail, strModelo))
-            { return true; }
-            else { return false; }
-        }
         private void comboFuncao_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -486,10 +479,9 @@ namespace SistemaPet.subForms
         }
         private void textEmail_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (e.KeyChar == 13)
             {
-                if (ValidarEmail(textEmail.Text) == false)
+                if (FormatCnpjCpf.ValidarEmail(textEmail.Text) == false)
                 {
                     sound3();
                     MessageBox.Show("Email com formato incorreto!", "Aviso!!!", MessageBoxButtons.OK);

@@ -32,10 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmServico));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textValor = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.textValor = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
@@ -58,10 +58,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textValor);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.btnLimpar);
-            this.panel1.Controls.Add(this.textValor);
             this.panel1.Controls.Add(this.bunifuCustomLabel1);
             this.panel1.Controls.Add(this.btnPesquisar);
             this.panel1.Controls.Add(this.btnDeletar);
@@ -81,6 +81,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(880, 650);
             this.panel1.TabIndex = 0;
+            // 
+            // textValor
+            // 
+            this.textValor.BackColor = System.Drawing.Color.Chocolate;
+            this.textValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textValor.ForeColor = System.Drawing.Color.White;
+            this.textValor.Location = new System.Drawing.Point(98, 211);
+            this.textValor.Name = "textValor";
+            this.textValor.Size = new System.Drawing.Size(150, 26);
+            this.textValor.TabIndex = 2;
+            this.textValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textValor.TextChanged += new System.EventHandler(this.textValor_TextChanged);
+            this.textValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textValor_KeyPress);
             // 
             // dataGridView1
             // 
@@ -120,6 +133,7 @@
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.Enabled = false;
             this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(101)))), ((int)(((byte)(39)))));
             this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -150,27 +164,6 @@
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // textValor
-            // 
-            this.textValor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textValor.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textValor.HintForeColor = System.Drawing.Color.Empty;
-            this.textValor.HintText = "";
-            this.textValor.isPassword = false;
-            this.textValor.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textValor.LineIdleColor = System.Drawing.Color.Chocolate;
-            this.textValor.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
-            this.textValor.LineThickness = 4;
-            this.textValor.Location = new System.Drawing.Point(100, 208);
-            this.textValor.Margin = new System.Windows.Forms.Padding(5);
-            this.textValor.Name = "textValor";
-            this.textValor.Size = new System.Drawing.Size(145, 29);
-            this.textValor.TabIndex = 137;
-            this.textValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel1
             // 
@@ -280,7 +273,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(250, 80);
+            this.pictureBox1.Location = new System.Drawing.Point(247, 80);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -306,8 +299,9 @@
             this.textServico.Margin = new System.Windows.Forms.Padding(5);
             this.textServico.Name = "textServico";
             this.textServico.Size = new System.Drawing.Size(574, 29);
-            this.textServico.TabIndex = 129;
+            this.textServico.TabIndex = 1;
             this.textServico.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textServico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textServico_KeyPress);
             // 
             // textCod
             // 
@@ -414,7 +408,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnLimpar;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox textValor;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button btnDeletar;
@@ -429,5 +422,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
+        private System.Windows.Forms.TextBox textValor;
     }
 }

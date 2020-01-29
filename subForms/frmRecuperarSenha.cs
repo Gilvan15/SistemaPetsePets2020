@@ -12,6 +12,7 @@ using System.Net;
 using System.Net.Mail;
 using Entidades;
 using Model;
+using SistemaPet.Utils;
 
 namespace SistemaPet.subForms
 {
@@ -45,7 +46,7 @@ namespace SistemaPet.subForms
         }
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            if (ValidarEmail(textEmail.Text) == false)
+            if (FormatCnpjCpf.ValidarEmail(textEmail.Text) == false)
             {
                 sound2();
                 MessageBox.Show("Email com formato incorreto!","Aviso!!!", MessageBoxButtons.OK);
@@ -100,11 +101,6 @@ namespace SistemaPet.subForms
                 //mail.Attachments.Add(new Attachment(@"C:\teste.txt"));
             }
         }
-        public static bool ValidarEmail(string strEmail)
-        {
-            string strModelo = "^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
-            if (System.Text.RegularExpressions.Regex.IsMatch(strEmail, strModelo))
-            {return true;} else {return false;}
-        }
+        
     }
 }

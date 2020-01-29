@@ -530,5 +530,21 @@ namespace SistemaPet.subForms
                 MessageBox.Show("Error DataGrid: " + ex.Message);
             }
         }
+        
+        private void textEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                if (FormatCnpjCpf.ValidarEmail(textEmail.Text) == false)
+                {
+                    sound3();
+                    MessageBox.Show("Email com formato incorreto!", "Aviso!!!", MessageBoxButtons.OK);
+                    textEmail.Focus();
+                    return;
+                }
+
+                textRg.Focus();
+            }
+        }
     }
 }
