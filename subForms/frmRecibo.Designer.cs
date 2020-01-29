@@ -230,7 +230,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 144);
+            this.label2.Location = new System.Drawing.Point(3, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(151, 20);
             this.label2.TabIndex = 74;
@@ -248,10 +248,10 @@
             this.textImportanciade1.LineIdleColor = System.Drawing.Color.Gray;
             this.textImportanciade1.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textImportanciade1.LineThickness = 4;
-            this.textImportanciade1.Location = new System.Drawing.Point(177, 131);
+            this.textImportanciade1.Location = new System.Drawing.Point(156, 131);
             this.textImportanciade1.Margin = new System.Windows.Forms.Padding(4);
             this.textImportanciade1.Name = "textImportanciade1";
-            this.textImportanciade1.Size = new System.Drawing.Size(666, 33);
+            this.textImportanciade1.Size = new System.Drawing.Size(687, 33);
             this.textImportanciade1.TabIndex = 2;
             this.textImportanciade1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textImportanciade1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textImportanciade1_KeyPress);

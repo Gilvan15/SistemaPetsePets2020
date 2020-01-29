@@ -226,6 +226,8 @@ namespace SistemaPet.subForms
             for (int x = 1; x <= 100; x++) 
             {
                 cbIdade.Items.Add(x);
+                cbIdade2.Items.Add(x);
+
             }
         }
 

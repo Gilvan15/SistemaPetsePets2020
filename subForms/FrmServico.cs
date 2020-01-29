@@ -57,7 +57,6 @@ namespace SistemaPet.subForms
         }
         private void DesabilitarCampos()
         {
-            LimparCampos();
             textCod.Enabled = false;
             textServico.Enabled = false;
             textValor.Enabled = false;
@@ -69,6 +68,7 @@ namespace SistemaPet.subForms
             textServico.Text = null;
             textPesquisar.Text = null;
             textValor.Text = Convert.ToString(0);
+
         }
         private void CarregarGrid()
         {
@@ -117,6 +117,7 @@ namespace SistemaPet.subForms
         private void frmServico_Load(object sender, EventArgs e)
         {
             CarregarGrid();
+            DesabilitarCampos();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -197,6 +198,10 @@ namespace SistemaPet.subForms
         {
             sound2();
             LimparCampos();
+            DesabilitarCampos();
+
+            
+
             btnSalvar.Enabled = false;
         }
 
