@@ -114,7 +114,6 @@
             this.textSenha.Size = new System.Drawing.Size(301, 33);
             this.textSenha.TabIndex = 2;
             this.textSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textSenha.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox2_OnValueChanged);
             this.textSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textSenha_KeyPress);
             // 
             // btnLogar

@@ -46,6 +46,7 @@
     <Compile Include="FuncaoEnt.cs" />
     <Compile Include="ClientesEnt.cs" />
     <Compile Include="FuncionarioEnt.cs" />
+    <Compile Include="LembrarLoginEnt.cs" />
     <Compile Include="OSEnt.cs" />
     <Compile Include="ReciboEnt.cs" />
     <Compile Include="ServicoEnt.cs" />

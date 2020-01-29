@@ -22,38 +22,61 @@ namespace SistemaPet
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         string pasta_aplicacao = "";
+        int tipo;
+        LembrarLoginEnt objTabela = new LembrarLoginEnt();
         public frmLogin()
         {
             InitializeComponent();
             pasta_aplicacao = Application.StartupPath + @"\";
 
-            
-                
         }
-
-        private void bunifuMaterialTextbox2_OnValueChanged(object sender, EventArgs e)
-        {
-            textSenha.isPassword = true;
-        }
-
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             DialogResult result1 = MessageBox.Show("Fechar o Sistema Pets e Pets?", "Sair", MessageBoxButtons.YesNo);
             if (result1 == DialogResult.Yes) {Application.Exit();} else {  };
         }
 
+        private void LembrarLogin() 
+        {
+                objTabela.Id =  1;
+                objTabela.Username = textUsername.Text;
+                objTabela.Password = textSenha.Text;
+                objTabela.Checksave = true;
+                LembrarLoginModel.Editar(objTabela);
+        }
+        private void LimparLogin()
+        {
+            objTabela.Id = 1;
+            objTabela.Username = "";
+            objTabela.Password = "";
+            objTabela.Checksave = false;
+            LembrarLoginModel.Editar(objTabela);
+        }
+
         private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
         {
-            
+            sound1();
+            if (bunifuCheckbox1.Checked == true) { LembrarLogin(); } else { LimparLogin(); }
         }
-
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            //sound2();
+            CarregarLogin();
         }
+        private void CarregarLogin()
+        {
+            List<LembrarLoginEnt> colecao = new List<LembrarLoginEnt>();
+            colecao = new LembrarLoginModel().Lista();
 
+            foreach (var item in colecao)
+            {
+                textUsername.Text = item.Username;
+                textSenha.Text = item.Password;
+                bunifuCheckbox1.Checked = item.Checksave;
+            }
+        }
         public void sound1()
         {
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");

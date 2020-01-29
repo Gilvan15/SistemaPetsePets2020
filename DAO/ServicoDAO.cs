@@ -98,7 +98,6 @@ namespace DAO
                 return lista;
             }
         }
-
         public int Editar(ServicoEnt objTabela)
         {
             using (SqlConnection con = new SqlConnection())
