@@ -309,5 +309,13 @@ namespace SistemaPet
         {
             AbrirFormWrapper(new frmRecibo());
         }
+
+        private void bunifuFlatButton13_Click(object sender, EventArgs e)
+        {
+            AbrirFormWrapper(new ReporCliente());
+            /*
+            ReporCliente RpCliente = new ReporCliente();
+            RpCliente.Show();*/
+        }
     }
 }
