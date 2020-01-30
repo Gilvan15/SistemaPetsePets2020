@@ -6,22 +6,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.43417cm</Width>
+              <Width>2.31511cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>8.06979cm</Width>
+              <Width>7.95073cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.97958cm</Width>
+              <Width>5.86052cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.04812cm</Width>
+              <Width>3.92906cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.28083cm</Width>
+              <Width>3.16177cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.43958cm</Width>
+              <Width>3.32052cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -505,8 +505,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>2.24896cm</Top>
-        <Height>1.62333cm</Height>
-        <Width>27.25208cm</Width>
+        <Left>0.71438cm</Left>
+        <Height>1.62334cm</Height>
+        <Width>26.5377cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -520,9 +521,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>RELAÇÃO DE CLIENTES - PETS E PETS </Value>
+                <Value>RELATÓRIO DE CLIENTES - PETS &amp; PETS </Value>
                 <Style>
+                  <FontFamily>Arial Rounded MT Bold</FontFamily>
                   <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -530,10 +533,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>0.47307cm</Top>
-        <Left>6.13833cm</Left>
+        <Top>0.76976cm</Top>
+        <Left>9.10166cm</Left>
         <Height>0.67938cm</Height>
-        <Width>9.90833cm</Width>
+        <Width>11.66812cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -549,8 +552,8 @@
         <Source>Embedded</Source>
         <Value>PetsPetsLogo</Value>
         <Sizing>Fit</Sizing>
-        <Top>0.3175cm</Top>
-        <Left>2.9337cm</Left>
+        <Top>0.19086cm</Top>
+        <Left>6.84953cm</Left>
         <Height>1.59949cm</Height>
         <Width>1.87042cm</Width>
         <ZIndex>2</ZIndex>

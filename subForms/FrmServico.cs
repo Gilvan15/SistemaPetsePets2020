@@ -23,6 +23,7 @@ namespace SistemaPet.subForms
         public frmServico()
         {
             InitializeComponent();
+            pasta_aplicacao = Application.StartupPath + @"\";
         }
 
         public void sound1()

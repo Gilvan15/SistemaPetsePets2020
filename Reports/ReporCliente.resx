@@ -123,7 +123,26 @@
   <metadata name="dbpetsepetsDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="dbpetsepetsDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="ClienteTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>346, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAh9JREFUaEPt
+        mT2MTFEUgMdvRDQaQbJCQUJBQkOCLZCIhsZWNHS2ECqhUeqoqChkO5UoREEkIhQ0KgkFWQkhET+7i/jZ
+        /b6Jm0xkx7zZnXnvvM39ki+bd/LeuefMe/vm3juNTHDu4WRNfIBtme6CyLal4wlBKNzI8uZRTKytYyMP
+        0RMe4TIDwbAma7PGpwbasQKfoyfexSUYhcV4G63tBa7C/zKAr9ALbuIirJoFeAOtaRTXYiHW41v0whGc
+        j1UxD6+htbzHjdgVm/EjmsBEJiwbx7yC1vAJt+KM2I5f0USXDJTMBXTscdxlYDbswW9owrMGSuIcOuYP
+        3G+gFxzEn2ji0wb6zDA61i88bKCXHMHf+AePG+gTRzGNc8xAPziB6ZMaMtBjDmG686cM9BP/T9Kze8BA
+        j9iL39HcZwyUQXqbTOBuA7NkB6a340UDZeH7/TI68GfchjNlC6bvK3OWjs1cRQv4gJuwWzbgOzRHpTOI
+        1jnQG1yHRVmDr9FrndMtxEppnZW+xNXYibCz7KXoGtrCuvExhlv3tK7cihp2JZoK7ETR8yojNxKN3Eg0
+        ciPRyI1EIzcSjdxINHIj0ZhzjexsHrUnfCP30QLd7ryOK3E6wjfiTshJdK/LQsfwPLpB0Ur4RhLeCe+I
+        d8aC3THZh4naNJJwO/UZpsJvob9R1q4R8XFzZz09bl/+/q1dI4l/H7faNpIYxCd4p3mUmZM0GlOglTVT
+        wxM34QAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

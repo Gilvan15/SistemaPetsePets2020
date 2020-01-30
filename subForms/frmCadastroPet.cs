@@ -313,19 +313,6 @@ namespace SistemaPet.subForms
                 textAlegMedic.Visible = false;
             }
         }
-
-        private void textPesquisar_OnValueChanged_1(object sender, EventArgs e)
-        {
-            if (textPesquisar.Text == "")
-            {
-                CarregarGrid();
-                return;
-            }
-            opc = "Buscar";
-            InicarOpc();
-
-        }
-
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -352,17 +339,15 @@ namespace SistemaPet.subForms
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             sound1();
-            if (pictureLupa.Visible == false)
+            if (groupBox1.Visible == false)
             {
-                pictureLupa.Visible = true;
-                textPesquisar.Visible = true;
-                textPesquisar.Text = null;
+                groupBox1.Visible = true;
                 textPesquisar.Focus();
             }
             else
             {
-                pictureLupa.Visible = false;
-                textPesquisar.Visible = false;
+                groupBox1.Visible = false;
+                textPesquisar.Text = "";
             }
         }
 
@@ -712,9 +697,7 @@ namespace SistemaPet.subForms
             {
                 textEmail.Focus();
             }
-
         }
-
         private void textEmail_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -723,13 +706,22 @@ namespace SistemaPet.subForms
             }
 
         }
-
         private void textAlegMedic_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
                 btnSalvar.Focus();
             }
+        }
+        private void textPesquisar_OnValueChanged(object sender, EventArgs e)
+        {
+            if (textPesquisar.Text == "")
+            {
+                CarregarGrid();
+                return;
+            }
+            opc = "Buscar";
+            InicarOpc();
         }
     }
 }

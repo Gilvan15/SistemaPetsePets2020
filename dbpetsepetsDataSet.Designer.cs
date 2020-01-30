@@ -5896,7 +5896,7 @@ SELECT id, especie, raca, nome, proprietario, telefone, email, cuidados_esp, ale
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Cliente] WHERE (([id] = @Original_id) AND ((@IsNull_nome = 1 AND [nome] IS NULL) OR ([nome] = @Original_nome)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_rg = 1 AND [rg] IS NULL) OR ([rg] = @Original_rg)) AND ((@IsNull_cpf = 1 AND [cpf] IS NULL) OR ([cpf] = @Original_cpf)) AND ((@IsNull_fone1 = 1 AND [fone1] IS NULL) OR ([fone1] = @Original_fone1)) AND ((@IsNull_fone2 = 1 AND [fone2] IS NULL) OR ([fone2] = @Original_fone2)) AND ((@IsNull_rua = 1 AND [rua] IS NULL) OR ([rua] = @Original_rua)) AND ((@IsNull_numero = 1 AND [numero] IS NULL) OR ([numero] = @Original_numero)) AND ((@IsNull_bairro = 1 AND [bairro] IS NULL) OR ([bairro] = @Original_bairro)) AND ((@IsNull_complemento = 1 AND [complemento] IS NULL) OR ([complemento] = @Original_complemento)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Cliente] WHERE (([id] = @Original_id) AND ((@IsNull_nome = 1 AND [nome] IS NULL) OR ([nome] = @Original_nome)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_rg = 1 AND [rg] IS NULL) OR ([rg] = @Original_rg)) AND ((@IsNull_cpf = 1 AND [cpf] IS NULL) OR ([cpf] = @Original_cpf)) AND ((@IsNull_fone1 = 1 AND [fone1] IS NULL) OR ([fone1] = @Original_fone1)) AND ((@IsNull_fone2 = 1 AND [fone2] IS NULL) OR ([fone2] = @Original_fone2)) AND ((@IsNull_rua = 1 AND [rua] IS NULL) OR ([rua] = @Original_rua)) AND ((@IsNull_numero = 1 AND [numero] IS NULL) OR ([numero] = @Original_numero)) AND ((@IsNull_bairro = 1 AND [bairro] IS NULL) OR ([bairro] = @Original_bairro)) AND ((@IsNull_complemento = 1 AND [complemento] IS NULL) OR ([complemento] = @Original_complemento)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nome", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -5921,8 +5921,8 @@ SELECT id, especie, raca, nome, proprietario, telefone, email, cuidados_esp, ale
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_complemento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "complemento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Cliente] ([nome], [email], [rg], [cpf], [fone1], [fone2], [rua], [numero], [bairro], [complemento]) VALUES (@nome, @email, @rg, @cpf, @fone1, @fone2, @rua, @numero, @bairro, @complemento);
-SELECT id, nome, email, rg, cpf, fone1, fone2, rua, numero, bairro, complemento FROM Cliente WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Cliente] ([nome], [email], [rg], [cpf], [fone1], [fone2], [rua], [numero], [bairro], [complemento]) VALUES (@nome, @email, @rg, @cpf, @fone1, @fone2, @rua, @numero, @bairro, @complemento);
+SELECT id, nome, email, rg, cpf, fone1, fone2, rua, numero, bairro, complemento FROM Cliente WHERE (id = SCOPE_IDENTITY()) ORDER BY nome";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5936,8 +5936,8 @@ SELECT id, nome, email, rg, cpf, fone1, fone2, rua, numero, bairro, complemento 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@complemento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "complemento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Cliente] SET [nome] = @nome, [email] = @email, [rg] = @rg, [cpf] = @cpf, [fone1] = @fone1, [fone2] = @fone2, [rua] = @rua, [numero] = @numero, [bairro] = @bairro, [complemento] = @complemento WHERE (([id] = @Original_id) AND ((@IsNull_nome = 1 AND [nome] IS NULL) OR ([nome] = @Original_nome)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_rg = 1 AND [rg] IS NULL) OR ([rg] = @Original_rg)) AND ((@IsNull_cpf = 1 AND [cpf] IS NULL) OR ([cpf] = @Original_cpf)) AND ((@IsNull_fone1 = 1 AND [fone1] IS NULL) OR ([fone1] = @Original_fone1)) AND ((@IsNull_fone2 = 1 AND [fone2] IS NULL) OR ([fone2] = @Original_fone2)) AND ((@IsNull_rua = 1 AND [rua] IS NULL) OR ([rua] = @Original_rua)) AND ((@IsNull_numero = 1 AND [numero] IS NULL) OR ([numero] = @Original_numero)) AND ((@IsNull_bairro = 1 AND [bairro] IS NULL) OR ([bairro] = @Original_bairro)) AND ((@IsNull_complemento = 1 AND [complemento] IS NULL) OR ([complemento] = @Original_complemento)));
-SELECT id, nome, email, rg, cpf, fone1, fone2, rua, numero, bairro, complemento FROM Cliente WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Cliente] SET [nome] = @nome, [email] = @email, [rg] = @rg, [cpf] = @cpf, [fone1] = @fone1, [fone2] = @fone2, [rua] = @rua, [numero] = @numero, [bairro] = @bairro, [complemento] = @complemento WHERE (([id] = @Original_id) AND ((@IsNull_nome = 1 AND [nome] IS NULL) OR ([nome] = @Original_nome)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_rg = 1 AND [rg] IS NULL) OR ([rg] = @Original_rg)) AND ((@IsNull_cpf = 1 AND [cpf] IS NULL) OR ([cpf] = @Original_cpf)) AND ((@IsNull_fone1 = 1 AND [fone1] IS NULL) OR ([fone1] = @Original_fone1)) AND ((@IsNull_fone2 = 1 AND [fone2] IS NULL) OR ([fone2] = @Original_fone2)) AND ((@IsNull_rua = 1 AND [rua] IS NULL) OR ([rua] = @Original_rua)) AND ((@IsNull_numero = 1 AND [numero] IS NULL) OR ([numero] = @Original_numero)) AND ((@IsNull_bairro = 1 AND [bairro] IS NULL) OR ([bairro] = @Original_bairro)) AND ((@IsNull_complemento = 1 AND [complemento] IS NULL) OR ([complemento] = @Original_complemento)));
+SELECT id, nome, email, rg, cpf, fone1, fone2, rua, numero, bairro, complemento FROM Cliente WHERE (id = @id) ORDER BY nome";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5986,17 +5986,25 @@ SELECT id, nome, email, rg, cpf, fone1, fone2, rua, numero, bairro, complemento 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, nome, email, rg, cpf, fone1, fone2, rua, numero, bairro, complemento F" +
-                "ROM dbo.Cliente";
+            this._commandCollection[0].CommandText = "SELECT        id, nome, email, rg, cpf, fone1, fone2, rua, numero, bairro, comple" +
+                "mento\r\nFROM            Cliente\r\nWHERE        (nome LIKE \'%\' + @nome + \'%\')\r\nORDE" +
+                "R BY nome";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbpetsepetsDataSet.ClienteDataTable dataTable) {
+        public virtual int Fill(dbpetsepetsDataSet.ClienteDataTable dataTable, string nome) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((nome == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nome));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -6008,8 +6016,14 @@ SELECT id, nome, email, rg, cpf, fone1, fone2, rua, numero, bairro, complemento 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbpetsepetsDataSet.ClienteDataTable GetData() {
+        public virtual dbpetsepetsDataSet.ClienteDataTable GetData(string nome) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((nome == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nome));
+            }
             dbpetsepetsDataSet.ClienteDataTable dataTable = new dbpetsepetsDataSet.ClienteDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
