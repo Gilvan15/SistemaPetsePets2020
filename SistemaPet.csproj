@@ -95,6 +95,12 @@
     <Compile Include="Reports\ReporCliente.Designer.cs">
       <DependentUpon>ReporCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ReportRecibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportRecibo.Designer.cs">
+      <DependentUpon>ReportRecibo.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="subForms\frmCadastroPet.cs">
       <SubType>Form</SubType>
@@ -187,6 +193,10 @@
     <EmbeddedResource Include="Reports\ReporCliente.rdlc" />
     <EmbeddedResource Include="Reports\ReporCliente.resx">
       <DependentUpon>ReporCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportRecibo.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRecibo.resx">
+      <DependentUpon>ReportRecibo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="subForms\frmCadastroPet.resx">
       <DependentUpon>frmCadastroPet.cs</DependentUpon>

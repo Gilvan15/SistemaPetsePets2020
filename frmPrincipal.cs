@@ -11,6 +11,7 @@ using SistemaPet.subForms;
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Globalization;
+using SistemaPet.Reports;
 
 namespace SistemaPet
 {
@@ -304,7 +305,6 @@ namespace SistemaPet
                 hideSubMenu();
             }
         }
-
         private void bunifuFlatButton18_Click_1(object sender, EventArgs e)
         {
             AbrirFormWrapper(new frmRecibo());
@@ -322,10 +322,9 @@ namespace SistemaPet
         {
 
         }
-
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
-
+            AbrirFormWrapper(new ReportRecibo());
         }
     }
 }
