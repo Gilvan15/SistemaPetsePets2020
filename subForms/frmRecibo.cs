@@ -455,6 +455,7 @@ namespace SistemaPet.subForms
                             objTabela.Emitente = textEmitente.Text;
                             objTabela.Cnpj = textCnpj.Text;
                             objTabela.Data = DateTime.Now;
+                            objTabela.Datareport = DateTime.Now;
 
                             int x = ReciboModel.Inseir(objTabela);
 

@@ -14,6 +14,10 @@ namespace SistemaPet
     public partial class ReporCliente : Form
     {
         string pasta_aplicacao = "";
+
+        DateTime data1;
+        DateTime data2;
+
         public ReporCliente()
         {
             InitializeComponent();
@@ -43,12 +47,13 @@ namespace SistemaPet
             else
             {
                 panel1.Visible = false;
+                textBox1.Text = string.Empty;
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            this.ClienteTableAdapter.Fill(this.dbpetsepetsDataSet.Cliente, textBox1.Text);
+            this.ClienteTableAdapter.Fill(this.dbpetsepetsDataSet.Cliente, textBox1.Text) ;
             this.reportViewer1.RefreshReport();
         }
     }

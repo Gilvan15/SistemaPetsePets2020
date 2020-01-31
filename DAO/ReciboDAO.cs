@@ -23,9 +23,9 @@ namespace DAO
                     cn.CommandType = CommandType.Text;
                     con.Open();
                     cn.CommandText = "INSERT INTO Recibo ([valor], [recebemosde], [importanciade1], " +
-                        "[importanciade2], [referentea1], [referentea2], [emitente], [cnpj], [data]) " +
+                        "[importanciade2], [referentea1], [referentea2], [emitente], [cnpj], [data], [datareport] ) " +
                         "VALUES (@valor, @recebemosde, @importanciade1, @importanciade2, " +
-                        "@referentea1, @referentea2, @emitente, @cnpj, @data)";
+                        "@referentea1, @referentea2, @emitente, @cnpj, @data, @datareport)";
 
                     cn.Parameters.Add("valor", SqlDbType.VarChar).Value = objTabela.Valor;
                     cn.Parameters.Add("recebemosde", SqlDbType.VarChar).Value = objTabela.Recebemosde;
@@ -36,6 +36,7 @@ namespace DAO
                     cn.Parameters.Add("emitente", SqlDbType.VarChar).Value = objTabela.Emitente;
                     cn.Parameters.Add("cnpj", SqlDbType.VarChar).Value = objTabela.Cnpj;
                     cn.Parameters.Add("data", SqlDbType.DateTime).Value = objTabela.Data;
+                    cn.Parameters.Add("datareport", SqlDbType.DateTime).Value = objTabela.Datareport;
                     cn.Connection = con;
                     qtd = cn.ExecuteNonQuery();
                 }
@@ -78,6 +79,7 @@ namespace DAO
                         dado.Emitente = Convert.ToString(dr["emitente"]);
                         dado.Cnpj = Convert.ToString(dr["cnpj"]);
                         dado.Data = Convert.ToDateTime(dr["data"]);
+                        dado.Datareport = Convert.ToDateTime(dr["datareport"]);
                         lista.Add(dado);
                     }
                 }
@@ -159,11 +161,10 @@ namespace DAO
                         dado.Emitente = Convert.ToString(dr["emitente"]);
                         dado.Cnpj= Convert.ToString(dr["cnpj"]);
                         dado.Data = Convert.ToDateTime(dr["data"]);
-
+                        dado.Datareport = Convert.ToDateTime(dr["datareport"]);
                         lista.Add(dado);
                     }
                 }
-                
                 return lista;
             }
         }

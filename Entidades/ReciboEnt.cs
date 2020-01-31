@@ -18,6 +18,7 @@ namespace Entidades
         private string emitente;
         private string cnpj;
         private DateTime data;
+        private DateTime datareport;
 
         public int Id { get => id; set => id = value; }
         public string Valor { get => valor; set => valor = value; }
@@ -29,5 +30,6 @@ namespace Entidades
         public string Emitente { get => emitente; set => emitente = value; }
         public string Cnpj { get => cnpj; set => cnpj = value; }
         public DateTime Data { get => data; set => data = value; }
+        public DateTime Datareport { get => datareport; set => datareport = value; }
     }
 }
