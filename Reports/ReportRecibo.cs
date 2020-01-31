@@ -13,9 +13,7 @@ namespace SistemaPet.Reports
 {
     public partial class ReportRecibo : Form
     {
-
         string pasta_aplicacao = "";
-
         DateTime data1;
         DateTime data2;
         public ReportRecibo()
@@ -45,7 +43,6 @@ namespace SistemaPet.Reports
                 panel1.Visible = false;
                 carregarDataeLista();
             }
-
         }
         private void carregarDataeLista() 
         {

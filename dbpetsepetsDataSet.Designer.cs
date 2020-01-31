@@ -12187,7 +12187,7 @@ SELECT id, nomepet, especie, raca, proprietario, telefone, email, c_especiais, a
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [Recibo] ([valor], [recebemosde], [importanciade1], [importanciade2], [referentea1], [referentea2], [emitente], [cnpj], [data], [datareport]) VALUES (@valor, @recebemosde, @importanciade1, @importanciade2, @referentea1, @referentea2, @emitente, @cnpj, @data, @datareport);
-SELECT id, valor, recebemosde, importanciade1, importanciade2, referentea1, referentea2, emitente, cnpj, data, datareport FROM Recibo WHERE (id = SCOPE_IDENTITY())";
+SELECT id, valor, recebemosde, importanciade1, importanciade2, referentea1, referentea2, emitente, cnpj, data, datareport FROM Recibo WHERE (id = SCOPE_IDENTITY()) ORDER BY datareport";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@recebemosde", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "recebemosde", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -12202,7 +12202,7 @@ SELECT id, valor, recebemosde, importanciade1, importanciade2, referentea1, refe
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [Recibo] SET [valor] = @valor, [recebemosde] = @recebemosde, [importanciade1] = @importanciade1, [importanciade2] = @importanciade2, [referentea1] = @referentea1, [referentea2] = @referentea2, [emitente] = @emitente, [cnpj] = @cnpj, [data] = @data, [datareport] = @datareport WHERE (([id] = @Original_id) AND ([valor] = @Original_valor) AND ([recebemosde] = @Original_recebemosde) AND ([importanciade1] = @Original_importanciade1) AND ((@IsNull_importanciade2 = 1 AND [importanciade2] IS NULL) OR ([importanciade2] = @Original_importanciade2)) AND ((@IsNull_referentea1 = 1 AND [referentea1] IS NULL) OR ([referentea1] = @Original_referentea1)) AND ([referentea2] = @Original_referentea2) AND ((@IsNull_emitente = 1 AND [emitente] IS NULL) OR ([emitente] = @Original_emitente)) AND ((@IsNull_cnpj = 1 AND [cnpj] IS NULL) OR ([cnpj] = @Original_cnpj)) AND ([data] = @Original_data) AND ([datareport] = @Original_datareport));
-SELECT id, valor, recebemosde, importanciade1, importanciade2, referentea1, referentea2, emitente, cnpj, data, datareport FROM Recibo WHERE (id = @id)";
+SELECT id, valor, recebemosde, importanciade1, importanciade2, referentea1, referentea2, emitente, cnpj, data, datareport FROM Recibo WHERE (id = @id) ORDER BY datareport";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@recebemosde", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "recebemosde", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -12247,7 +12247,7 @@ SELECT id, valor, recebemosde, importanciade1, importanciade2, referentea1, refe
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        id, valor, recebemosde, importanciade1, importanciade2, referentea1" +
                 ", referentea2, emitente, cnpj, data, datareport\r\nFROM            Recibo\r\nWHERE  " +
-                "      (datareport BETWEEN @data1 AND @data2)";
+                "      (datareport BETWEEN @data1 AND @data2)\r\nORDER BY datareport";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@data1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "datareport", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@data2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "datareport", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
