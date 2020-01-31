@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using DAO;
+using System.Data;
 
 namespace Model
 {
@@ -29,6 +30,13 @@ namespace Model
         {
             return new ReciboDAO().Editar(objTabela);
         }
+
+
+        public DataTable ListaDataTable()
+        {
+            return new ReciboDAO().ListaDataTable();
+        }
+
         public List<ReciboEnt> Buscar(ReciboEnt objTabela)
         {
             return new ReciboDAO().Buscar(objTabela);

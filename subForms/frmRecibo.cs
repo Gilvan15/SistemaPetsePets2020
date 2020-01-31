@@ -170,8 +170,12 @@ namespace SistemaPet.subForms
         {
             try
             {
-                List<ReciboEnt> lista = new List<ReciboEnt>();
-                lista = new ReciboModel().Lista();
+                //List<ReciboEnt> lista = new List<ReciboEnt>();
+                //lista = new ReciboModel().Lista();
+
+                DataTable lista;
+                lista = new ReciboModel().ListaDataTable();
+
                 dataGridView1.AutoGenerateColumns = true;
                 dataGridView1.DataSource = lista;
                 dataGridView1.Columns[0].HeaderText = "ID";
@@ -184,12 +188,13 @@ namespace SistemaPet.subForms
                 dataGridView1.Columns[7].HeaderText = "EMITENTE";
                 dataGridView1.Columns[8].HeaderText = "CNPJ";
                 dataGridView1.Columns[9].HeaderText = "DATA/HORA";
+                dataGridView1.Columns[10].HeaderText = "DATA";
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                
                 dataGridView1.Columns[4].Visible = false;
                 dataGridView1.Columns[6].Visible = false;
                 dataGridView1.Columns[7].Visible = false;
                 dataGridView1.Columns[8].Visible = false;
+                dataGridView1.Columns[10].Visible = false;
             }
             catch (Exception ex)
             {

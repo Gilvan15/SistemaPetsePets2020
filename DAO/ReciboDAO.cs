@@ -130,6 +130,24 @@ namespace DAO
             }
         }
 
+
+
+        public DataTable ListaDataTable()
+        {
+            using (SqlConnection con = new SqlConnection())
+            {
+                con.ConnectionString = DAO.Properties.Settings.Default.banco;
+                con.Open();
+                string query = "SELECT * FROM Recibo ORDER BY datareport ASC";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
         public List<ReciboEnt> Lista()
         {
             using (SqlConnection con = new SqlConnection())
