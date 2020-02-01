@@ -321,6 +321,8 @@ namespace SistemaPet
         private void bunifuFlatButton2_Click_1(object sender, EventArgs e)
         {
 
+            AbrirFormWrapper(new ReportOS());
+
         }
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {

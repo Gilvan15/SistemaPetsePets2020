@@ -31,30 +31,35 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporCliente));
-            this.ClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dbpetsepetsDataSet = new SistemaPet.dbpetsepetsDataSet();
+            this.ClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ClienteTableAdapter = new SistemaPet.dbpetsepetsDataSetTableAdapters.ClienteTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.clienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ClienteBindingSource
+            // clienteBindingSource1
             // 
-            this.ClienteBindingSource.DataMember = "Cliente";
-            this.ClienteBindingSource.DataSource = this.dbpetsepetsDataSet;
+            this.clienteBindingSource1.DataMember = "Cliente";
+            this.clienteBindingSource1.DataSource = this.dbpetsepetsDataSet;
             // 
             // dbpetsepetsDataSet
             // 
             this.dbpetsepetsDataSet.DataSetName = "dbpetsepetsDataSet";
             this.dbpetsepetsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ClienteBindingSource
+            // 
+            this.ClienteBindingSource.DataMember = "Cliente";
+            this.ClienteBindingSource.DataSource = this.dbpetsepetsDataSet;
             // 
             // reportViewer1
             // 
@@ -62,7 +67,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.clienteBindingSource1;
+            reportDataSource1.Value = this.ClienteBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "SistemaPet.Reports.ReporCliente.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(9, 70);
@@ -118,11 +123,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // clienteBindingSource1
-            // 
-            this.clienteBindingSource1.DataMember = "Cliente";
-            this.clienteBindingSource1.DataSource = this.dbpetsepetsDataSet;
-            // 
             // ReporCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,11 +136,11 @@
             this.Name = "ReporCliente";
             this.Text = "ReporCliente";
             this.Load += new System.EventHandler(this.ReporCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

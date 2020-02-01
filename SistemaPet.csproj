@@ -95,6 +95,12 @@
     <Compile Include="Reports\ReporCliente.Designer.cs">
       <DependentUpon>ReporCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ReportOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportOS.Designer.cs">
+      <DependentUpon>ReportOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\ReportRecibo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,10 @@
     <EmbeddedResource Include="Reports\ReporCliente.rdlc" />
     <EmbeddedResource Include="Reports\ReporCliente.resx">
       <DependentUpon>ReporCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportOS.rdlc" />
+    <EmbeddedResource Include="Reports\ReportOS.resx">
+      <DependentUpon>ReportOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportRecibo.rdlc" />
     <EmbeddedResource Include="Reports\ReportRecibo.resx">

@@ -257,31 +257,7 @@ namespace SistemaPet.subForms
             {
                 MessageBox.Show("Ocorreu um error ao excluir o registro: " + ex.Message);
             }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                DesabilitarCampos();
-                int codId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                textNumeroRecibo.Text = codId.ToString("D5");
-                textValorRecibo.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textRecebemosde.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textImportanciade1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textImportanciade2.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textReferentea1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textReferentea2.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                textEmitente.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                textCnpj.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                lbldata.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                btnSalvar.Enabled = false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error DataGrid: " + ex.Message);
-            }
-        }
+        }        
         private void Moeda(ref TextBox txt)
         {
             //procedure para formatar textbox em formato moeda c/2 casas decimais
@@ -646,6 +622,31 @@ namespace SistemaPet.subForms
                 }
             }
         }
-        
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+            try
+            {
+                DesabilitarCampos();
+                int codId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                textNumeroRecibo.Text = codId.ToString("D5");
+                textValorRecibo.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textRecebemosde.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textImportanciade1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textImportanciade2.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textReferentea1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textReferentea2.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                textEmitente.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textCnpj.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                lbldata.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                btnSalvar.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error DataGrid: " + ex.Message);
+            }
+
+        }
     }
 }

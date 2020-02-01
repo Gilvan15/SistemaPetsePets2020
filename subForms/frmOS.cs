@@ -168,6 +168,8 @@ namespace SistemaPet.subForms
                 dataGridView1.Columns[7].HeaderText = "CUID.ESPECIAIS";
                 dataGridView1.Columns[8].HeaderText = "ALERGICO";
                 dataGridView1.Columns[9].HeaderText = "OBS";
+
+
                 dataGridView1.Columns[10].HeaderText = "SERVICO1";
                 dataGridView1.Columns[11].HeaderText = "CHECKADO1";
                 dataGridView1.Columns[12].HeaderText = "VALORSERV1";
@@ -184,9 +186,10 @@ namespace SistemaPet.subForms
                 dataGridView1.Columns[20].HeaderText = "VALORSERV4";
 
                 dataGridView1.Columns[21].HeaderText = "DATA";
-                dataGridView1.Columns[22].HeaderText = "VALOR TOTAL";
-                dataGridView1.Columns[23].HeaderText = "DESCONTO";
-                dataGridView1.Columns[24].HeaderText = "VALOR FINAL";
+                dataGridView1.Columns[22].HeaderText = "DATA";
+                dataGridView1.Columns[23].HeaderText = "VALOR TOTAL";
+                dataGridView1.Columns[24].HeaderText = "DESCONTO";
+                dataGridView1.Columns[25].HeaderText = "VALOR FINAL";
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 for (int i = 7; i <= 21; i++)
@@ -408,6 +411,7 @@ namespace SistemaPet.subForms
                             objTabela.Servico4 = comboServico4.Text;
                             objTabela.Valorserv4 = textValor4.Text;
                             objTabela.Data = DateTime.Now;
+                            objTabela.Dataos = DateTime.Now;
                             objTabela.Valortotal = textTotal.Text;
                             objTabela.Desconto= textDesconto.Text;
                             objTabela.Valorfinal = textValorFinal.Text;
@@ -469,6 +473,7 @@ namespace SistemaPet.subForms
                             objTabela.Servico4 = comboServico4.Text;
                             objTabela.Valorserv4 = textValor4.Text;
                             objTabela.Data = DateTime.Now;
+                            objTabela.Dataos = DateTime.Now;
 
                             objTabela.Valortotal = textTotal.Text;
                             objTabela.Desconto = textDesconto.Text;
@@ -1020,9 +1025,10 @@ namespace SistemaPet.subForms
                 comboServico4.Text = dataGridView1.CurrentRow.Cells[19].Value.ToString();
                 textValor4.Text = dataGridView1.CurrentRow.Cells[20].Value.ToString();
                 lbldata.Text = dataGridView1.CurrentRow.Cells[21].Value.ToString();
-                textTotal.Text = dataGridView1.CurrentRow.Cells[22].Value.ToString();
-                textDesconto.Text = dataGridView1.CurrentRow.Cells[23].Value.ToString();
-                textValorFinal.Text = dataGridView1.CurrentRow.Cells[24].Value.ToString();
+
+                textTotal.Text = dataGridView1.CurrentRow.Cells[23].Value.ToString();
+                textDesconto.Text = dataGridView1.CurrentRow.Cells[24].Value.ToString();
+                textValorFinal.Text = dataGridView1.CurrentRow.Cells[25].Value.ToString();
             }
             catch (Exception ex)
             {
