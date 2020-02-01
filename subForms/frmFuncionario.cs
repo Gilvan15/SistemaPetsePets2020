@@ -597,6 +597,7 @@ namespace SistemaPet.subForms
                 if (textCpf.Text.Length == 11)
                 {
                     textCpf.Text = FormatCnpjCpf.FormatCPF(textCpf.Text);
+                    textTelefone.Focus();
                 }
             }
             catch (Exception)
@@ -604,22 +605,97 @@ namespace SistemaPet.subForms
                 return;
             }
         }
-
         private void textTelefone_OnValueChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (textTelefone.Text.Length == 11)
-                {
-                    textTelefone.Text = FormatCnpjCpf.FormatCelular(textTelefone.Text);
-                    
-                }
-            }
-            catch (Exception)
-            {
-                return;
-            }
+             if(textTelefone.Text.Length == 11) 
+             {
+                textTelefone.Text = FormatCnpjCpf.FormatCelular(textTelefone.Text);
+                textEmail.Focus();
+                
+             }
+        }
 
+        private void textNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textRg.Focus();
+            }
+        }
+        private void textCpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == 13)
+            {
+                textTelefone.Focus();
+            }
+        }
+
+        private void textRg_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == 13)
+            {
+                textCpf.Focus();
+            }
+        }
+        private void textTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textEmail.Focus();
+            }
+        }
+        private void textEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                if (FormatCnpjCpf.ValidarEmail(textEmail.Text) == false)
+                {
+                    sound3();
+                    MessageBox.Show("Email com formato incorreto!", "Aviso!!!", MessageBoxButtons.OK);
+                    textEmail.Text = "";
+                    textEmail.Focus();
+                    return;
+                }
+                textRua.Focus();
+            }
+        }
+        private void textNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBairro.Focus();
+            }
+        }
+        private void textRua_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textNumero.Focus();
+            }
+        }
+
+        private void textBairro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textComp.Focus();
+            }
+        }
+        private void textComp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                comboFuncao.Focus();
+            }
+        }
+        private void comboFuncao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnSalvar.Focus();
+            }
         }
     }
 }

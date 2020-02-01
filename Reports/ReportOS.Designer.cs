@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportOS));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.oservicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbpetsepetsDataSet = new SistemaPet.dbpetsepetsDataSet();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -39,22 +41,31 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dbpetsepetsDataSet = new SistemaPet.dbpetsepetsDataSet();
-            this.oservicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oservicoTableAdapter = new SistemaPet.dbpetsepetsDataSetTableAdapters.OservicoTableAdapter();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oservicoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // oservicoBindingSource
+            // 
+            this.oservicoBindingSource.DataMember = "Oservico";
+            this.oservicoBindingSource.DataSource = this.dbpetsepetsDataSet;
+            // 
+            // dbpetsepetsDataSet
+            // 
+            this.dbpetsepetsDataSet.DataSetName = "dbpetsepetsDataSet";
+            this.dbpetsepetsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(4, 18);
+            this.button2.Location = new System.Drawing.Point(12, 18);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(67, 49);
             this.button2.TabIndex = 3;
@@ -145,16 +156,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(856, 563);
             this.reportViewer1.TabIndex = 7;
             // 
-            // dbpetsepetsDataSet
-            // 
-            this.dbpetsepetsDataSet.DataSetName = "dbpetsepetsDataSet";
-            this.dbpetsepetsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // oservicoBindingSource
-            // 
-            this.oservicoBindingSource.DataMember = "Oservico";
-            this.oservicoBindingSource.DataSource = this.dbpetsepetsDataSet;
-            // 
             // oservicoTableAdapter
             // 
             this.oservicoTableAdapter.ClearBeforeFill = true;
@@ -172,10 +173,10 @@
             this.Name = "ReportOS";
             this.Text = "ReportOS";
             this.Load += new System.EventHandler(this.ReportOS_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.oservicoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oservicoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

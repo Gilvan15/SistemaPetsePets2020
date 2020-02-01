@@ -279,7 +279,7 @@ namespace SistemaPet
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //labelHora.Text = String.Format("Dia: {0:dd/MM/yyyy} Hora: {1:HH:mm:ss}", DateTime.Now, DateTime.Now);
+            this.labelHora.Text = String.Format("Data: {0:dd/MM/yyyy} |  Hora: {1:HH:mm:ss}", DateTime.Now, DateTime.Now);
         }
 
         private void btnMenuValores_Click(object sender, EventArgs e)

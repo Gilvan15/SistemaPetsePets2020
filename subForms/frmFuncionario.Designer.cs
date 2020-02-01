@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFuncionario));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupDadosAdicionais = new System.Windows.Forms.GroupBox();
@@ -391,9 +391,10 @@
             this.textComp.Location = new System.Drawing.Point(454, 325);
             this.textComp.Margin = new System.Windows.Forms.Padding(5);
             this.textComp.Name = "textComp";
-            this.textComp.Size = new System.Drawing.Size(266, 29);
+            this.textComp.Size = new System.Drawing.Size(282, 29);
             this.textComp.TabIndex = 9;
             this.textComp.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textComp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textComp_KeyPress);
             // 
             // bunifuCustomLabel9
             // 
@@ -437,6 +438,7 @@
             this.textBairro.Size = new System.Drawing.Size(303, 29);
             this.textBairro.TabIndex = 8;
             this.textBairro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBairro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBairro_KeyPress);
             // 
             // textEmail
             // 
@@ -457,6 +459,7 @@
             this.textEmail.Size = new System.Drawing.Size(330, 29);
             this.textEmail.TabIndex = 5;
             this.textEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEmail_KeyPress);
             // 
             // bunifuCustomLabel12
             // 
@@ -491,6 +494,7 @@
             this.textTelefone.TabIndex = 4;
             this.textTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textTelefone.OnValueChanged += new System.EventHandler(this.textTelefone_OnValueChanged);
+            this.textTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTelefone_KeyPress);
             // 
             // bunifuCustomLabel11
             // 
@@ -512,6 +516,7 @@
             this.comboFuncao.Size = new System.Drawing.Size(204, 28);
             this.comboFuncao.TabIndex = 10;
             this.comboFuncao.SelectedIndexChanged += new System.EventHandler(this.comboFuncao_SelectedIndexChanged);
+            this.comboFuncao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboFuncao_KeyPress);
             // 
             // bunifuCustomLabel10
             // 
@@ -544,6 +549,7 @@
             this.textRua.Size = new System.Drawing.Size(416, 29);
             this.textRua.TabIndex = 6;
             this.textRua.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textRua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textRua_KeyPress);
             // 
             // bunifuCustomLabel7
             // 
@@ -575,6 +581,7 @@
             this.textNumero.Size = new System.Drawing.Size(159, 29);
             this.textNumero.TabIndex = 7;
             this.textNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNumero_KeyPress);
             // 
             // bunifuCustomLabel6
             // 
@@ -619,6 +626,7 @@
             this.textCpf.TabIndex = 3;
             this.textCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textCpf.OnValueChanged += new System.EventHandler(this.textCpf_OnValueChanged);
+            this.textCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCpf_KeyPress);
             // 
             // bunifuCustomLabel4
             // 
@@ -652,6 +660,7 @@
             this.textRg.Size = new System.Drawing.Size(263, 29);
             this.textRg.TabIndex = 2;
             this.textRg.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textRg_KeyPress);
             // 
             // bunifuCustomLabel1
             // 
@@ -783,14 +792,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(9, 427);
@@ -856,6 +865,7 @@
             this.textNome.Size = new System.Drawing.Size(648, 29);
             this.textNome.TabIndex = 1;
             this.textNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNome_KeyPress);
             // 
             // textCod
             // 

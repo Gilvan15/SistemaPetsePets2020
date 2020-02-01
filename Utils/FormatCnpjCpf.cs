@@ -20,7 +20,11 @@ namespace SistemaPet.Utils
             CNPJ =  Convert.ToUInt64(CNPJ).ToString(@"00\.000\.000\/0000\-00");
             return CNPJ;
         }
-
+        public static string FormatConvencional(string celular)
+        {
+            celular = Convert.ToUInt64(celular).ToString(@"(##) ####-####");
+            return celular;
+        }
         public static string FormatCelular(string celular)
         {
             celular = Convert.ToUInt64(celular).ToString(@"(##) #####-####");
