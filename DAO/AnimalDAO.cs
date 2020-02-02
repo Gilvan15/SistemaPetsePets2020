@@ -20,10 +20,14 @@ namespace DAO
                     SqlCommand cn = new SqlCommand();
                     cn.CommandType = CommandType.Text;
                     con.Open();
-                    cn.CommandText = "INSERT INTO Animal ([especie], [raca], [nome], [proprietario], [telefone], [email], [cuidados_esp], [alergico]) VALUES (@especie, @raca, @nome, @proprietario, @telefone, @email, @cuidados_esp, @alergico)";
+                    cn.CommandText = "INSERT INTO Animal ([especie], [raca], [nome], [idadenumero1], [idadetipo1], [idadenumero2], [idadetipo2], [proprietario], [telefone], [email], [cuidados_esp], [alergico]) VALUES (@especie, @raca, @nome, @idadenumero1,  @idadetipo1, @idadenumero2, @idadetipo2, @proprietario, @telefone, @email, @cuidados_esp, @alergico)";
                     cn.Parameters.Add("especie", SqlDbType.VarChar).Value = objTabela.Especie;
                     cn.Parameters.Add("raca", SqlDbType.VarChar).Value = objTabela.Raca;
                     cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Nome;
+                    cn.Parameters.Add("idadenumero1", SqlDbType.VarChar).Value = objTabela.Idadenumero1;
+                    cn.Parameters.Add("idadetipo1", SqlDbType.VarChar).Value = objTabela.Idadetipo1;
+                    cn.Parameters.Add("idadenumero2", SqlDbType.VarChar).Value = objTabela.Idadenumero2;
+                    cn.Parameters.Add("idadetipo2", SqlDbType.VarChar).Value = objTabela.Idadetipo2;
                     cn.Parameters.Add("proprietario", SqlDbType.VarChar).Value = objTabela.Proprietario;
                     cn.Parameters.Add("telefone", SqlDbType.VarChar).Value = objTabela.Telefone;
                     cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
@@ -65,6 +69,10 @@ namespace DAO
                         dado.Especie = Convert.ToString(dr["especie"]);
                         dado.Raca = Convert.ToString(dr["raca"]);
                         dado.Nome = Convert.ToString(dr["nome"]);
+                        dado.Idadenumero1 = Convert.ToString(dr["idadenumero1"]);
+                        dado.Idadetipo1 = Convert.ToString(dr["idadetipo1"]);
+                        dado.Idadenumero2 = Convert.ToString(dr["idadenumero2"]);
+                        dado.Idadetipo2 = Convert.ToString(dr["idadetipo2"]);
                         dado.Proprietario = Convert.ToString(dr["proprietario"]);
                         dado.Telefone = Convert.ToString(dr["telefone"]);
                         dado.Email = Convert.ToString(dr["email"]);
@@ -90,10 +98,19 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "UPDATE Animal SET especie = @especie, raca = @raca, nome = @nome,  proprietario = @proprietario,  telefone = @telefone,  email = @email, cuidados_esp = @cuidados_esp, alergico = @alergico WHERE id = @id";
+                cn.CommandText = "UPDATE Animal SET especie = @especie, raca = @raca, nome = @nome, " +
+                                "idadenumero1 = @idadenumero1, idadetipo1 = @idadetipo1, idadenumero2 = @idadenumero2, " +
+                                "idadetipo2 = @idadetipo2, proprietario = @proprietario,  telefone = @telefone,  " +
+                                "email = @email, cuidados_esp = @cuidados_esp, alergico = @alergico WHERE id = @id";
                 cn.Parameters.Add("especie", SqlDbType.VarChar).Value = objTabela.Especie;
                 cn.Parameters.Add("raca", SqlDbType.VarChar).Value = objTabela.Raca;
                 cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Nome;
+
+                cn.Parameters.Add("idadenumero1", SqlDbType.VarChar).Value = objTabela.Idadenumero1;
+                cn.Parameters.Add("idadetipo1", SqlDbType.VarChar).Value = objTabela.Idadetipo1;
+                cn.Parameters.Add("idadenumero2", SqlDbType.VarChar).Value = objTabela.Idadenumero2;
+                cn.Parameters.Add("idadetipo2", SqlDbType.VarChar).Value = objTabela.Idadetipo2;
+
                 cn.Parameters.Add("proprietario", SqlDbType.VarChar).Value = objTabela.Proprietario;
                 cn.Parameters.Add("telefone", SqlDbType.VarChar).Value = objTabela.Telefone;
                 cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
@@ -160,6 +177,10 @@ namespace DAO
                         dado.Especie = Convert.ToString(dr["especie"]);
                         dado.Raca = Convert.ToString(dr["raca"]);
                         dado.Nome = Convert.ToString(dr["nome"]);
+                        dado.Idadenumero1 = Convert.ToString(dr["idadenumero1"]);
+                        dado.Idadetipo1 = Convert.ToString(dr["idadetipo1"]);
+                        dado.Idadenumero2 = Convert.ToString(dr["idadenumero2"]);
+                        dado.Idadetipo2 = Convert.ToString(dr["idadetipo2"]);
                         dado.Proprietario = Convert.ToString(dr["proprietario"]);
                         dado.Telefone = Convert.ToString(dr["telefone"]);
                         dado.Email = Convert.ToString(dr["email"]);
@@ -179,4 +200,3 @@ namespace DAO
         }
     }
 }
-

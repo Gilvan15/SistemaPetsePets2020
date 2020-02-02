@@ -12,6 +12,10 @@ namespace Entidades
         private string especie;
         private string raca;
         private string nome;
+        private string idadenumero1;
+        private string idadetipo1;
+        private string idadenumero2;
+        private string idadetipo2;
         private string proprietario;
         private string telefone;
         private string email;
@@ -23,6 +27,10 @@ namespace Entidades
         public string Especie { get => especie; set => especie = value; }
         public string Raca { get => raca; set => raca = value; }
         public string Nome { get => nome; set => nome = value; }
+        public string Idadenumero1 { get => idadenumero1; set => idadenumero1 = value; }
+        public string Idadetipo1 { get => idadetipo1; set => idadetipo1 = value; }
+        public string Idadenumero2 { get => idadenumero2; set => idadenumero2 = value; }
+        public string Idadetipo2 { get => idadetipo2; set => idadetipo2 = value; }
         public string Proprietario { get => proprietario; set => proprietario = value; }
         public string Telefone { get => telefone; set => telefone = value; }
         public string Email { get => email; set => email = value; }

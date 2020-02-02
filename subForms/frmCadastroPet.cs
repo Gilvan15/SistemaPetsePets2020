@@ -39,8 +39,10 @@ namespace SistemaPet.subForms
             comboEspecie.Enabled = false;
             textRaca.Enabled = false;
             textNome.Enabled = false;
-            cbIdade.Enabled = false;
-            comboBox1.Enabled = false;
+            cbIdade1.Enabled = false;
+            cbIdadeTipo1.Enabled = false;
+            cbIdade2.Enabled = false;
+            cbIdadeTipo2.Enabled = false;
             comboProprietario.Enabled = false;
             textTelefone.Enabled = false;
             textEmail.Enabled = false;
@@ -54,8 +56,10 @@ namespace SistemaPet.subForms
             comboEspecie.Text = null;
             textRaca.Text = null;
             textNome.Text = null;
-            cbIdade.Text = null;
-            comboBox1.Text = null;
+            cbIdade1.Text = null;
+            cbIdadeTipo1.Text = null;
+            cbIdade2.Text = null;
+            cbIdadeTipo2.Text = null;
             comboProprietario.Text = null;
             textTelefone.Text = null;
             textEmail.Text = null;
@@ -71,8 +75,10 @@ namespace SistemaPet.subForms
             comboEspecie.Enabled = true;
             textRaca.Enabled = true;
             textNome.Enabled = true;
-            cbIdade.Enabled = true;
-            comboBox1.Enabled = true;
+            cbIdade1.Enabled = true;
+            cbIdadeTipo1.Enabled = true;
+            cbIdade2.Enabled = true;
+            cbIdadeTipo2.Enabled = true;
             comboProprietario.Enabled = true;
             textTelefone.Enabled = true;
             textEmail.Enabled = true;
@@ -144,17 +150,27 @@ namespace SistemaPet.subForms
                 dataGridView1.Columns[1].HeaderText = "ESPÉCIE";
                 dataGridView1.Columns[2].HeaderText = "RAÇA";
                 dataGridView1.Columns[3].HeaderText = "NOME";
-                dataGridView1.Columns[4].HeaderText = "PROPRIETÁRIO";
-                dataGridView1.Columns[5].HeaderText = "TELEFONE";
-                dataGridView1.Columns[6].HeaderText = "EMAIL";
-                dataGridView1.Columns[7].HeaderText = "CUIDADOS ESPECIAIS";
-                dataGridView1.Columns[8].HeaderText = "ALÉRGICO";
-                dataGridView1.Columns[9].HeaderText = "FOTO";
+
+                dataGridView1.Columns[4].HeaderText = "IDADE1";
+                dataGridView1.Columns[5].HeaderText = "IDADETIPO1";
+                dataGridView1.Columns[6].HeaderText = "IDADE2";
+                dataGridView1.Columns[7].HeaderText = "IDADETIPO2";
+
+                dataGridView1.Columns[8].HeaderText = "PROPRIETÁRIO";
+                dataGridView1.Columns[9].HeaderText = "TELEFONE";
+                dataGridView1.Columns[10].HeaderText = "EMAIL";
+                dataGridView1.Columns[11].HeaderText = "CUIDADOS ESPECIAIS";
+                dataGridView1.Columns[12].HeaderText = "ALÉRGICO";
+                dataGridView1.Columns[13].HeaderText = "FOTO";
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.Columns[4].Visible = false;
+                dataGridView1.Columns[5].Visible = false;
                 dataGridView1.Columns[6].Visible = false;
                 dataGridView1.Columns[7].Visible = false;
-                //dataGridView1.Columns[8].Visible = false;
-                dataGridView1.Columns[9].Visible = false;
+                dataGridView1.Columns[10].Visible = false;
+                dataGridView1.Columns[11].Visible = false;
+                dataGridView1.Columns[12].Visible = false;
+                dataGridView1.Columns[13].Visible = false;
             }
             catch (Exception ex)
             {
@@ -225,7 +241,7 @@ namespace SistemaPet.subForms
         {
             for (int x = 1; x <= 100; x++) 
             {
-                cbIdade.Items.Add(x);
+                cbIdade1.Items.Add(x);
                 cbIdade2.Items.Add(x);
 
             }
@@ -323,11 +339,17 @@ namespace SistemaPet.subForms
                 comboEspecie.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 textRaca.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 textNome.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                comboProprietario.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textTelefone.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textEmail.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                richTextBoxCE.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                textAlegMedic.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+
+                cbIdade1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                cbIdadeTipo1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                cbIdade2.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                cbIdadeTipo2.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+
+                comboProprietario.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                textTelefone.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                textEmail.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                richTextBoxCE.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
+                textAlegMedic.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
                 CarregarFoto();
             }
             catch (Exception ex)
@@ -471,6 +493,12 @@ namespace SistemaPet.subForms
                             objTabela.Especie = comboEspecie.Text;
                             objTabela.Raca = textRaca.Text;
                             objTabela.Nome = textNome.Text;
+
+                            objTabela.Idadenumero1 = cbIdade1.Text;
+                            objTabela.Idadetipo1 = cbIdadeTipo1.Text;
+                            objTabela.Idadenumero2 = cbIdade2.Text;
+                            objTabela.Idadetipo2 = cbIdadeTipo2.Text;
+
                             objTabela.Proprietario = comboProprietario.Text;
                             objTabela.Telefone = textTelefone.Text;
                             objTabela.Email = textEmail.Text;
@@ -516,6 +544,12 @@ namespace SistemaPet.subForms
                             objTabela.Especie = comboEspecie.Text;
                             objTabela.Raca = textRaca.Text;
                             objTabela.Nome = textNome.Text;
+
+                            objTabela.Idadenumero1 = cbIdade1.Text;
+                            objTabela.Idadetipo1 = cbIdadeTipo1.Text;
+                            objTabela.Idadenumero2 = cbIdade2.Text;
+                            objTabela.Idadetipo2 = cbIdadeTipo2.Text;
+
                             objTabela.Proprietario = comboProprietario.Text;
                             objTabela.Telefone = textTelefone.Text;
                             objTabela.Email = textEmail.Text;
@@ -679,7 +713,7 @@ namespace SistemaPet.subForms
         {
             if (e.KeyChar == 13)
             {
-                cbIdade.Focus();
+                cbIdade1.Focus();
             }
         }
 
