@@ -118,6 +118,12 @@ namespace SistemaPet.subForms
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\aviso.wav");
             player.Play();
         }
+
+        public void sound4()
+        {
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\salvar.wav");
+            player.Play();
+        }
         private void InicarOpc()
         {
             switch (opc)
@@ -146,6 +152,7 @@ namespace SistemaPet.subForms
 
                         if (x > 0)
                         {
+                            sound4();
                             MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                             DesabilitarCampos();
                             CarregarGrid();
@@ -226,6 +233,7 @@ namespace SistemaPet.subForms
 
                             if (x > 0)
                             {
+                                sound4();
                                 MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                 DesabilitarCampos();
                                 CarregarGrid();
@@ -382,6 +390,7 @@ namespace SistemaPet.subForms
 
                             if (x > 0)
                             {
+                                sound4();
                                 MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                 LimparCampos();
                                 DesabilitarCampos();
@@ -421,6 +430,7 @@ namespace SistemaPet.subForms
                             int x = ClienteModel.Editar(objTabela);
                             if (x > 0)
                             {
+                                sound4();
                                 MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                 LimparCampos();
                                 DesabilitarCampos();
@@ -500,6 +510,7 @@ namespace SistemaPet.subForms
                 if (textCpf.Text.Length == 11)
                 {
                     textCpf.Text = FormatCnpjCpf.FormatCPF(textCpf.Text);
+                    textTelefone1.Focus();
                 }
             }
             catch (Exception)
@@ -529,8 +540,7 @@ namespace SistemaPet.subForms
             {
                 MessageBox.Show("Error DataGrid: " + ex.Message);
             }
-        }
-        
+        }        
         private void textEmail_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -544,6 +554,22 @@ namespace SistemaPet.subForms
                 }
 
                 textRg.Focus();
+            }
+        }
+        private void textTelefone1_OnValueChanged(object sender, EventArgs e)
+        {
+            if (textTelefone1.Text.Length == 11)
+            {
+                textTelefone1.Text = FormatCnpjCpf.FormatCelular(textTelefone1.Text);
+                textTelefone2.Focus();
+            }
+        }
+        private void textTelefone2_OnValueChanged(object sender, EventArgs e)
+        {
+            if (textTelefone2.Text.Length == 10)
+            {
+                textTelefone2.Text = FormatCnpjCpf.FormatConvencional(textTelefone2.Text);
+                textRua.Focus();
             }
         }
     }

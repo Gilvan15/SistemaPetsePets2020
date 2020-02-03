@@ -132,6 +132,13 @@ namespace SistemaPet.subForms
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\aviso.wav");
             player.Play();
         }
+
+        public void sound4()
+        {
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\salvar.wav");
+            player.Play();
+        }
+
         private void btnSalvar_Click_2(object sender, EventArgs e)
         {
             
@@ -399,6 +406,7 @@ namespace SistemaPet.subForms
 
                             if (x > 0)
                             {
+                                sound4();
                                 MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                 LimparCampos();
                                 DesabilitarCampos();

@@ -253,6 +253,12 @@ namespace SistemaPet.subForms
             player.Play();
         }
 
+        public void sound5()
+        {
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\salvar.wav");
+            player.Play();
+        }
+
         private void textDescricao_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -379,6 +385,7 @@ namespace SistemaPet.subForms
 
                             if (x > 0)
                             {
+                                sound5();
                                 MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                 LimparCampos();
                                 DesabilitarCampos();
@@ -411,6 +418,7 @@ namespace SistemaPet.subForms
 
                             if (x > 0)
                             {
+                                sound5();
                                 MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                 LimparCampos();
                                 DesabilitarCampos();

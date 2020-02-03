@@ -517,6 +517,7 @@ namespace SistemaPet.subForms
 
                             if (x > 0)
                             {
+                                sound6();
                                 MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                 DesabilitarCampos();
                                 CarregarGrid();
@@ -568,6 +569,7 @@ namespace SistemaPet.subForms
 
                             if (x > 0)
                             {
+                                sound6();
                                 MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                 DesabilitarCampos();
                                 CarregarGrid();

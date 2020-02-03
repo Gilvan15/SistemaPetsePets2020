@@ -278,24 +278,25 @@
             this.textTelefone2.LineIdleColor = System.Drawing.Color.Chocolate;
             this.textTelefone2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textTelefone2.LineThickness = 4;
-            this.textTelefone2.Location = new System.Drawing.Point(430, 234);
+            this.textTelefone2.Location = new System.Drawing.Point(461, 234);
             this.textTelefone2.Margin = new System.Windows.Forms.Padding(5);
             this.textTelefone2.Name = "textTelefone2";
-            this.textTelefone2.Size = new System.Drawing.Size(280, 29);
+            this.textTelefone2.Size = new System.Drawing.Size(249, 29);
             this.textTelefone2.TabIndex = 6;
             this.textTelefone2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textTelefone2.OnValueChanged += new System.EventHandler(this.textTelefone2_OnValueChanged);
             // 
             // bunifuCustomLabel3
             // 
             this.bunifuCustomLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(365, 243);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(344, 246);
             this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(59, 20);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(108, 20);
             this.bunifuCustomLabel3.TabIndex = 154;
-            this.bunifuCustomLabel3.Text = "Fone2:";
+            this.bunifuCustomLabel3.Text = "Convêncional:";
             // 
             // textTelefone1
             // 
@@ -314,9 +315,10 @@
             this.textTelefone1.Location = new System.Drawing.Point(74, 234);
             this.textTelefone1.Margin = new System.Windows.Forms.Padding(5);
             this.textTelefone1.Name = "textTelefone1";
-            this.textTelefone1.Size = new System.Drawing.Size(280, 29);
+            this.textTelefone1.Size = new System.Drawing.Size(244, 29);
             this.textTelefone1.TabIndex = 5;
             this.textTelefone1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textTelefone1.OnValueChanged += new System.EventHandler(this.textTelefone1_OnValueChanged);
             // 
             // bunifuCustomLabel2
             // 
@@ -325,9 +327,9 @@
             this.bunifuCustomLabel2.Location = new System.Drawing.Point(13, 243);
             this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(59, 20);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(62, 20);
             this.bunifuCustomLabel2.TabIndex = 152;
-            this.bunifuCustomLabel2.Text = "Fone1:";
+            this.bunifuCustomLabel2.Text = "Celular:";
             // 
             // lblEmail
             // 

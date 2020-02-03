@@ -44,7 +44,7 @@ namespace SistemaPet.subForms
 
         public void sound4()
         {
-            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\avisovoz.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\salvar.wav");
             player.Play();
         }
 
@@ -232,6 +232,7 @@ namespace SistemaPet.subForms
 
                                 if (x > 0)
                                 {
+                                    sound4();
                                     MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                     LimparCampos();
                                     DesabilitarCampos();
@@ -265,6 +266,7 @@ namespace SistemaPet.subForms
 
                                 if (x > 0)
                                 {
+                                    sound4();
                                     MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                     LimparCampos();
                                     DesabilitarCampos();
