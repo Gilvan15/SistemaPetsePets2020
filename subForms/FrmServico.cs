@@ -340,5 +340,29 @@ namespace SistemaPet.subForms
                 btnSalvar.Focus();
             }
         }
+
+        private void textPesquisar_OnValueChanged(object sender, EventArgs e)
+        {
+            if (textPesquisar.Text == "")
+            {
+                CarregarGrid();
+                return;
+            }
+            else
+            {
+                try
+                {
+                    objTabela.Servico  = textPesquisar.Text;
+                    List<ServicoEnt> lista = new List<ServicoEnt>();
+                    lista = new ServicoModel().Buscar(objTabela);
+                    dataGridView1.AutoGenerateColumns = true;
+                    dataGridView1.DataSource = lista;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error ao Listar Dados: " + ex.Message);
+                }
+            }
+        }
     }
 }

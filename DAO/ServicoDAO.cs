@@ -76,7 +76,7 @@ namespace DAO
                 con.Open();
                 cn.CommandText = "SELECT * FROM Servico WHERE servico like @servico";
                 cn.Parameters.Add("servico", SqlDbType.VarChar).Value = objTabela.Servico+ "%";
-                cn.Parameters.Add("valor", SqlDbType.VarChar).Value = objTabela.Valor;
+                //cn.Parameters.Add("valor", SqlDbType.VarChar).Value = objTabela.Valor;
 
                 cn.Connection = con;
                 SqlDataReader dr;

@@ -269,6 +269,7 @@
             this.textPesquisar.TabIndex = 131;
             this.textPesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textPesquisar.Visible = false;
+            this.textPesquisar.OnValueChanged += new System.EventHandler(this.textPesquisar_OnValueChanged);
             // 
             // pictureBox1
             // 

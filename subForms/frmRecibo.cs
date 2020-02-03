@@ -281,33 +281,7 @@ namespace SistemaPet.subForms
             {
                 //MessageBox.Show(c.Message);
             }
-        }
-
-
-
-        private void textPesquisar_OnValueChanged(object sender, EventArgs e)
-        {
-            if (textPesquisar.Text == "")
-            {
-                CarregarGrid();
-                return;
-            }
-            else
-            {
-                try
-                {
-                    objTabela.Recebemosde = textPesquisar.Text;
-                    List<ReciboEnt> lista = new List<ReciboEnt>();
-                    lista = new ReciboModel().Buscar(objTabela);
-                    dataGridView1.AutoGenerateColumns = true;
-                    dataGridView1.DataSource = lista;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error ao Listar Dados: " + ex.Message);
-                }
-            }
-        }
+        }        
 
         private void textValorRecibo_TextChanged_1(object sender, EventArgs e)
         {
@@ -646,7 +620,29 @@ namespace SistemaPet.subForms
             {
                 MessageBox.Show("Error DataGrid: " + ex.Message);
             }
-
+        }
+        private void textPesquisar_OnValueChanged_1(object sender, EventArgs e)
+        {
+            if (textPesquisar.Text == "")
+            {
+                CarregarGrid();
+                return;
+            }
+            else
+            {
+                try
+                {
+                    objTabela.Recebemosde = textPesquisar.Text;
+                    List<ReciboEnt> lista = new List<ReciboEnt>();
+                    lista = new ReciboModel().Buscar(objTabela);
+                    dataGridView1.AutoGenerateColumns = true;
+                    dataGridView1.DataSource = lista;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error ao Listar Dados: " + ex.Message);
+                }
+            }
         }
     }
 }
