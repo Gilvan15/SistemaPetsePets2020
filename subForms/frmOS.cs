@@ -147,6 +147,7 @@ namespace SistemaPet.subForms
                     ((TextBox)ctrl).Text = string.Empty;
                 }
             }
+            textTotal.Text = "";
             verify = 1;
 
         }

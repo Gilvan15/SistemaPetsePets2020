@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecibo));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.textEmitente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.textAssinatura = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -63,8 +63,6 @@
             this.comboPrinter1 = new System.Windows.Forms.ComboBox();
             this.btnFecharRecibo = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.textPesquisar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnPrepararImpressao = new System.Windows.Forms.Button();
@@ -76,15 +74,19 @@
             this.dbpetsepetsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelSelecionePrint = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textPesquisar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -266,7 +268,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 20);
             this.label3.TabIndex = 76;
-            this.label3.Text = "referante a";
+            this.label3.Text = "referente a";
             // 
             // textImportanciade2
             // 
@@ -376,6 +378,7 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.textNumeroRecibo);
             this.panel1.Controls.Add(this.textValorRecibo);
             this.panel1.Controls.Add(this.lbldata);
@@ -399,7 +402,7 @@
             this.panel1.Controls.Add(this.bunifuCustomLabel8);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(134, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(857, 576);
             this.panel1.TabIndex = 98;
@@ -481,7 +484,7 @@
             this.comboPrinter1.FormattingEnabled = true;
             this.comboPrinter1.Items.AddRange(new object[] {
             "SELECIONE UMA IMPRESSORA"});
-            this.comboPrinter1.Location = new System.Drawing.Point(450, 598);
+            this.comboPrinter1.Location = new System.Drawing.Point(695, 598);
             this.comboPrinter1.Name = "comboPrinter1";
             this.comboPrinter1.Size = new System.Drawing.Size(201, 21);
             this.comboPrinter1.TabIndex = 119;
@@ -497,7 +500,7 @@
             this.btnFecharRecibo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFecharRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFecharRecibo.ForeColor = System.Drawing.Color.White;
-            this.btnFecharRecibo.Location = new System.Drawing.Point(655, 596);
+            this.btnFecharRecibo.Location = new System.Drawing.Point(900, 596);
             this.btnFecharRecibo.Name = "btnFecharRecibo";
             this.btnFecharRecibo.Size = new System.Drawing.Size(113, 25);
             this.btnFecharRecibo.TabIndex = 117;
@@ -516,7 +519,7 @@
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.Color.White;
-            this.btnImprimir.Location = new System.Drawing.Point(774, 596);
+            this.btnImprimir.Location = new System.Drawing.Point(1019, 596);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(82, 25);
             this.btnImprimir.TabIndex = 116;
@@ -525,55 +528,18 @@
             this.btnImprimir.Visible = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
-            // textPesquisar
-            // 
-            this.textPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textPesquisar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textPesquisar.HintForeColor = System.Drawing.Color.Empty;
-            this.textPesquisar.HintText = "";
-            this.textPesquisar.isPassword = false;
-            this.textPesquisar.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textPesquisar.LineIdleColor = System.Drawing.Color.Gray;
-            this.textPesquisar.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.textPesquisar.LineThickness = 3;
-            this.textPesquisar.Location = new System.Drawing.Point(417, 18);
-            this.textPesquisar.Margin = new System.Windows.Forms.Padding(5);
-            this.textPesquisar.Name = "textPesquisar";
-            this.textPesquisar.Size = new System.Drawing.Size(427, 35);
-            this.textPesquisar.TabIndex = 110;
-            this.textPesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textPesquisar.Visible = false;
-            this.textPesquisar.OnValueChanged += new System.EventHandler(this.textPesquisar_OnValueChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(371, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 109;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
-            // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.btnNovo);
             this.panel2.Controls.Add(this.btnPrepararImpressao);
             this.panel2.Controls.Add(this.btnSalvar);
             this.panel2.Controls.Add(this.btnEditar);
             this.panel2.Controls.Add(this.btnPesquisar);
-            this.panel2.Controls.Add(this.textPesquisar);
-            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnLimpar);
-            this.panel2.Location = new System.Drawing.Point(12, 723);
+            this.panel2.Location = new System.Drawing.Point(1008, 120);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(856, 62);
+            this.panel2.Size = new System.Drawing.Size(94, 253);
             this.panel2.TabIndex = 104;
             // 
             // btnNovo
@@ -585,9 +551,9 @@
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovo.ForeColor = System.Drawing.Color.White;
-            this.btnNovo.Location = new System.Drawing.Point(295, 3);
+            this.btnNovo.Location = new System.Drawing.Point(3, 3);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(70, 50);
+            this.btnNovo.Size = new System.Drawing.Size(87, 30);
             this.btnNovo.TabIndex = 115;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
@@ -602,9 +568,9 @@
             this.btnPrepararImpressao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrepararImpressao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrepararImpressao.ForeColor = System.Drawing.Color.White;
-            this.btnPrepararImpressao.Location = new System.Drawing.Point(175, 3);
+            this.btnPrepararImpressao.Location = new System.Drawing.Point(2, 203);
             this.btnPrepararImpressao.Name = "btnPrepararImpressao";
-            this.btnPrepararImpressao.Size = new System.Drawing.Size(114, 50);
+            this.btnPrepararImpressao.Size = new System.Drawing.Size(88, 44);
             this.btnPrepararImpressao.TabIndex = 114;
             this.btnPrepararImpressao.Text = "Preparar Impressão";
             this.btnPrepararImpressao.UseVisualStyleBackColor = false;
@@ -619,9 +585,9 @@
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(3, 2);
+            this.btnSalvar.Location = new System.Drawing.Point(3, 163);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(82, 25);
+            this.btnSalvar.Size = new System.Drawing.Size(87, 30);
             this.btnSalvar.TabIndex = 113;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
@@ -636,9 +602,9 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(3, 28);
+            this.btnEditar.Location = new System.Drawing.Point(3, 83);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(82, 25);
+            this.btnEditar.Size = new System.Drawing.Size(87, 30);
             this.btnEditar.TabIndex = 112;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -653,9 +619,9 @@
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.ForeColor = System.Drawing.Color.White;
-            this.btnPesquisar.Location = new System.Drawing.Point(87, 2);
+            this.btnPesquisar.Location = new System.Drawing.Point(3, 123);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(82, 25);
+            this.btnPesquisar.Size = new System.Drawing.Size(87, 30);
             this.btnPesquisar.TabIndex = 111;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = false;
@@ -670,9 +636,9 @@
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpar.Location = new System.Drawing.Point(87, 28);
+            this.btnLimpar.Location = new System.Drawing.Point(3, 43);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(82, 25);
+            this.btnLimpar.Size = new System.Drawing.Size(87, 30);
             this.btnLimpar.TabIndex = 108;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
@@ -693,7 +659,7 @@
             this.labelSelecionePrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSelecionePrint.AutoSize = true;
             this.labelSelecionePrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSelecionePrint.Location = new System.Drawing.Point(256, 601);
+            this.labelSelecionePrint.Location = new System.Drawing.Point(501, 601);
             this.labelSelecionePrint.Name = "labelSelecionePrint";
             this.labelSelecionePrint.Size = new System.Drawing.Size(191, 15);
             this.labelSelecionePrint.TabIndex = 105;
@@ -705,22 +671,21 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.EnableHeadersVisualStyles = false;
@@ -729,9 +694,53 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(857, 126);
+            this.dataGridView1.Size = new System.Drawing.Size(1102, 182);
             this.dataGridView1.TabIndex = 120;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.textPesquisar);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Location = new System.Drawing.Point(251, 184);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(431, 76);
+            this.groupBox1.TabIndex = 101;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Pesquisar";
+            this.groupBox1.Visible = false;
+            // 
+            // textPesquisar
+            // 
+            this.textPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textPesquisar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textPesquisar.HintForeColor = System.Drawing.Color.Empty;
+            this.textPesquisar.HintText = "";
+            this.textPesquisar.isPassword = false;
+            this.textPesquisar.LineFocusedColor = System.Drawing.Color.Blue;
+            this.textPesquisar.LineIdleColor = System.Drawing.Color.Gray;
+            this.textPesquisar.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textPesquisar.LineThickness = 3;
+            this.textPesquisar.Location = new System.Drawing.Point(60, 26);
+            this.textPesquisar.Margin = new System.Windows.Forms.Padding(5);
+            this.textPesquisar.Name = "textPesquisar";
+            this.textPesquisar.Size = new System.Drawing.Size(357, 35);
+            this.textPesquisar.TabIndex = 112;
+            this.textPesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 111;
+            this.pictureBox1.TabStop = false;
             // 
             // frmRecibo
             // 
@@ -739,7 +748,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(880, 788);
+            this.ClientSize = new System.Drawing.Size(1125, 788);
             this.Controls.Add(this.labelSelecionePrint);
             this.Controls.Add(this.comboPrinter1);
             this.Controls.Add(this.btnImprimir);
@@ -758,11 +767,12 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -791,8 +801,6 @@
         private System.Windows.Forms.Label lbldata;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox textPesquisar;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textValorRecibo;
         private System.Windows.Forms.BindingSource dbpetsepetsDataSetBindingSource;
         private SistemaPet.dbpetsepetsDataSet dbpetsepetsDataSet;
@@ -813,5 +821,8 @@
         private System.Windows.Forms.ComboBox comboPrinter1;
         private System.Windows.Forms.Label labelSelecionePrint;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textPesquisar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

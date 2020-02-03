@@ -67,6 +67,7 @@ namespace SistemaPet.subForms
             textAlegMedic.Text = null;
             pictureCamera.Image = Image.FromFile(pasta_aplicacao + "img\\dog1.png");
             textPesquisar.Text = null;
+            btnSalvarFoto.Enabled = false;
 
         }
 
@@ -229,6 +230,13 @@ namespace SistemaPet.subForms
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\stopcamera.wav");
             player.Play();
         }
+
+        public void sound6()
+        {
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\salvar.wav");
+            player.Play();
+        }
+
         private void frmCadastroPet_Load(object sender, EventArgs e)
         {
             CarregaComboIdade();
@@ -617,7 +625,9 @@ namespace SistemaPet.subForms
             {
                 videoSource.SignalToStop();
                 videoSource = null;
+                btnSalvarFoto.Enabled = true;
             }
+
         }
         private void btnOffCamera_Click(object sender, EventArgs e)
         {
@@ -650,19 +660,13 @@ namespace SistemaPet.subForms
 
         private void btnSalvarFoto_Click(object sender, EventArgs e)
         {
-            if (pictureCamera.Image == null)
-            {
-                MessageBox.Show("Antes de salvar, ative primerio a Camera e tire a foto");
-                return;
-            }
+            
             if (textCod.Text == "")
             {
                 sound3();
                 MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
                 return;
             }
-
-
 
             // Carrega a imagem para o nosso formulário
             Bitmap bmp = new Bitmap(pictureCamera.Image);
@@ -673,31 +677,36 @@ namespace SistemaPet.subForms
 
             SqlConnection con = new SqlConnection();
             con.ConnectionString = Settings.Default.dbpetsepetsConnectionString;
-            SqlCommand cn = new SqlCommand("UPDATE Animal SET Foto = @foto WHERE id =" + textCod.Text, con);
+            SqlCommand cn = new SqlCommand("UPDATE Animal SET foto = @foto WHERE id =" + textCod.Text, con);
 
             SqlParameter paramFoto = new SqlParameter("@foto", SqlDbType.Binary);
             paramFoto.Value = foto;
+
             cn.Parameters.Add(paramFoto);
             con.Open();
 
-            if (MessageBox.Show("Salvar Foto em Restrito?", "Salvar Foto", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Salvar foto em registro selecioado?", "Salvar Foto", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
                     cn.ExecuteNonQuery();
                     con.Close();
+                    sound6();
                     MessageBox.Show("Foto Cadastrada com Sucesso!");
                     LimparCampos();
                     CarregarGrid();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: ao salvar a foto!!: " + ex.Message);
+                    sound3();
+                    btnSalvarFoto.Enabled = false;
+                    MessageBox.Show("Error: ao tentar salvar a foto!!: " + ex.Message);
                 }
             }
             else
             {
-                //pictureCamera.Image = null;
+                pictureCamera.Image = Image.FromFile(pasta_aplicacao + "img\\dog1.png");
+                btnSalvarFoto.Enabled = false;
                 return;
             }
         }
@@ -756,6 +765,73 @@ namespace SistemaPet.subForms
             }
             opc = "Buscar";
             InicarOpc();
+        }
+
+        private void carregarFotoLocal() 
+        {
+            try
+            {
+                var result = openFileDialog1.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    // Carrega a imagem para o nosso formulário
+                    string nomeArquivo = openFileDialog1.FileName;
+                    Bitmap bmp = new Bitmap(nomeArquivo);
+                    pictureCamera.Image = bmp;
+
+                    MemoryStream ms = new MemoryStream();
+                    bmp.Save(ms, ImageFormat.Bmp);
+                    byte[] foto = ms.ToArray();
+
+                    SqlConnection con = new SqlConnection();
+                    con.ConnectionString = Settings.Default.dbpetsepetsConnectionString;
+                    SqlCommand cn = new SqlCommand("UPDATE Animal SET Foto = @foto WHERE id =" + textCod.Text, con);
+                    SqlParameter paramFoto = new SqlParameter("@foto", SqlDbType.Binary);
+                    paramFoto.Value = foto;
+
+                    cn.Parameters.Add(paramFoto);
+                    con.Open();
+
+                    if (MessageBox.Show("Salvar foto em registro selecionado?", "Salvar Foto", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            cn.ExecuteNonQuery();
+                            con.Close();
+                            sound6();
+                            MessageBox.Show("Foto Cadastrada com Sucesso!");
+                            LimparCampos();
+                            CarregarGrid();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error: ao tentar salvar a foto!!: " + ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        //pictureCamera.Image = Image.FromFile(pasta_aplicacao + "img\\dog1.png");
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("erro: " + ex.Message);
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textCod.Text == "")
+            {
+                sound3();
+                MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
+                return;
+            }
+
+            sound1();
+            carregarFotoLocal();
         }
     }
 }

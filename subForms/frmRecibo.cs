@@ -114,10 +114,12 @@ namespace SistemaPet.subForms
        {
             btnNovo.Visible = false;
             btnPrepararImpressao.Visible = false;
+            dataGridView1.Visible = false;
             btnFecharRecibo.Visible = true;
             btnImprimir.Visible = true;
             comboPrinter1.Visible = true;
             labelSelecionePrint.Visible = true;
+
 
         }
                 
@@ -383,17 +385,15 @@ namespace SistemaPet.subForms
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             sound1();
-            if (pictureBox1.Visible == false)
+            if (groupBox1.Visible == false)
             {
-                pictureBox1.Visible = true;
-                textPesquisar.Visible = true;
-                textPesquisar.Text = null;
+                groupBox1.Visible = true;
                 textPesquisar.Focus();
             }
             else
             {
-                pictureBox1.Visible = false;
-                textPesquisar.Visible = false;
+                groupBox1.Visible = false;
+                textPesquisar.Text = "";
             }
         }
 

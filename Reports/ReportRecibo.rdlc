@@ -438,7 +438,7 @@
                               <Value>=Sum(CDec(Fields!valor.Value))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
-                                <Format>'R$' 0.00;('R$' 0.00)</Format>
+                                <Format>'R$' #,0.00;('R$' #,0.00)</Format>
                                 <Color>#333333</Color>
                                 <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                               </Style>
