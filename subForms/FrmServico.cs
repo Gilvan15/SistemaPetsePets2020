@@ -192,6 +192,7 @@ namespace SistemaPet.subForms
             {
                 pictureBox1.Visible = false;
                 textPesquisar.Visible = false;
+                textPesquisar.Text = "";
             }
         }
 
