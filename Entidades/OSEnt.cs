@@ -31,12 +31,15 @@ namespace Entidades
         private string valorserv3;
         private string servico4;
         private string valorserv4;
+
+        private string taxaentrega;
+        private string hora;
+
         private DateTime data;
         private DateTime dataos;
         private string valortotal;
         private string desconto;
         private string valorfinal;
-
         public int Id { get => id; set => id = value; }
         public string Nomepet { get => nomepet; set => nomepet = value; }
         public string Especie { get => especie; set => especie = value; }
@@ -58,11 +61,12 @@ namespace Entidades
         public string Valorserv3 { get => valorserv3; set => valorserv3 = value; }
         public string Servico4 { get => servico4; set => servico4 = value; }
         public string Valorserv4 { get => valorserv4; set => valorserv4 = value; }
+        public string Taxaentrega { get => taxaentrega; set => taxaentrega = value; }
+        public string Hora { get => hora; set => hora = value; }
         public DateTime Data { get => data; set => data = value; }
         public DateTime Dataos { get => dataos; set => dataos = value; }
         public string Valortotal { get => valortotal; set => valortotal = value; }
         public string Desconto { get => desconto; set => desconto = value; }
         public string Valorfinal { get => valorfinal; set => valorfinal = value; }
-
     }
 }

@@ -36,6 +36,7 @@ namespace SistemaPet.subForms
         decimal valor3 = 0;
         decimal valor4 = 0;
         decimal desconto = 0;
+        decimal taxaEntrega = 0;
         decimal valorTotal = 0;
         
         public frmOS()
@@ -46,7 +47,7 @@ namespace SistemaPet.subForms
             string vtextproprietario, string vtexttelefone, string vtextemail, string vtextcespeciais,
             string vtextalergico, string vtextobservacao, string comboservico1, Boolean checkservico1, string vtextvalor1,
             string comboservico2, Boolean checkservico2, string vtextvalor2, string comboservico3, Boolean checkservico3, string vtextvalor3,
-            string comboservico4, string vtextvalor4, string vdesconto, string vvalortotal)
+            string comboservico4, string vtextvalor4, string vcbTipoEntrega,  string vtexttaxaentrega, string vmasckhora,  string vvalortotal, string vdesconto, string vvalorfinal)
         {
             InitializeComponent();
             textCod.Text = vtextCod;
@@ -75,12 +76,18 @@ namespace SistemaPet.subForms
             comboServico4.Text = comboservico4;
             textValor4.Text = vtextvalor4;
 
+            cbTipoEntrega.Text = vcbTipoEntrega;
+
+            textTaxaEntrega.Text = vtexttaxaentrega;
+            maskHora.Text = vmasckhora;
+
+            textTotal.Text = vvalortotal;
             textDesconto.Text = vdesconto;
-            textValorFinal.Text = vvalortotal;
+            textValorFinal.Text = vvalorfinal;
             //DesabilitarCampos();
             apenasLeitura();
             //HabilitarCampos();
-            this.Size = new Size(880,650);
+            this.Size = new Size(880,670);
             this.AutoScroll = false;
             panel2.Visible = false;
             hiderButtons();
@@ -146,10 +153,28 @@ namespace SistemaPet.subForms
                 {
                     ((TextBox)ctrl).Text = string.Empty;
                 }
+
             }
             textTotal.Text = "";
             verify = 1;
 
+            foreach (Control ctrl2 in groupBox2.Controls)
+            {
+                if (ctrl2 is TextBox)
+                {
+                    ((TextBox)ctrl2).Text = string.Empty;
+                }
+
+                if (ctrl2 is MaskedTextBox)
+                {
+                    ((MaskedTextBox)ctrl2).Text = string.Empty;
+                }
+
+                if (ctrl2 is ComboBox)
+                {
+                    ((ComboBox)ctrl2).Text = string.Empty;
+                }
+            }
         }
         private void CarregarGrid()
         {
@@ -186,18 +211,20 @@ namespace SistemaPet.subForms
                 dataGridView1.Columns[19].HeaderText = "SERVICO4";
                 dataGridView1.Columns[20].HeaderText = "VALORSERV4";
 
-                dataGridView1.Columns[21].HeaderText = "DATA";
-                dataGridView1.Columns[22].HeaderText = "DATA";
-                dataGridView1.Columns[23].HeaderText = "VALOR TOTAL";
-                dataGridView1.Columns[24].HeaderText = "DESCONTO";
-                dataGridView1.Columns[25].HeaderText = "VALOR FINAL";
+                dataGridView1.Columns[21].HeaderText = "TAXAENTREGA";
+                dataGridView1.Columns[22].HeaderText = "HORA";
+
+                dataGridView1.Columns[23].HeaderText = "DATA";
+                //dataGridView1.Columns[24].HeaderText = "DATA";
+                dataGridView1.Columns[25].HeaderText = "VALOR TOTAL";
+                dataGridView1.Columns[26].HeaderText = "DESCONTO";
+                dataGridView1.Columns[27].HeaderText = "VALOR FINAL";
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                for (int i = 7; i <= 21; i++)
+                for (int i = 6; i <= 22; i++)
                 {
-                    dataGridView1.Columns[i].Visible = false;
+                        dataGridView1.Columns[i].Visible = false;
                 }
-
             }
             catch (Exception ex)
             {
@@ -226,7 +253,11 @@ namespace SistemaPet.subForms
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\caixa.wav");
             player.Play();
         }
-
+        public void sound5()
+        {
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\salvar.wav");
+            player.Play();
+        }
         private void LimparCamposCheck()
         {
             if (checkServico1.Checked == false)
@@ -273,11 +304,15 @@ namespace SistemaPet.subForms
                 {
                     ((TextBox)ctrl).Enabled = false;
                 }
+
+                if (ctrl is GroupBox)
+                {
+                    ((GroupBox)ctrl).Enabled = false;
+                }
+
             }
             btnSalvar.Enabled = false;
         }
-
-
         private void HabilitarCampos()
         {
             foreach (Control ctrl in panel3.Controls)
@@ -302,10 +337,15 @@ namespace SistemaPet.subForms
                 {
                     ((TextBox)ctrl).Enabled = true;
                 }
+
+                if (ctrl is GroupBox)
+                {
+                    ((GroupBox)ctrl).Enabled = true;
+                }
+
             }
             fixaEnablecCampos();
         }
-
         private void fixaEnablecCampos() {
             textValor1.Enabled = false;
             textValor2.Enabled = false;
@@ -313,7 +353,6 @@ namespace SistemaPet.subForms
             textValor4.Enabled = false;
             textCod.Enabled = false; 
         }
-
         private void atualizaData()
         {
             CultureInfo culture = new CultureInfo("pt-BR");
@@ -326,7 +365,6 @@ namespace SistemaPet.subForms
             string data = diasemana + ", " + dia + " de " + mes + " de " + ano + ".";
             lbldata.Text = data;
         }
-
         private void frmOS_Load(object sender, EventArgs e)
         {
             //btnSalvar.Enabled = false;
@@ -338,7 +376,6 @@ namespace SistemaPet.subForms
             atualizaData();
             DesabilitarCampos();
         }
-
         private void SelectPrinter()
         {
             comboPrinter1.Items.Clear();
@@ -347,7 +384,6 @@ namespace SistemaPet.subForms
                 comboPrinter1.Items.Add(impressora.Trim().ToLower());
             }
         }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             sound1();
@@ -411,6 +447,10 @@ namespace SistemaPet.subForms
                             
                             objTabela.Servico4 = comboServico4.Text;
                             objTabela.Valorserv4 = textValor4.Text;
+
+                            objTabela.Taxaentrega = textTaxaEntrega.Text;
+                            objTabela.Hora = maskHora.Text;
+
                             objTabela.Data = DateTime.Now;
                             objTabela.Dataos = DateTime.Now;
                             objTabela.Valortotal = textTotal.Text;
@@ -421,6 +461,7 @@ namespace SistemaPet.subForms
 
                             if (x > 0)
                             {
+                                sound5();
                                 MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                 LimparCampos();
                                 DesabilitarCampos();
@@ -473,6 +514,10 @@ namespace SistemaPet.subForms
 
                             objTabela.Servico4 = comboServico4.Text;
                             objTabela.Valorserv4 = textValor4.Text;
+
+                            objTabela.Taxaentrega = textTaxaEntrega.Text;
+                            objTabela.Hora = maskHora.Text;
+
                             objTabela.Data = DateTime.Now;
                             objTabela.Dataos = DateTime.Now;
 
@@ -483,6 +528,7 @@ namespace SistemaPet.subForms
 
                             if (x > 0)
                             {
+                                sound5();
                                 MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                 LimparCampos();
                                 DesabilitarCampos();
@@ -506,7 +552,6 @@ namespace SistemaPet.subForms
                     break;
             }
         }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             verify = 1;
@@ -559,7 +604,7 @@ namespace SistemaPet.subForms
                     textRaca.Text, textProprietario.Text, textTelefone.Text, textEmail.Text, textCespeciais.Text, 
                     textAlergico.Text, textObservacao.Text, comboServico1.Text, checkServico1.Checked, textValor1.Text,
                     comboServico2.Text, checkServico2.Checked, textValor2.Text, comboServico3.Text, checkServico3.Checked, textValor3.Text,
-                    comboServico4.Text, textValor4.Text, textDesconto.Text, textValorFinal.Text);
+                    comboServico4.Text, textValor4.Text, cbTipoEntrega.Text, textTaxaEntrega.Text, maskHora.Text, textTotal.Text, textDesconto.Text, textValorFinal.Text);
                 frmrec.TopMost = true;
                 frmrec.StartPosition = FormStartPosition.CenterScreen;
                 frmrec.Show();
@@ -738,7 +783,16 @@ namespace SistemaPet.subForms
                 valorTotal = (valor1 + valor2 + valor3 + valor4);
             }
 
-            if(textDesconto.Text != string.Empty || textDesconto.Text == "0,00" ) 
+            if (textTaxaEntrega.Text != string.Empty || textTaxaEntrega.Text == "0,00")
+            {
+                taxaEntrega = Convert.ToDecimal(textTaxaEntrega.Text);
+                valorTotal = valorTotal + taxaEntrega;
+                textTotal.Text = Convert.ToString(valorTotal);
+                textValorFinal.Text = Convert.ToString(valorTotal);
+            }
+
+
+            if (textDesconto.Text != string.Empty || textDesconto.Text == "0,00" ) 
             {
                 desconto = Convert.ToDecimal(textDesconto.Text);
                 textValorFinal.Text = Convert.ToString(valorTotal - desconto );
@@ -747,6 +801,10 @@ namespace SistemaPet.subForms
             {
                 textValorFinal.Text = Convert.ToString(valorTotal);
             }
+
+
+
+
         }        
         private void Moeda(ref TextBox txt)
         {
@@ -1025,11 +1083,13 @@ namespace SistemaPet.subForms
                 textValor3.Text = dataGridView1.CurrentRow.Cells[18].Value.ToString();
                 comboServico4.Text = dataGridView1.CurrentRow.Cells[19].Value.ToString();
                 textValor4.Text = dataGridView1.CurrentRow.Cells[20].Value.ToString();
-                lbldata.Text = dataGridView1.CurrentRow.Cells[21].Value.ToString();
-
-                textTotal.Text = dataGridView1.CurrentRow.Cells[23].Value.ToString();
-                textDesconto.Text = dataGridView1.CurrentRow.Cells[24].Value.ToString();
-                textValorFinal.Text = dataGridView1.CurrentRow.Cells[25].Value.ToString();
+                if (dataGridView1.CurrentRow.Cells[21].Value.ToString() == "0,00") { cbTipoEntrega.Text = "Dono vem pegar"; } else { cbTipoEntrega.Text = "Taxi Dog"; }
+                textTaxaEntrega.Text = dataGridView1.CurrentRow.Cells[21].Value.ToString();
+                maskHora.Text = dataGridView1.CurrentRow.Cells[22].Value.ToString();
+                lbldata.Text = dataGridView1.CurrentRow.Cells[23].Value.ToString();
+                textTotal.Text = dataGridView1.CurrentRow.Cells[25].Value.ToString();
+                textDesconto.Text = dataGridView1.CurrentRow.Cells[26].Value.ToString();
+                textValorFinal.Text = dataGridView1.CurrentRow.Cells[27].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -1049,7 +1109,6 @@ namespace SistemaPet.subForms
                 verifyValue();
             }
         }
-
         private void textValor2_OnValueChanged_1(object sender, EventArgs e)
         {
             if (textValor2.Text == string.Empty)
@@ -1095,6 +1154,47 @@ namespace SistemaPet.subForms
             try
             {
                 Moeda(ref textDesconto);
+                verifyValue();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cbTipoEntrega_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbTipoEntrega.Text == "Taxi Dog")
+            {
+                pictTaxiDog.Visible = true;
+                textTaxaEntrega.Visible = true;
+                labelTaxa.Visible = true;
+                textTaxaEntrega.Focus();
+                textTaxaEntrega.Text = Convert.ToString(0);
+                maskHora.Text = "";
+                pictDono.Visible = false;
+                labelHora.Visible = false;
+                maskHora.Visible = false;
+            }
+            else 
+            {
+                pictTaxiDog.Visible = false;
+                textTaxaEntrega.Visible = false;
+                labelTaxa.Visible = false;
+                pictDono.Visible = true;
+                textTaxaEntrega.Text = Convert.ToString(0);
+                labelHora.Visible = true;
+                maskHora.Visible = true;
+                maskHora.Focus();
+            }
+        }
+
+        private void textTaxaEntrega_TextChanged(object sender, EventArgs e)
+        {
+            if (textTaxaEntrega.Text == string.Empty) { return; }
+            try
+            {
+                Moeda(ref textTaxaEntrega);
                 verifyValue();
             }
             catch (Exception ex)
