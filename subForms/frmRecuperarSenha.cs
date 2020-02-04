@@ -44,6 +44,12 @@ namespace SistemaPet.subForms
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\aviso.wav");
             player.Play();
         }
+        public void sound3()
+        {
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\salvar.wav");
+            player.Play();
+        }
+
         private void btnLogar_Click(object sender, EventArgs e)
         {
             if (FormatCnpjCpf.ValidarEmail(textEmail.Text) == false)
@@ -71,10 +77,10 @@ namespace SistemaPet.subForms
                // MessageBox.Show("Result: " + obj.Senha);
                 try
                 {
-                    mail.From = new MailAddress("gilvanx10@gmail.com");
+                    mail.From = new MailAddress("contatopetsepetsam@gmail.com");
                     mail.To.Add(Textemail); // para
                     mail.Subject = "Pets e Pets Recuperação Login"; // assunto
-                    mail.Body = "Seu nome de Usuário: " + obj.Username + ", Senha: " + obj.Senha; // mensagem
+                    mail.Body = "Seu nome de Usuário é: " + obj.Username + ", sua Senha é: " + obj.Senha; // mensagem
 
                     using (var smtp = new SmtpClient("smtp.gmail.com"))
                     {
@@ -84,11 +90,12 @@ namespace SistemaPet.subForms
                         smtp.UseDefaultCredentials = false; // vamos utilizar credencias especificas
 
                         // seu usuário e senha para autenticação
-                        smtp.Credentials = new NetworkCredential("gilvanx10@gmail.com", "ramona10101515");
+                        smtp.Credentials = new NetworkCredential("contatopetsepetsam@gmail.com", "!@#123petsepets");
                         // envia o e-mail
                         smtp.Send(mail);
 
-                        MessageBox.Show("Email enviado com sucesso!, Senha enviada para o Email informado!", "Aviso!!!", MessageBoxButtons.OK);
+                        sound3();
+                        MessageBox.Show("Dados de LOGIN enviado para o Email informado!!!", "Aviso!!!", MessageBoxButtons.OK);
                         textEmail.Text = null;
                     }
                 }

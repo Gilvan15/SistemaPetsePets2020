@@ -126,7 +126,7 @@ namespace SistemaPet.subForms
 
         private void HabilitarCampos()
         {
-            textNumeroRecibo.Enabled = true;
+            textNumeroRecibo.Enabled = false;
             textValorRecibo.Enabled = true;
             textRecebemosde.Enabled = true;
             textImportanciade1.Enabled = true;
@@ -218,7 +218,12 @@ namespace SistemaPet.subForms
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\aviso.wav");
             player.Play();
         }
-        
+        public void sound4()
+        {
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\salvar.wav");
+            player.Play();
+        }
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             
@@ -416,6 +421,7 @@ namespace SistemaPet.subForms
 
                             if (x > 0)
                             {
+                                sound4();
                                 MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                 LimparCampos();
                                 DesabilitarCampos();
@@ -457,6 +463,7 @@ namespace SistemaPet.subForms
 
                             if (x > 0)
                             {
+                                sound4();
                                 MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                 LimparCampos();
                                 DesabilitarCampos();
@@ -465,6 +472,7 @@ namespace SistemaPet.subForms
                             }
                             else
                             {
+                                sound3();
                                 MessageBox.Show("Error ao Tentar Editar o Registro", "Aviso!", MessageBoxButtons.OK);
                                 btnSalvar.Enabled = false;
                             }

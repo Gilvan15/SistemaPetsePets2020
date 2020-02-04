@@ -226,7 +226,7 @@
             this.textRecebemosde.Margin = new System.Windows.Forms.Padding(4);
             this.textRecebemosde.Name = "textRecebemosde";
             this.textRecebemosde.Size = new System.Drawing.Size(687, 33);
-            this.textRecebemosde.TabIndex = 1;
+            this.textRecebemosde.TabIndex = 2;
             this.textRecebemosde.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textRecebemosde.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textRecebemosde_KeyPress);
             // 
@@ -256,7 +256,7 @@
             this.textImportanciade1.Margin = new System.Windows.Forms.Padding(4);
             this.textImportanciade1.Name = "textImportanciade1";
             this.textImportanciade1.Size = new System.Drawing.Size(687, 33);
-            this.textImportanciade1.TabIndex = 2;
+            this.textImportanciade1.TabIndex = 3;
             this.textImportanciade1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textImportanciade1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textImportanciade1_KeyPress);
             // 
@@ -286,7 +286,7 @@
             this.textImportanciade2.Margin = new System.Windows.Forms.Padding(4);
             this.textImportanciade2.Name = "textImportanciade2";
             this.textImportanciade2.Size = new System.Drawing.Size(820, 33);
-            this.textImportanciade2.TabIndex = 3;
+            this.textImportanciade2.TabIndex = 4;
             this.textImportanciade2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textImportanciade2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textImportanciade2_KeyPress);
             // 
@@ -330,7 +330,7 @@
             this.textReferentea1.Margin = new System.Windows.Forms.Padding(4);
             this.textReferentea1.Name = "textReferentea1";
             this.textReferentea1.Size = new System.Drawing.Size(730, 33);
-            this.textReferentea1.TabIndex = 4;
+            this.textReferentea1.TabIndex = 5;
             this.textReferentea1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textReferentea1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textReferentea1_KeyPress);
             // 
@@ -350,7 +350,7 @@
             this.textReferentea2.Margin = new System.Windows.Forms.Padding(4);
             this.textReferentea2.Name = "textReferentea2";
             this.textReferentea2.Size = new System.Drawing.Size(820, 33);
-            this.textReferentea2.TabIndex = 5;
+            this.textReferentea2.TabIndex = 6;
             this.textReferentea2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textReferentea2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textReferentea2_KeyPress);
             // 
@@ -458,7 +458,7 @@
             this.textNumeroRecibo.Location = new System.Drawing.Point(339, 3);
             this.textNumeroRecibo.Name = "textNumeroRecibo";
             this.textNumeroRecibo.Size = new System.Drawing.Size(148, 29);
-            this.textNumeroRecibo.TabIndex = 99;
+            this.textNumeroRecibo.TabIndex = 0;
             // 
             // textValorRecibo
             // 
@@ -466,7 +466,7 @@
             this.textValorRecibo.Location = new System.Drawing.Point(689, 3);
             this.textValorRecibo.Name = "textValorRecibo";
             this.textValorRecibo.Size = new System.Drawing.Size(154, 29);
-            this.textValorRecibo.TabIndex = 98;
+            this.textValorRecibo.TabIndex = 1;
             this.textValorRecibo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textValorRecibo.TextChanged += new System.EventHandler(this.textValorRecibo_TextChanged_1);
             this.textValorRecibo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textValorRecibo_KeyPress);
@@ -633,7 +633,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(3, 163);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(87, 30);
-            this.btnSalvar.TabIndex = 113;
+            this.btnSalvar.TabIndex = 7;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);

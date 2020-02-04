@@ -186,7 +186,5 @@ C:\Repositorio\SistemaPetsePets2020\bin\Debug\ru\Microsoft.ReportViewer.DataVisu
 C:\Repositorio\SistemaPetsePets2020\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Repositorio\SistemaPetsePets2020\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Repositorio\SistemaPetsePets2020\obj\Debug\SistemaPet.ReporCliente.resources
-C:\Repositorio\SistemaPetsePets2020\obj\Debug\RdlCompile.cache
-C:\Repositorio\SistemaPetsePets2020\obj\Debug\RdlCompile.compiled
 C:\Repositorio\SistemaPetsePets2020\obj\Debug\SistemaPet.Reports.ReportRecibo.resources
 C:\Repositorio\SistemaPetsePets2020\obj\Debug\SistemaPet.Reports.ReportOS.resources
