@@ -96,7 +96,7 @@ namespace SistemaPet.subForms
                 {
                     con.ConnectionString = Settings.Default.dbpetsepetsConnectionString;
                     SqlCommand cn = new SqlCommand();
-                    cn = new SqlCommand("SELECT Foto FROM Animal WHERE id = " + textCod.Text, con);
+                    cn = new SqlCommand("SELECT foto FROM Animal WHERE id = " + textCod.Text, con);
                     con.Open();
                     SqlDataReader dr;
                     dr = cn.ExecuteReader();
@@ -104,14 +104,14 @@ namespace SistemaPet.subForms
 
                     if (dr.Read())
                     {
-                        if (dr["Foto"] == System.DBNull.Value)
+                        if (dr["foto"] == System.DBNull.Value)
                         {
                             MessageBox.Show("Registro sem foto!");
                             videoSource = null;
                             return;
                         }
 
-                        byte[] foto = (byte[])dr["Foto"];
+                        byte[] foto = (byte[])dr["foto"];
                         MemoryStream ms = new MemoryStream(foto);
                         figura = Image.FromStream(ms);
                     }

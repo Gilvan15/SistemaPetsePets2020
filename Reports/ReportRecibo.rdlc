@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.95792cm</Width>
+              <Width>1.08479cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>8.86354cm</Width>
+              <Width>8.38729cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.23875cm</Width>
+              <Width>4.7625cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.46604cm</Width>
+              <Width>3.28083cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -107,7 +107,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>DATA</Value>
+                              <Value>DATA/HORA</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -245,6 +245,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -492,7 +493,7 @@
         <Top>2.30188cm</Top>
         <Left>0.92444cm</Left>
         <Height>2.5673cm</Height>
-        <Width>19.52625cm</Width>
+        <Width>17.51542cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -518,8 +519,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>0.86395cm</Top>
-        <Left>6.56325cm</Left>
+        <Top>0.54645cm</Top>
+        <Left>6.24575cm</Left>
         <Height>0.67938cm</Height>
         <Width>11.66812cm</Width>
         <ZIndex>1</ZIndex>
@@ -549,6 +550,40 @@
           </Border>
         </Style>
       </Image>
+      <Textbox Name="ExecutionTime">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Globals!ExecutionTime</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ExecutionTime</rd:DefaultName>
+        <Top>1.22583cm</Top>
+        <Left>8.04016cm</Left>
+        <Height>0.52944cm</Height>
+        <Width>5.30459cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>3.55208in</Height>
     <Style />
