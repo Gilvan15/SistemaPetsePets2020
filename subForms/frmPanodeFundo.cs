@@ -24,10 +24,7 @@ namespace SistemaPet.subForms
         }
         public static void FecharPanodeFundo() 
         {
-         
-            
             Form.ActiveForm.Close();
-            
         }
 
     }

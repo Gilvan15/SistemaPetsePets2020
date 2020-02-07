@@ -573,11 +573,15 @@ namespace SistemaPet.subForms
         }
         public void FecharPanodeFundo()
         {
-            int tot = Application.OpenForms.OfType<frmRecibo>().Count();
+            int tot = Application.OpenForms.OfType<frmOS>().Count();
             //MessageBox.Show("total de janelas abertas: " + tot);
             for (int i = 0; i <= tot; i++)
             {
-                frmPanodeFundo.FecharPanodeFundo();
+                //MessageBox.Show( $"Passou: {i} ");
+                if (Application.OpenForms.OfType<frmPanodeFundo>().Count() == 1)
+                {
+                    frmPanodeFundo.FecharPanodeFundo();
+                }
             }
         }
         private void btnPrepararImpressao_Click(object sender, EventArgs e)
