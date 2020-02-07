@@ -390,6 +390,8 @@ namespace SistemaPet.subForms
             if (groupBox1.Visible == false)
             {
                 groupBox1.Visible = true;
+                groupBox1.Enabled = true;
+                textPesquisar.Enabled = true;
                 textPesquisar.Focus();
             }
             else

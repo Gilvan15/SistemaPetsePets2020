@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOS));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnPrepararImpressao = new System.Windows.Forms.Button();
@@ -128,7 +128,7 @@
             this.panel2.Controls.Add(this.btnEditar);
             this.panel2.Controls.Add(this.btnPesquisar);
             this.panel2.Controls.Add(this.btnLimpar);
-            this.panel2.Location = new System.Drawing.Point(894, 124);
+            this.panel2.Location = new System.Drawing.Point(912, 124);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(105, 324);
             this.panel2.TabIndex = 109;
@@ -286,7 +286,7 @@
             this.panel3.Controls.Add(this.bunifuSeparator1);
             this.panel3.Controls.Add(this.bunifuSeparator2);
             this.panel3.Controls.Add(this.bunifuCustomLabel14);
-            this.panel3.Location = new System.Drawing.Point(81, 9);
+            this.panel3.Location = new System.Drawing.Point(83, 9);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(857, 619);
             this.panel3.TabIndex = 110;
@@ -1136,7 +1136,7 @@
             this.labelSelecionePrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSelecionePrint.AutoSize = true;
             this.labelSelecionePrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSelecionePrint.Location = new System.Drawing.Point(337, 638);
+            this.labelSelecionePrint.Location = new System.Drawing.Point(361, 638);
             this.labelSelecionePrint.Name = "labelSelecionePrint";
             this.labelSelecionePrint.Size = new System.Drawing.Size(191, 15);
             this.labelSelecionePrint.TabIndex = 125;
@@ -1150,7 +1150,7 @@
             this.comboPrinter1.FormattingEnabled = true;
             this.comboPrinter1.Items.AddRange(new object[] {
             "SELECIONE UMA IMPRESSORA"});
-            this.comboPrinter1.Location = new System.Drawing.Point(534, 635);
+            this.comboPrinter1.Location = new System.Drawing.Point(558, 635);
             this.comboPrinter1.Name = "comboPrinter1";
             this.comboPrinter1.Size = new System.Drawing.Size(201, 21);
             this.comboPrinter1.TabIndex = 128;
@@ -1166,7 +1166,7 @@
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.Color.White;
-            this.btnImprimir.Location = new System.Drawing.Point(858, 633);
+            this.btnImprimir.Location = new System.Drawing.Point(882, 633);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(82, 25);
             this.btnImprimir.TabIndex = 126;
@@ -1185,7 +1185,7 @@
             this.btnFecharRecibo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFecharRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFecharRecibo.ForeColor = System.Drawing.Color.White;
-            this.btnFecharRecibo.Location = new System.Drawing.Point(739, 633);
+            this.btnFecharRecibo.Location = new System.Drawing.Point(763, 633);
             this.btnFecharRecibo.Name = "btnFecharRecibo";
             this.btnFecharRecibo.Size = new System.Drawing.Size(113, 25);
             this.btnFecharRecibo.TabIndex = 127;
@@ -1199,21 +1199,21 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.EnableHeadersVisualStyles = false;
@@ -1222,7 +1222,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(927, 163);
+            this.dataGridView1.Size = new System.Drawing.Size(897, 163);
             this.dataGridView1.TabIndex = 129;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -1236,7 +1236,7 @@
             this.bunifuSeparator3.Location = new System.Drawing.Point(129, 804);
             this.bunifuSeparator3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bunifuSeparator3.Name = "bunifuSeparator3";
-            this.bunifuSeparator3.Size = new System.Drawing.Size(97, 15);
+            this.bunifuSeparator3.Size = new System.Drawing.Size(67, 15);
             this.bunifuSeparator3.TabIndex = 156;
             this.bunifuSeparator3.Transparency = 255;
             this.bunifuSeparator3.Vertical = false;
@@ -1247,7 +1247,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1019, 788);
+            this.ClientSize = new System.Drawing.Size(1023, 788);
             this.Controls.Add(this.bunifuSeparator3);
             this.Controls.Add(this.labelSelecionePrint);
             this.Controls.Add(this.comboPrinter1);
