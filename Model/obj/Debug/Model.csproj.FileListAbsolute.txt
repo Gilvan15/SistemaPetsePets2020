@@ -42,3 +42,4 @@ C:\Repositorio\SistemaPetsePets2020\Model\obj\Debug\Model.csprojAssemblyReferenc
 C:\Repositorio\SistemaPetsePets2020\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Repositorio\SistemaPetsePets2020\Model\obj\Debug\Model.dll
 C:\Repositorio\SistemaPetsePets2020\Model\obj\Debug\Model.pdb
+C:\Repositorio\SistemaPetsePets2020\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache

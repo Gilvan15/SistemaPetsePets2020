@@ -402,7 +402,7 @@ namespace SistemaPet.subForms
                 case "Salvar":
                     try
                     {
-                        DialogResult result1 = MessageBox.Show("Confima salvação do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        DialogResult result1 = MessageBox.Show("Confima a inclusão do registro?", "Aviso!", MessageBoxButtons.YesNo);
                         if (result1 == DialogResult.Yes)
                         {
 

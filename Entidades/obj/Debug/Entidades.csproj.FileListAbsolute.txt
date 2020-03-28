@@ -18,3 +18,4 @@ C:\Repositorio\SistemaPetsePets2020\Entidades\bin\Debug\Entidades.pdb
 C:\Repositorio\SistemaPetsePets2020\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 C:\Repositorio\SistemaPetsePets2020\Entidades\obj\Debug\Entidades.dll
 C:\Repositorio\SistemaPetsePets2020\Entidades\obj\Debug\Entidades.pdb
+C:\Repositorio\SistemaPetsePets2020\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache

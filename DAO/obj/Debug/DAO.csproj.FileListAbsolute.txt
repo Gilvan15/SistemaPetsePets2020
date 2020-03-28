@@ -34,3 +34,4 @@ C:\Repositorio\SistemaPetsePets2020\DAO\obj\Debug\DAO.csprojAssemblyReference.ca
 C:\Repositorio\SistemaPetsePets2020\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Repositorio\SistemaPetsePets2020\DAO\obj\Debug\DAO.dll
 C:\Repositorio\SistemaPetsePets2020\DAO\obj\Debug\DAO.pdb
+C:\Repositorio\SistemaPetsePets2020\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
