@@ -33,6 +33,7 @@ namespace Entidades
         private string valorserv4;
 
         private string taxaentrega;
+        private string endentrega;
         private string hora;
 
         private DateTime data;
@@ -62,6 +63,7 @@ namespace Entidades
         public string Servico4 { get => servico4; set => servico4 = value; }
         public string Valorserv4 { get => valorserv4; set => valorserv4 = value; }
         public string Taxaentrega { get => taxaentrega; set => taxaentrega = value; }
+        public string Endentrega { get => endentrega; set => endentrega = value; }
         public string Hora { get => hora; set => hora = value; }
         public DateTime Data { get => data; set => data = value; }
         public DateTime Dataos { get => dataos; set => dataos = value; }

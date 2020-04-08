@@ -780,7 +780,10 @@ namespace SistemaPet.subForms
                     // Carrega a imagem para o nosso formulário
                     string nomeArquivo = openFileDialog1.FileName;
                     Bitmap bmp = new Bitmap(nomeArquivo);
+                    MessageBox.Show(nomeArquivo);
                     pictureCamera.Image = bmp;
+
+
 
                     MemoryStream ms = new MemoryStream();
                     bmp.Save(ms, ImageFormat.Bmp);
