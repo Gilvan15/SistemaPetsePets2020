@@ -597,7 +597,9 @@ namespace SistemaPet.subForms
             //sound1();
             if (Application.OpenForms.OfType<frmOS>().Count() > 2)
             {
+                //int val = Application.OpenForms.OfType<frmOS>().Count();
                 //int cont = Application.OpenForms.OfType<frmOS>().Count();
+                //MessageBox.Show( "Valor"  + val);
                 MessageBox.Show("A OS já esta aberta!");
                 //MessageBox.Show("total" + cont);
             }
