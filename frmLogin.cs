@@ -17,7 +17,8 @@ namespace SistemaPet
 {
     public partial class frmLogin : Form
     {
-        
+        string textErrorConect;
+        string nametemp;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -45,7 +46,7 @@ namespace SistemaPet
                 objTabela.Username = textUsername.Text;
                 objTabela.Password = textSenha.Text;
                 objTabela.Checksave = true;
-                LembrarLoginModel.Editar(objTabela);
+                LembrarLoginModel.Editar(objTabela);            
         }
         private void LimparLogin()
         {
@@ -87,6 +88,16 @@ namespace SistemaPet
                 textUsername.Text = item.Username;
                 textSenha.Text = item.Password;
                 bunifuCheckbox1.Checked = item.Checksave;
+                nametemp = item.Username;
+            }
+
+            //MessageBox.Show("a colecao é:" + colecao);
+
+            if (nametemp == null)
+            {
+                nametemp = LembrarLoginModel.ErrorConect();
+                MessageBox.Show("oi" + nametemp);
+                return;
             }
         }
         public void sound1()
@@ -233,5 +244,6 @@ namespace SistemaPet
 
             }
         }
+                
     }
 }

@@ -17,5 +17,8 @@ C:\Repositorio\SistemaPetsePets2020\Entidades\bin\Debug\Entidades.dll
 C:\Repositorio\SistemaPetsePets2020\Entidades\bin\Debug\Entidades.pdb
 C:\Repositorio\SistemaPetsePets2020\Entidades\obj\Debug\Entidades.dll
 C:\Repositorio\SistemaPetsePets2020\Entidades\obj\Debug\Entidades.pdb
+<<<<<<< HEAD
 C:\Repositorio\SistemaPetsePets2020\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+=======
+>>>>>>> Sprint2020-01
 C:\Repositorio\SistemaPetsePets2020\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache

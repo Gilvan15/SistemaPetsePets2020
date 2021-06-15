@@ -21,5 +21,12 @@ namespace Model
             return new LembrarLoginDAO().Lista();
         }
 
+        public static string ErrorConect() 
+        {
+            string textmsm1 = new LembrarLoginDAO().errorConect();
+
+            return textmsm1;
+        }
+
     }
 }

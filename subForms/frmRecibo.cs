@@ -402,7 +402,7 @@ namespace SistemaPet.subForms
                 case "Salvar":
                     try
                     {
-                        DialogResult result1 = MessageBox.Show("Confima salvação do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        DialogResult result1 = MessageBox.Show("Confima a inclusão do registro?", "Aviso!", MessageBoxButtons.YesNo);
                         if (result1 == DialogResult.Yes)
                         {
 
@@ -496,9 +496,13 @@ namespace SistemaPet.subForms
         {
             int tot = Application.OpenForms.OfType<frmRecibo>().Count();
             //MessageBox.Show("total de janelas abertas: " + tot);
-            for (int i = 0; i < tot; i++)
+            for (int i = 0; i <= tot; i++)
             {
-                frmPanodeFundo.FecharPanodeFundo();
+                //MessageBox.Show( $"Passou: {i} ");
+                if(Application.OpenForms.OfType<frmPanodeFundo>().Count() == 1) 
+                {
+                    frmPanodeFundo.FecharPanodeFundo();
+                }
             }
         }
         private void btnPrepararImpressao_Click(object sender, EventArgs e)

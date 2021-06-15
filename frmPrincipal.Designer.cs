@@ -113,7 +113,11 @@
             this.bunifuT.SetDecoration(this.labelHora, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTLog.SetDecoration(this.labelHora, BunifuAnimatorNS.DecorationType.None);
             this.labelHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.labelHora.Location = new System.Drawing.Point(858, 16);
+=======
+            this.labelHora.Location = new System.Drawing.Point(962, 16);
+>>>>>>> Sprint2020-01
             this.labelHora.Name = "labelHora";
             this.labelHora.Size = new System.Drawing.Size(79, 20);
             this.labelHora.TabIndex = 1;

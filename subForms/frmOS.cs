@@ -47,7 +47,7 @@ namespace SistemaPet.subForms
             string vtextproprietario, string vtexttelefone, string vtextemail, string vtextcespeciais,
             string vtextalergico, string vtextobservacao, string comboservico1, Boolean checkservico1, string vtextvalor1,
             string comboservico2, Boolean checkservico2, string vtextvalor2, string comboservico3, Boolean checkservico3, string vtextvalor3,
-            string comboservico4, string vtextvalor4, string vcbTipoEntrega,  string vtexttaxaentrega, string vmasckhora,  string vvalortotal, string vdesconto, string vvalorfinal)
+            string comboservico4, string vtextvalor4, string vcbTipoEntrega,  string vtexttaxaentrega, string vtextendentrega, string vmasckhora,  string vvalortotal, string vdesconto, string vvalorfinal)
         {
             InitializeComponent();
             textCod.Text = vtextCod;
@@ -79,6 +79,7 @@ namespace SistemaPet.subForms
             cbTipoEntrega.Text = vcbTipoEntrega;
 
             textTaxaEntrega.Text = vtexttaxaentrega;
+            textEndEntrega.Text = vtextendentrega;
             maskHora.Text = vmasckhora;
 
             textTotal.Text = vvalortotal;
@@ -212,13 +213,14 @@ namespace SistemaPet.subForms
                 dataGridView1.Columns[20].HeaderText = "VALORSERV4";
 
                 dataGridView1.Columns[21].HeaderText = "TAXAENTREGA";
-                dataGridView1.Columns[22].HeaderText = "HORA";
+                dataGridView1.Columns[22].HeaderText = "END.ENTREGA";
+                dataGridView1.Columns[23].HeaderText = "HORA";
 
-                dataGridView1.Columns[23].HeaderText = "DATA";
-                //dataGridView1.Columns[24].HeaderText = "DATA";
-                dataGridView1.Columns[25].HeaderText = "VALOR TOTAL";
-                dataGridView1.Columns[26].HeaderText = "DESCONTO";
-                dataGridView1.Columns[27].HeaderText = "VALOR FINAL";
+                dataGridView1.Columns[24].HeaderText = "DATA";
+                //dataGridView1.Columns[25].HeaderText = "DATA";
+                dataGridView1.Columns[26].HeaderText = "VALOR TOTAL";
+                dataGridView1.Columns[27].HeaderText = "DESCONTO";
+                dataGridView1.Columns[28].HeaderText = "VALOR FINAL";
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 for (int i = 6; i <= 22; i++)
@@ -390,6 +392,8 @@ namespace SistemaPet.subForms
             if (groupBox1.Visible == false)
             {
                 groupBox1.Visible = true;
+                groupBox1.Enabled = true;
+                textPesquisar.Enabled = true;
                 textPesquisar.Focus();
             }
             else
@@ -449,6 +453,7 @@ namespace SistemaPet.subForms
                             objTabela.Valorserv4 = textValor4.Text;
 
                             objTabela.Taxaentrega = textTaxaEntrega.Text;
+                            objTabela.Endentrega = textEndEntrega.Text;
                             objTabela.Hora = maskHora.Text;
 
                             objTabela.Data = DateTime.Now;
@@ -516,6 +521,7 @@ namespace SistemaPet.subForms
                             objTabela.Valorserv4 = textValor4.Text;
 
                             objTabela.Taxaentrega = textTaxaEntrega.Text;
+                            objTabela.Endentrega = textEndEntrega.Text;
                             objTabela.Hora = maskHora.Text;
 
                             objTabela.Data = DateTime.Now;
@@ -573,11 +579,15 @@ namespace SistemaPet.subForms
         }
         public void FecharPanodeFundo()
         {
-            int tot = Application.OpenForms.OfType<frmRecibo>().Count();
+            int tot = Application.OpenForms.OfType<frmOS>().Count();
             //MessageBox.Show("total de janelas abertas: " + tot);
             for (int i = 0; i <= tot; i++)
             {
-                frmPanodeFundo.FecharPanodeFundo();
+                //MessageBox.Show( $"Passou: {i} ");
+                if (Application.OpenForms.OfType<frmPanodeFundo>().Count() == 1)
+                {
+                    frmPanodeFundo.FecharPanodeFundo();
+                }
             }
         }
         private void btnPrepararImpressao_Click(object sender, EventArgs e)
@@ -587,7 +597,11 @@ namespace SistemaPet.subForms
             //sound1();
             if (Application.OpenForms.OfType<frmOS>().Count() > 2)
             {
-                MessageBox.Show("O Recibo já está aberto!");
+                //int val = Application.OpenForms.OfType<frmOS>().Count();
+                //int cont = Application.OpenForms.OfType<frmOS>().Count();
+                //MessageBox.Show( "Valor"  + val);
+                MessageBox.Show("A OS já esta aberta!");
+                //MessageBox.Show("total" + cont);
             }
             else
             {
@@ -604,7 +618,7 @@ namespace SistemaPet.subForms
                     textRaca.Text, textProprietario.Text, textTelefone.Text, textEmail.Text, textCespeciais.Text, 
                     textAlergico.Text, textObservacao.Text, comboServico1.Text, checkServico1.Checked, textValor1.Text,
                     comboServico2.Text, checkServico2.Checked, textValor2.Text, comboServico3.Text, checkServico3.Checked, textValor3.Text,
-                    comboServico4.Text, textValor4.Text, cbTipoEntrega.Text, textTaxaEntrega.Text, maskHora.Text, textTotal.Text, textDesconto.Text, textValorFinal.Text);
+                    comboServico4.Text, textValor4.Text, cbTipoEntrega.Text, textTaxaEntrega.Text, textEndEntrega.Text, maskHora.Text, textTotal.Text, textDesconto.Text, textValorFinal.Text);
                 frmrec.TopMost = true;
                 frmrec.StartPosition = FormStartPosition.CenterScreen;
                 frmrec.Show();
@@ -1085,11 +1099,12 @@ namespace SistemaPet.subForms
                 textValor4.Text = dataGridView1.CurrentRow.Cells[20].Value.ToString();
                 if (dataGridView1.CurrentRow.Cells[21].Value.ToString() == "0,00") { cbTipoEntrega.Text = "Dono vem pegar"; } else { cbTipoEntrega.Text = "Taxi Dog"; }
                 textTaxaEntrega.Text = dataGridView1.CurrentRow.Cells[21].Value.ToString();
-                maskHora.Text = dataGridView1.CurrentRow.Cells[22].Value.ToString();
-                lbldata.Text = dataGridView1.CurrentRow.Cells[23].Value.ToString();
-                textTotal.Text = dataGridView1.CurrentRow.Cells[25].Value.ToString();
-                textDesconto.Text = dataGridView1.CurrentRow.Cells[26].Value.ToString();
-                textValorFinal.Text = dataGridView1.CurrentRow.Cells[27].Value.ToString();
+                textEndEntrega.Text = dataGridView1.CurrentRow.Cells[22].Value.ToString();
+                maskHora.Text = dataGridView1.CurrentRow.Cells[23].Value.ToString();
+                lbldata.Text = dataGridView1.CurrentRow.Cells[24].Value.ToString();
+                textTotal.Text = dataGridView1.CurrentRow.Cells[26].Value.ToString();
+                textDesconto.Text = dataGridView1.CurrentRow.Cells[27].Value.ToString();
+                textValorFinal.Text = dataGridView1.CurrentRow.Cells[28].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -1175,11 +1190,15 @@ namespace SistemaPet.subForms
                 pictDono.Visible = false;
                 labelHora.Visible = false;
                 maskHora.Visible = false;
+                LabelEndEntrega.Visible = true;
+                textEndEntrega.Visible = true;
             }
             else 
             {
                 pictTaxiDog.Visible = false;
                 textTaxaEntrega.Visible = false;
+                LabelEndEntrega.Visible = false;
+                textEndEntrega.Visible = false;
                 labelTaxa.Visible = false;
                 pictDono.Visible = true;
                 textTaxaEntrega.Text = Convert.ToString(0);

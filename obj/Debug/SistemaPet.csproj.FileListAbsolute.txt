@@ -187,5 +187,8 @@ C:\Repositorio\SistemaPetsePets2020\bin\Debug\zh-CHT\Microsoft.ReportViewer.Data
 C:\Repositorio\SistemaPetsePets2020\obj\Debug\SistemaPet.ReporCliente.resources
 C:\Repositorio\SistemaPetsePets2020\obj\Debug\SistemaPet.Reports.ReportRecibo.resources
 C:\Repositorio\SistemaPetsePets2020\obj\Debug\SistemaPet.Reports.ReportOS.resources
+<<<<<<< HEAD
 C:\Repositorio\SistemaPetsePets2020\obj\Debug\SistemaPet.csproj.AssemblyReference.cache
+=======
+>>>>>>> Sprint2020-01
 C:\Repositorio\SistemaPetsePets2020\obj\Debug\SistemaPet.csproj.CoreCompileInputs.cache

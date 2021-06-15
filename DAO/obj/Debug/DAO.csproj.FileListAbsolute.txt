@@ -33,5 +33,8 @@ C:\Repositorio\SistemaPetsePets2020\DAO\bin\Debug\Entidades.pdb
 C:\Repositorio\SistemaPetsePets2020\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Repositorio\SistemaPetsePets2020\DAO\obj\Debug\DAO.dll
 C:\Repositorio\SistemaPetsePets2020\DAO\obj\Debug\DAO.pdb
+<<<<<<< HEAD
 C:\Repositorio\SistemaPetsePets2020\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+=======
+>>>>>>> Sprint2020-01
 C:\Repositorio\SistemaPetsePets2020\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache

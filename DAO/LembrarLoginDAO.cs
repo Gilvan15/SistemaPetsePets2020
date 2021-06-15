@@ -11,6 +11,7 @@ namespace DAO
 {
     public class LembrarLoginDAO
     {
+        string texto;
         public int Editar(LembrarLoginEnt objTabela)
         {
             using (SqlConnection con = new SqlConnection())
@@ -33,38 +34,50 @@ namespace DAO
 
         public List<LembrarLoginEnt> Lista()
         {
-            using (SqlConnection con = new SqlConnection())
+            List<LembrarLoginEnt> lista = new List<LembrarLoginEnt>();
+
+            try
             {
-                con.ConnectionString = DAO.Properties.Settings.Default.banco;
-                SqlCommand cn = new SqlCommand();
-                cn.CommandType = CommandType.Text;
-                con.Open();
-                cn.CommandText = "SELECT * FROM Lembrarlogin";
-                cn.Connection = con;
-                SqlDataReader dr;
-                List<LembrarLoginEnt> lista = new List<LembrarLoginEnt>();
-                dr = cn.ExecuteReader();
-                if (dr.HasRows)
+                using (SqlConnection con = new SqlConnection())
                 {
-                    while (dr.Read())
+                    con.ConnectionString = DAO.Properties.Settings.Default.banco;
+                    SqlCommand cn = new SqlCommand();
+                    cn.CommandType = CommandType.Text;
+                    con.Open();
+                    cn.CommandText = "SELECT * FROM Lembrarlogin";
+                    cn.Connection = con;
+                    SqlDataReader dr;
+                    //List<LembrarLoginEnt> lista = new List<LembrarLoginEnt>();
+                    dr = cn.ExecuteReader();
+                    if (dr.HasRows)
                     {
-                        LembrarLoginEnt dado = new LembrarLoginEnt();
-                        dado.Id = Convert.ToInt32(dr["id"]);
-                        dado.Username = Convert.ToString(dr["username"]);
-                        dado.Password = Convert.ToString((dr["password"]));
-                        dado.Checksave = Convert.ToBoolean((dr["checksave"]));
-                        lista.Add(dado);
+                        while (dr.Read())
+                        {
+                            LembrarLoginEnt dado = new LembrarLoginEnt();
+                            dado.Id = Convert.ToInt32(dr["id"]);
+                            dado.Username = Convert.ToString(dr["username"]);
+                            dado.Password = Convert.ToString((dr["password"]));
+                            dado.Checksave = Convert.ToBoolean((dr["checksave"]));
+                            lista.Add(dado);
+                        }
                     }
+                    return lista;
                 }
-                return lista;
+
             }
+            catch (Exception ex)
+            {
+                texto = ex.Message;
+                Console.WriteLine("Error ao Conectar com o DataBase:" + texto);
+                errorConect();
+            }
+            return lista;
         }
 
-
-
-
-
-
-
+        public string errorConect()
+        {
+            string text = texto;
+            return text; 
+        }
     }
 }

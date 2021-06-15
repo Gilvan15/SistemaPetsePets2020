@@ -41,5 +41,8 @@ C:\Repositorio\SistemaPetsePets2020\Model\bin\Debug\Entidades.pdb
 C:\Repositorio\SistemaPetsePets2020\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Repositorio\SistemaPetsePets2020\Model\obj\Debug\Model.dll
 C:\Repositorio\SistemaPetsePets2020\Model\obj\Debug\Model.pdb
+<<<<<<< HEAD
 C:\Repositorio\SistemaPetsePets2020\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+=======
+>>>>>>> Sprint2020-01
 C:\Repositorio\SistemaPetsePets2020\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
