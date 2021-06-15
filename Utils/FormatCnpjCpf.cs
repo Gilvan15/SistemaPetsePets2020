@@ -22,13 +22,25 @@ namespace SistemaPet.Utils
         }
         public static string FormatConvencional(string celular)
         {
-            celular = Convert.ToUInt64(celular).ToString(@"(##) ####-####");
+            celular = Convert.ToUInt64(celular).ToString(@"(##)####-####");
             return celular;
         }
         public static string FormatCelular(string celular)
         {
-            celular = Convert.ToUInt64(celular).ToString(@"(##) #####-####");
+
+            try
+            {
+                celular = Convert.ToUInt64(celular).ToString(@"(##)#####-####");
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                
+            }
+            
             return celular;
+
         }
 
         public static bool ValidarEmail(string strEmail)
